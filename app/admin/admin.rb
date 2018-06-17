@@ -4,6 +4,8 @@ ActiveAdmin.register Admin do
     index do
       selectable_column
       id_column
+      column :firstname
+      column :lastname
       column :email
       column :current_sign_in_at
       column :sign_in_count
@@ -11,6 +13,8 @@ ActiveAdmin.register Admin do
       actions
     end
 
+    filter :firstname
+    filter :lastname
     filter :email
     filter :current_sign_in_at
     filter :sign_in_count
