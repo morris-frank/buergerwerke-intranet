@@ -10,15 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_17_220548) do
+ActiveRecord::Schema.define(version: 2018_06_18_044953) do
+
+  create_table "cooperatives", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "address", default: ""
+    t.string "additional_board", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_cooperatives_on_email", unique: true
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_groups_on_name", unique: true
+  end
+
+  create_table "groups_users", id: false, force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_groups_users_on_group_id"
+    t.index ["member_id"], name: "index_groups_users_on_member_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.integer "plant_type"
+    t.float "size"
+    t.float "long"
+    t.float "lat"
+    t.text "description"
+    t.integer "cooperative_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cooperative_id"], name: "index_plants_on_cooperative_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
-    t.boolean "is_coop_admin"
-    t.boolean "is_board_member"
-    t.boolean "is_editor"
-    t.boolean "can_see_customer_data"
+    t.boolean "is_coop_admin", default: false
+    t.boolean "is_board_member", default: false
+    t.boolean "is_editor", default: false
+    t.boolean "can_see_customer_data", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -38,7 +77,10 @@ ActiveRecord::Schema.define(version: 2018_06_17_220548) do
     t.integer "invitations_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
+    t.integer "cooperative_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["cooperative_id"], name: "index_users_on_cooperative_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

@@ -1,5 +1,5 @@
 ActiveAdmin.register Member do
-    permit_params :email
+    permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data, :groups
 
     controller do
       def create
@@ -18,14 +18,12 @@ ActiveAdmin.register Member do
       column :firstname
       column :lastname
       column :email
+      column :cooperative
+      column :groups
       column :is_coop_admin
       column :is_board_member
       column :is_editor
       column :can_see_customer_data
-      column :current_sign_in_at
-      column :sign_in_count
-      column :created_at
-      column :invited_by
       actions
     end
 
@@ -33,18 +31,23 @@ ActiveAdmin.register Member do
     filter :firstname
     filter :lastname
     filter :email
+    filter :cooperative
     filter :is_coop_admin
     filter :is_board_member
     filter :is_editor
     filter :can_see_customer_data
-    filter :current_sign_in_at
-    filter :sign_in_count
-    filter :created_at
-    filter :invited_by_id, :as => :select, :collection => proc { Admin.all.collect{|admin| [admin.email, admin.id]}}
 
     form do |f|
       f.inputs "Invite Member #{current_admin.inspect}" do
         f.input :email
+        f.input :firstname
+        f.input :lastname
+        f.input :cooperative
+        f.input :groups
+        f.input :is_coop_admin
+        f.input :is_board_member
+        f.input :is_editor
+        f.input :can_see_customer_data
       end
       f.actions
     end

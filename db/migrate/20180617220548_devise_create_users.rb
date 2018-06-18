@@ -5,10 +5,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string  :firstname
       t.string  :lastname
-      t.boolean :is_coop_admin
-      t.boolean :is_board_member
-      t.boolean :is_editor
-      t.boolean :can_see_customer_data
+      t.boolean :is_coop_admin,         default: false
+      t.boolean :is_board_member,       default: false
+      t.boolean :is_editor,             default: false
+      t.boolean :can_see_customer_data, default: false
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -44,6 +44,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer    :invitations_count, default: 0
 
       t.timestamps null: false
+
+      t.string :type
     end
 
     add_index :users, :email,                unique: true
