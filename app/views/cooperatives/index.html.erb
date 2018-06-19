@@ -1,0 +1,17 @@
+<h1>Cooperatives</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>E-Mail</th>
+    <th></th>
+  </tr>
+
+  <% @cooperatives.each do |cooperative| %>
+    <tr>
+      <td><%= cooperative.name %></td>
+      <td><%= cooperative.email %></td>
+      <td><%= link_to 'Show', cooperative_path(cooperative) %></td>
+    </tr>
+  <% end %>
+</table>

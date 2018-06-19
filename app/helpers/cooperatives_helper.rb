@@ -1,0 +1,2 @@
+module CooperativesHelper
+end
