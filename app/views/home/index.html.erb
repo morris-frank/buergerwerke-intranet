@@ -1,0 +1,9 @@
+
+<div class="row">
+  <div class="col-sm-12 text-xs-center bootstrap-welcome">
+    <h1>Welcome <%= current_member.email %></h1>
+    <p><%= link_to 'edit profile', edit_member_registration_path(current_member) %></p>
+    <p><%= link_to 'logout', eval("destroy_#{current_member.type.downcase}_session_path"), method: :delete %></p>
+
+  </div>
+</div>
