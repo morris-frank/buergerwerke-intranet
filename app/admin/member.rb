@@ -1,5 +1,5 @@
 ActiveAdmin.register Member do
-    permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data, :groups, :password, :password_confirmation
+    permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data, :groups#, :password, :password_confirmation
 
     controller do
       def create
@@ -48,8 +48,8 @@ ActiveAdmin.register Member do
         f.input :is_board_member
         f.input :is_editor
         f.input :can_see_customer_data
-        f.input :password
-        f.input :password_confirmation
+        # f.input :password
+        # f.input :password_confirmation
       end
       f.actions
     end

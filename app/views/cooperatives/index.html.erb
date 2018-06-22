@@ -1,17 +1,10 @@
-<h1>Cooperatives</h1>
+<p class="title is-2">Genossenschaften</p>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>E-Mail</th>
-    <th></th>
-  </tr>
-
   <% @cooperatives.each do |cooperative| %>
     <tr>
-      <td><%= cooperative.name %></td>
-      <td><%= cooperative.email %></td>
-      <td><%= link_to 'Show', cooperative_path(cooperative) %></td>
+      <td><%= link_to cooperative.name, cooperative_path(cooperative) %></td>
+      <td><a href="mailto:<%= cooperative.email %>"><%= cooperative.email %></a></td>
     </tr>
   <% end %>
 </table>

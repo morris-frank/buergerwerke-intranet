@@ -1,0 +1,18 @@
+<p class="title is-2">Anlagen der <%= @cooperative.name %></p>
+
+<div class="buttons has-addons">
+  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>" class="button is-primary is-outlined is-small">
+    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+    <span>zurück</span>
+  </a>
+</div>
+
+<table>
+  <% @plants.each do |plant| %>
+    <tr>
+      <td><%= link_to plant.name, cooperative_plant_path(plant, plant.cooperative_id) %></td>
+      <td><%= plant.plant_type %></td>
+      <td><%= plant.size %></td>
+    </tr>
+  <% end %>
+</table>

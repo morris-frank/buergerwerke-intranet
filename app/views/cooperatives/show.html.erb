@@ -1,4 +1,27 @@
-<p>
-  <strong>Name:</strong>
-  <%= @cooperative.name %>
-</p>
+<p class="title is-2"><%= @cooperative.name %></p>
+
+<div class="buttons has-addons">
+  <a href="<%= url_for controller: 'members', action: 'index', cooperative_id: @cooperative.id %>" class="button is-primary is-outlined">
+    <span class="icon"><i class="fas fa-users"></i></span>
+    <span>Mitglieder</span>
+  </a>
+  <a href="" class="button is-primary is-outlined">
+    <span class="icon"><i class="fas fa-file"></i></span>
+    <span>Dateien</span>
+  </a>
+  <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>" class="button is-primary is-outlined">
+    <span class="icon"><i class="fas fa-solar-panel"></i></span>
+    <span>Anlagen</span>
+  </a>
+</div>
+
+<div class="box content">
+  <p>Adresse: <%= @cooperative.address %></p>
+  <p>Vorstand: <%= @cooperative.additional_board %></p>
+  <p>Mail: <a href="mailto:<%= @cooperative.email %>"><%= @cooperative.email %></a></p>
+
+  <p><%= @cooperative.description %></p>
+
+  <% @cooperative.plants.each do |plant| %>
+  <% end %>
+</div>

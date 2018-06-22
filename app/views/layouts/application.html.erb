@@ -2,14 +2,60 @@
 <html>
   <head>
     <title>BuergerwerkePortal</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar has-shadow is-spaced is-grey-dark" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="https://buergerwerke.de/wp-content/themes/buergerwerke-child/public/images/logo_header.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+          </a>
+
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <% if member_signed_in? %>
+              <%= link_to 'Meine Genossenschaft', cooperative_path(current_member.cooperative), class: 'navbar-item' %>
+              <%= link_to 'Genossenschaften', cooperatives_path, class: 'navbar-item' %>
+              <a href="" class="navbar-item">Dateien</a>
+              <a href="" class="navbar-item">Profil</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container box">
+        <%= yield %>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="content has-text-centered">
+          <span>© Bürgerwerke</span>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>

@@ -1,0 +1,8 @@
+<p class="title is-2"><%= @plant.name %></p>
+
+<div class="buttons has-addons">
+  <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>" class="button is-primary is-outlined is-small">
+    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+    <span>zurück</span>
+  </a>
+</div>

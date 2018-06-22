@@ -10,3 +10,4 @@ Cooperative.create!(email: 'info@heg.de', address: 'Eppelheim', name: 'Heidelber
 Group.create!(name: 'Hanseatische Genossen') if Rails.env.development?
 Group.create!(name: 'Badische Solarfachgruppe') if Rails.env.development?
 Member.create!(email: 'maurice.frank@posteo.de', cooperative_id: 1, password: 'qwertz', password_confirmation: 'qwertz') if Rails.env.development?
+Plant.create!(name: 'Betten Knoll', cooperative_id: 1, plant_type: 'solar', size: 46.55)

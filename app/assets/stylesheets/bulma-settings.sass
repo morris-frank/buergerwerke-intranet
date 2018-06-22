@@ -1,0 +1,142 @@
+// Colors
+$primary: #fab41a
+$secondary: #B8161A
+
+
+$black:        hsl(0, 0%, 4%)
+$black-bis:    hsl(0, 0%, 7%)
+$black-ter:    hsl(0, 0%, 14%)
+
+$grey-darker:  #424242
+$grey-dark:    #424242
+$grey:         #58585a
+$grey-light:   #9c9e9f
+$grey-lighter: #9c9e9f
+
+$white-ter:    hsl(0, 0%, 99%)
+$white-bis:    hsl(0, 0%, 99%)
+$white:        hsl(0, 0%, 99%)
+
+// Typography
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600'
+@font-face
+    font-family: 'The Hand'
+    font-style: normal
+    font-weight: normal
+    src: local('The Hand Bold'), local('TheHandBold'), url('the-hand-bold.woff') format('woff')
+$family-sans-serif:  -apple-system, BlinkMacSystemFont, 'Source Sans Pro', sans-serif
+$family-monospace: monospace
+$family-accent: 'The Hand', sans-serif
+$render-mode: optimizeLegibility
+
+$size-1: 4rem
+$size-2: 2.2rem
+$size-3: 2rem
+$size-4: 1.5rem
+$size-5: 1.25rem
+$size-6: 1rem
+$size-7: 0.75rem
+
+$weight-light: 300
+$weight-normal: 400
+$weight-medium: 500
+$weight-semibold: 600
+$weight-bold: 700
+
+// Responsiveness
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 32px
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px
+// 960px container + 4rem
+$desktop: 916px + (2 * $gap)
+// 1152px container + 4rem
+$widescreen: 916px + (2 * $gap)
+// 1344px container + 4rem
+$fullhd: 916px + (2 * $gap)
+
+// Miscellaneous
+$easing: ease-out
+$radius-small: 2px
+$radius: 3px
+$radius-large: 6px
+$radius-rounded: 290486px
+$speed: 120ms
+
+// Flags
+$variable-columns: true
+$light: $white-ter
+$dark: $grey-darker
+
+// Invert colors
+$primary-invert: findColorInvert($primary)
+$secondary-invert: findColorInvert($secondary)
+$light-invert: $dark
+$dark-invert: $light
+
+// General colors
+$background: $white-ter
+
+$border: $grey-lighter
+$border-hover: $grey-light
+
+// Text colors
+$text: $grey-dark
+$text-invert: findColorInvert($text)
+$text-light: $grey
+$text-strong: $grey-darker
+
+// Code colors
+$pre: $text
+$pre-background: $background
+
+// Link colors
+$link: $primary
+$link-invert: $primary-invert
+$link-visited: $primary
+
+$link-hover: $grey-darker
+$link-hover-border: $grey-light
+
+$link-focus: $grey-darker
+$link-focus-border: $primary
+
+$link-active: $grey-darker
+$link-active-border: $grey-dark
+
+// Typography
+$family-primary: $family-sans-serif
+$family-code: $family-monospace
+
+$size-small: $size-7
+$size-normal: $size-6
+$size-medium: $size-5
+$size-large: $size-4
+
+// Title
+$title-size: $size-1
+$title-weight: $weight-normal
+
+// Navbar
+$navbar-height: 1.4rem
+
+$subtitle-size: $size-5
+$subtitle-weight: $weight-normal
+$content-heading-line-height: 1
+
+// Modal
+$modal-background-background-color: rgba($black, 0.45)
+
+$modal-content-width: 900px
+$modal-content-margin-mobile: 20px
+$modal-content-spacing-mobile: 160px
+$modal-content-spacing-tablet: 40px
+
+// Accordion
+$accordion-header-background-color: $grey-lighter
+$accordion-header-color: $grey-dark
+$accordion-header-padding: 1.5em 0.75em
+
+
+$colors: ("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "link": ($link, $link-invert))

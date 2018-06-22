@@ -1,4 +1,6 @@
 class PlantsController < ApplicationController
+    before_action :authenticate_member!
+
     def index
         @cooperative = Cooperative.find(params[:cooperative_id])
         @plants = @cooperative.plants
