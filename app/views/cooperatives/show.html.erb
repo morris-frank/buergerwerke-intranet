@@ -5,17 +5,19 @@
     <span class="icon"><i class="fas fa-users"></i></span>
     <span>Mitglieder</span>
   </a>
+  <% if @current_member_cooperative %>
   <a href="" class="button is-primary is-outlined">
     <span class="icon"><i class="fas fa-file"></i></span>
     <span>Dateien</span>
   </a>
+  <% end %>
   <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>" class="button is-primary is-outlined">
     <span class="icon"><i class="fas fa-solar-panel"></i></span>
     <span>Anlagen</span>
   </a>
 
   <% if @current_member_can_edit %>
-  <a href="" class="button is-primary is-outlined">
+  <a href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>" class="button is-primary is-outlined">
     <span class="icon"><i class="fas fa-edit"></i></span>
     <span>bearbeiten</span>
   </a>
@@ -32,22 +34,33 @@
   </div>
 
   <div class="column is-6">
-    <div class="box content">
-      <p>Adresse: <%= @cooperative.address %></p>
-      <p>Vorstand:
+    <div class="panel">
+      <p class="panel-heading"><%= @cooperative.name %></p>
+
+      <p class="panel-block">
+        <span class="panel-icon"><i class="fas fa-location-arrow" aria-hidden="true"></i></span>
+        <%= @cooperative.address %>
+      </p>
+
+      <p class="panel-block">
+        <span class="panel-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+        <a href="mailto: <%= @cooperative.email %>"><%= @cooperative.email %></a>
+      </p>
+
+      <p class="panel-block">
+        <span class="panel-icon"><i class="fas fa-at" aria-hidden="true"></i></span>
+        <a href="<%= @cooperative.website %>"><%= @cooperative.website %></a>
+      </p>
+
+      <div class="panel-block">
+        Vorstand:
         <% @cooperative.members.each do |member| %>
           <% if member.is_board_member? %>
             <%= member.firstname %> <%= member.lastname %>,
           <% end %>
         <% end %>
         <%= @cooperative.additional_board %>
-      </p>
-      <p>Mail: <a href="mailto:<%= @cooperative.email %>"><%= @cooperative.email %></a></p>
-
-      <p><%= @cooperative.description %></p>
-
-      <% @cooperative.plants.each do |plant| %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

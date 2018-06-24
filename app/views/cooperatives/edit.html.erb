@@ -1,0 +1,62 @@
+<p class="title is-2">BEG bearbeiten</p>
+
+<%= form_with model: @cooperative, url: cooperative_path, local: true do |form| %>
+
+  <% if @cooperative.errors.any? %>
+    <div id="error_explanation">
+      <% @cooperative.errors.full_messages.each do |msg| %>
+        <div class="message is-danger is-small">
+          <div class="message-body">
+        <%= msg %></div></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class='field'>
+    <%= form.label :name, class: 'label' %>
+    <div class='control'>
+      <%= form.text_field :name, class: 'input' %>
+      </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :address, class: 'label' %>
+    <div class='control'>
+      <%= form.text_field :address, class: 'input' %>
+      </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :additional_board, class: 'label' %>
+    <div class='control'>
+      <%= form.text_field :additional_board, class: 'input' %>
+      </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :email, class: 'label' %>
+    <div class='control'>
+      <%= form.text_field :email, class: 'input' %>
+      </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :website, class: 'label' %>
+    <div class='control'>
+      <%= form.text_field :website, class: 'input' %>
+      </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: 'label' %>
+    <div class="control">
+      <%= form.text_area :description, class: 'textarea' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <div class='control'>
+      <%= form.submit 'Submit', class: 'button is-link' %>
+    </div>
+  </div>
+<% end %>

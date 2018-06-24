@@ -14,7 +14,7 @@
 
 ### Genossenschafts-Redakteur
 
-- Profil der eigenen Genossenschaft bearbeiten
+- ~~Profil der eigenen Genossenschaft bearbeiten~~
 - ~~Anlagenliste bearbeiten~~
 - ~~Anlage hinzufügen~~
 

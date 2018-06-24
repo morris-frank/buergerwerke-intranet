@@ -7,6 +7,12 @@ class PlantsController < ApplicationController
         @current_member_can_edit = current_member_can_edit
     end
 
+    def show
+        @cooperative = Cooperative.find(params[:cooperative_id])
+        @plant = Plant.find(params[:id])
+        @current_member_can_edit = current_member_can_edit
+    end
+
     def new
         @cooperative = Cooperative.find(params[:cooperative_id])
         @plants = @cooperative.plants
@@ -55,12 +61,6 @@ class PlantsController < ApplicationController
         else
             render 'edit'
         end
-    end
-
-    def show
-        @cooperative = Cooperative.find(params[:cooperative_id])
-        @plant = Plant.find(params[:id])
-        @current_member_can_edit = current_member_can_edit
     end
 
     private
