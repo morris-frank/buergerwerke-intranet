@@ -1,29 +1,38 @@
-### Benutzer
+# Zu implementierende Aktionen
 
-- ~~Welche Genossenschaften gibt es~~
-- ~~Informationen zu einzelnen Genossenschaften anzeigen~~
-- ~~Mitglieder anderer Genossenschaften anzeigen~~
-- ~~Sichtbare Gruppen anzeigen~~
-- ~~Mitglieder sichtbarer Gruppen anzeigen~~
-- Die Dateien anzeigen/herunterladen die Ihm zugewiesen wurden
-- Die EG Dateien anzeigen
-- Die Dateien der eigenen Gruppen anzeigen
-- Vergangene Nachrichten anzeigen lassen (Html Nachrichten) als einfache Liste
-- Eigenes Passwort ändern
-- Eigene E-Mail ändern
+## Benutzer
 
-### Genossenschafts-Redakteur
+- [x] Liste der Genossenschaften anzeigen
+- [x] Informationen einer einzelnen Genossenschaft anzeigen
+- [x] Liste der Mitglieder einer Genossenschaft anzeigen
+- [x] Liste der Anlagen einer Genossenschaft anzeigen
+- [x] Informationen zu einer Anlage
+- [x] Liste der sichtbare Gruppen anzeigen
+- [x] Liste der Mitglieder einer sichtbaren Gruppen anzeigen
+- [ ] Dateien anzeigen die dem Benutzer zugewiesen wurden
+- [ ] Dateien anzeigen die der eigenen Genossenschaft zugewiesen wurden
+- [ ] Dateien anzeigen die einer der eigenen Gruppen zugewiesen wurden
+- [ ] Vergangene Nachrichten anzeigen lassen (Html Nachrichten) als einfache Liste
+- [ ] Eigene Profildaten ändern
 
-- ~~Profil der eigenen Genossenschaft bearbeiten~~
-- ~~Anlagenliste bearbeiten~~
-- ~~Anlage hinzufügen~~
+## Redakteur
 
-### Kundendaten-Leute
+Alle Aktionen von **Benutzer** plus:
 
-- Kundendaten einsehen
+- [x] Profil der eigenen Genossenschaft bearbeiten
+- [x] Anlagen der eigenen Genossenschaft bearbeiten
+- [x] Anlage der eigenen Genossenschaft hinzufügen
 
-### BEG-Admin
+## Kundendaten-Leute
 
-- Genossenschafts-interne Rollen vergeben
-- Kundendatenerlaubnis vergeben
-- Redakteurrolle vergeben
+Alle Aktionen von **Benutzer** plus:
+
+- [ ] Kundendaten einsehen
+
+## BEG-Admin
+
+Alle Aktionen von **Benutzer** und **Redaktuer** plus:
+
+- [ ] Genossenschafts-interne Rollen vergeben
+- [ ] Kundendatenerlaubnis vergeben
+- [ ] Redakteurrolle vergeben
