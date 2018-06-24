@@ -1,13 +1,13 @@
 ### Benutzer
 
+- ~~Welche Genossenschaften gibt es~~
+- ~~Informationen zu einzelnen Genossenschaften anzeigen~~
+- ~~Mitglieder anderer Genossenschaften anzeigen~~
+- ~~Sichtbare Gruppen anzeigen~~
+- ~~Mitglieder sichtbarer Gruppen anzeigen~~
 - Die Dateien anzeigen/herunterladen die Ihm zugewiesen wurden
 - Die EG Dateien anzeigen
 - Die Dateien der eigenen Gruppen anzeigen
-- ~~Welche Genossenschaften gibt es~~
-- ~~Informationen zu einzelnen Genossenschaften anzeigen~~
-- Sichtbare Gruppen anzeigen
-- Mitglieder sichtbarer Gruppen anzeigen
-- ~~Mitglieder anderer Genossenschaften anzeigen~~
 - Vergangene Nachrichten anzeigen lassen (Html Nachrichten) als einfache Liste
 - Eigenes Passwort ändern
 - Eigene E-Mail ändern
@@ -25,5 +25,5 @@
 ### BEG-Admin
 
 - Genossenschafts-interne Rollen vergeben
-  - Kundendatenerlaubnis vergeben
-  - Redakteurrolle vergeben
+- Kundendatenerlaubnis vergeben
+- Redakteurrolle vergeben

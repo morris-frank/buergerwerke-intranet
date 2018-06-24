@@ -9,7 +9,7 @@
   <tbody>
   <% @groups.each do |group| %>
     <tr>
-      <td><%= link_to group.name, groups_path(group) %></td>
+      <td><%= link_to group.name, group_path(group) %></td>
     </tr>
   <% end %>
   </tbody>
