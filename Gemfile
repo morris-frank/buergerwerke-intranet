@@ -76,3 +76,4 @@ gem 'arctic_admin'
 gem 'exception_notification'
 
 gem 'bulma-rails', '~> 0.7.1'
+gem 'leaflet-rails'

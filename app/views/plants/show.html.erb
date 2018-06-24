@@ -5,4 +5,28 @@
     <span class="icon"><i class="fas fa-chevron-left"></i></span>
     <span>zurück</span>
   </a>
+
+  <% if @current_member_can_edit %>
+  <a href="<%= url_for controller: 'plants', action: 'edit', id: @plant, cooperative_id: @cooperative.id %>" class="button is-primary is-outlined is-small">
+    <span class="icon"><i class="fas fa-edit"></i></span>
+    <span>Anlage bearbeiten</span>
+  </a>
+  <% end %>
+</div>
+
+<div class="columns">
+  <div class="column is-6">
+    <article class="message is-primary">
+      <div class="message-body">
+        <%= @plant.description %>
+      </div>
+    </article>
+  </div>
+  <div class="column is-6">
+    <div class="box content">
+      <p>BEG: <%= @plant.cooperative.name %></p>
+      <p>Größe: <%= @plant.size %> kWh</p>
+      <p>Type: <%= @plant.plant_type %></p>
+    </div>
+  </div>
 </div>

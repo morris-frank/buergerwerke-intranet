@@ -1,0 +1,50 @@
+<p class="title is-2">Neue Anlage hinzufügen</p>
+
+<%= form_with scope: :plant, url: cooperative_plants_path, local: true do |form| %>
+
+  <% if @plant.errors.any? %>
+    <div id="error_explanation">
+      <% @plant.errors.full_messages.each do |msg| %>
+        <div class="message is-danger is-small">
+          <div class="message-body">
+        <%= msg %></div></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class='field'>
+    <%= form.label :name, class: 'label' %>
+    <div class='control'>
+      <%= form.text_field :name, class: 'input' %>
+      </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :size, class: 'label' %>
+    <div class='control'>
+      <%= form.number_field :size, class: 'input' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :plant_type, class: 'label' %>
+    <div class='control'>
+      <div class='select'>
+        <%= form.select :plant_type, Plant.plant_types.keys.map { |w| [w.humanize, w] } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: 'label' %>
+    <div class="control">
+      <%= form.text_area :description, class: 'textarea' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <div class='control'>
+      <%= form.submit 'Submit', class: 'button is-link' %>
+    </div>
+  </div>
+<% end %>

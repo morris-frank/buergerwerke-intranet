@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :cooperatives, only: [:index, :show] do
-    resources :plants, only: [:index, :show]
+    resources :plants, only: [:index, :show, :new, :create, :edit, :update]
     resources :members, only: [:index]
   end
   resources :groups, only: [:index]

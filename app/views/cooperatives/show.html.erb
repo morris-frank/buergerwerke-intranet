@@ -13,15 +13,41 @@
     <span class="icon"><i class="fas fa-solar-panel"></i></span>
     <span>Anlagen</span>
   </a>
+
+  <% if @current_member_can_edit %>
+  <a href="" class="button is-primary is-outlined">
+    <span class="icon"><i class="fas fa-edit"></i></span>
+    <span>bearbeiten</span>
+  </a>
+  <% end %>
 </div>
 
-<div class="box content">
-  <p>Adresse: <%= @cooperative.address %></p>
-  <p>Vorstand: <%= @cooperative.additional_board %></p>
-  <p>Mail: <a href="mailto:<%= @cooperative.email %>"><%= @cooperative.email %></a></p>
+<div class="columns">
+  <div class="column is-6">
+    <article class="message is-primary">
+      <div class="message-body">
+        <%= @cooperative.description %>
+      </div>
+    </article>
+  </div>
 
-  <p><%= @cooperative.description %></p>
+  <div class="column is-6">
+    <div class="box content">
+      <p>Adresse: <%= @cooperative.address %></p>
+      <p>Vorstand:
+        <% @cooperative.members.each do |member| %>
+          <% if member.is_board_member? %>
+            <%= member.firstname %> <%= member.lastname %>,
+          <% end %>
+        <% end %>
+        <%= @cooperative.additional_board %>
+      </p>
+      <p>Mail: <a href="mailto:<%= @cooperative.email %>"><%= @cooperative.email %></a></p>
 
-  <% @cooperative.plants.each do |plant| %>
-  <% end %>
+      <p><%= @cooperative.description %></p>
+
+      <% @cooperative.plants.each do |plant| %>
+      <% end %>
+    </div>
+  </div>
 </div>

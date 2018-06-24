@@ -5,14 +5,30 @@
     <span class="icon"><i class="fas fa-chevron-left"></i></span>
     <span>zurück</span>
   </a>
+
+  <% if @current_member_can_edit %>
+  <a href="<%= url_for controller: 'plants', action: 'new', cooperative_id: @cooperative.id %>" class="button is-primary is-outlined is-small">
+    <span class="icon"><i class="fas fa-plus"></i></span>
+    <span>Neue Anlage hinzufügen</span>
+  </a>
+  <% end %>
 </div>
 
-<table>
+<table class="table is-fullwidth is-bordered is-hoverable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Größe</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @plants.each do |plant| %>
     <tr>
-      <td><%= link_to plant.name, cooperative_plant_path(plant, plant.cooperative_id) %></td>
+      <td><%= link_to plant.name, cooperative_plant_path(plant.cooperative_id, plant) %></td>
       <td><%= plant.plant_type %></td>
       <td><%= plant.size %></td>
     </tr>
   <% end %>
+  </tbody>
 </table>

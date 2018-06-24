@@ -10,15 +10,24 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require leaflet
  */
 
 @import "sass/utilities/functions"
-@import "bulma-settings"
+@import "bulma-settings.sass"
 @import "sass/utilities/_all"
 @import "sass/base/_all"
 @import "sass/elements/_all"
 @import "sass/components/_all"
 @import "sass/grid/_all"
 @import "sass/layout/_all"
+
+#map
+    height: 500px
+
+#error_explanation
+    margin: 2em 0 2em
+
+.navbar
+    box-shadow: $box-shadow
