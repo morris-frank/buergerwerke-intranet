@@ -1,0 +1,16 @@
+<p class="title is-2">Gruppen</p>
+
+<table class="table is-fullwidth is-bordered is-hoverable">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= link_to group.name, groups_path(group) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

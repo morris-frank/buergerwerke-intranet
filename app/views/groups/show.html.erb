@@ -1,0 +1,25 @@
+<p class="title is-2"><%= @group.name %></p>
+
+<div class="buttons has-addons">
+  <a href="<%= url_for controller: 'groups', action: 'index' %>" class="button is-primary is-outlined is-small">
+    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+    <span>zurück</span>
+  </a>
+</div>
+
+<table class="table is-fullwidth is-bordered is-hoverable">
+  <thead>
+    <tr>
+      <th>Vorname</th>
+      <th>Nachname</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @group.members.each do |member| %>
+    <tr>
+      <td><%= member.firstname %></td>
+      <td><%= member.lastname %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

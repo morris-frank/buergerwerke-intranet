@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_06_18_044953) do
     t.string "address", default: ""
     t.string "additional_board", default: ""
     t.text "description", default: ""
-    t.string "website", default: ""
+    t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_cooperatives_on_email", unique: true
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_06_18_044953) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
+    t.boolean "visible"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_groups_on_name", unique: true

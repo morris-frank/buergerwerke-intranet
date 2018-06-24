@@ -35,6 +35,7 @@
             <% if member_signed_in? %>
               <%= link_to 'Meine Genossenschaft', cooperative_path(current_member.cooperative), class: 'navbar-item' %>
               <%= link_to 'Genossenschaften', cooperatives_path, class: 'navbar-item' %>
+              <%= link_to 'Gruppen', groups_path, class: 'navbar-item' %>
               <a href="" class="navbar-item">Dateien</a>
               <a href="" class="navbar-item">Profil</a>
             <% end %>

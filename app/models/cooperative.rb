@@ -5,5 +5,5 @@ class Cooperative < ApplicationRecord
     validates :name, presence: true
     validates :email, presence: true
     validates :address, presence: true
-    validates :website, :format => URI::regexp(%w(http https))
+    validates :website, presence: false, :format => URI::regexp(%w(http https))
 end

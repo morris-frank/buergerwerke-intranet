@@ -6,7 +6,7 @@ class CreateCooperatives < ActiveRecord::Migration[5.2]
       t.string :address,            default: ""
       t.string :additional_board,   default: ""
       t.text   :description,        default: ""
-      t.string :website,            default: ""
+      t.string :website,            null: true
 
       t.timestamps
     end
