@@ -37,7 +37,10 @@
               <%= link_to 'Genossenschaften', cooperatives_path, class: 'navbar-item' %>
               <%= link_to 'Gruppen', groups_path, class: 'navbar-item' %>
               <a href="" class="navbar-item">Dateien</a>
-              <a href="" class="navbar-item">Profil</a>
+              <a href="<%= url_for eval("destroy_#{current_member.type.downcase}_session_path") %>" data-method="delete" class="navbar-item">
+                <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                <span>Log out</span>
+              </a>
             <% end %>
           </div>
         </div>
