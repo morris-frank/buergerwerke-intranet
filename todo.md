@@ -33,6 +33,6 @@ Alle Aktionen von **Benutzer** plus:
 
 Alle Aktionen von **Benutzer** und **Redaktuer** plus:
 
-- [ ] Genossenschafts-interne Rollen vergeben
-- [ ] Kundendatenerlaubnis vergeben
-- [ ] Redakteurrolle vergeben
+- [x] Genossenschafts-interne Rollen vergeben
+- [x] Kundendatenerlaubnis vergeben
+- [x] Redakteurrolle vergeben

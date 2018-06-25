@@ -13,6 +13,12 @@
       <th>Vorname</th>
       <th>Nachname</th>
       <th>E-Mail</th>
+      <% if @current_member_is_admin %>
+      <th>Vorstand</th>
+      <th>Redakteur</th>
+      <th>Kundendaten</th>
+      <th></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +27,22 @@
       <td><%= member.firstname %></td>
       <td><%= member.lastname %></td>
       <td><%= member.email %></td>
+      <% if @current_member_is_admin %>
+      <%= form_with model: member, url: cooperative_member_path(@cooperative.id, member.id), local: true do |form| %>
+      <td>
+        <%= form.check_box :is_board_member, class: 'checkbox' %>
+      </td>
+      <td>
+        <%= form.check_box :is_editor, class: 'checkbox' %>
+      </td>
+      <td>
+        <%= form.check_box :can_see_customer_data, class: 'checkbox' %>
+      </td>
+      <td>
+        <%= form.submit 'Submit', class: 'button is-link' %>
+      </td>
+      <% end %>
+      <% end %>
     </tr>
   <% end %>
   </tbody>

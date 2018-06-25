@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :cooperatives, only: [:index, :show, :edit, :update] do
     resources :plants, only: [:index, :show, :new, :create, :edit, :update]
-    resources :members, only: [:index]
+    resources :members, only: [:index, :update]
   end
   resources :groups, only: [:index, :show]
 
