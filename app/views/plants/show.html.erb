@@ -23,10 +23,20 @@
     </article>
   </div>
   <div class="column is-6">
-    <div class="box content">
-      <p>BEG: <%= @plant.cooperative.name %></p>
-      <p>Größe: <%= @plant.size %> kWh</p>
-      <p>Type: <%= @plant.plant_type %></p>
+    <div class="panel">
+      <p class="panel-heading"><%= @plant.name %></p>
+
+      <p class="panel-block">
+        <%= @plant.cooperative.name %>
+      </p>
+
+      <p class="panel-block">
+        Größe: <%= @plant.size %>
+      </p>
+
+      <p class="panel-block">
+        Type: <%= @plant.plant_type %></a>
+      </p>
     </div>
   </div>
 </div>

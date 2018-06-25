@@ -13,10 +13,6 @@ class MembersController < ApplicationController
             redirect_to cooperative_members_path(@cooperative)
         end
 
-        if current_member.id == params[:id]
-            redirect_to cooperative_members_path(@cooperative)
-        end
-
         member = Member.find(params[:id])
         member.cooperative = @cooperative
 
