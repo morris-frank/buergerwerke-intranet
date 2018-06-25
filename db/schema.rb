@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2018_06_18_044953) do
     t.string "additional_board", default: ""
     t.text "description", default: ""
     t.string "website"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_cooperatives_on_email", unique: true
@@ -45,8 +47,8 @@ ActiveRecord::Schema.define(version: 2018_06_18_044953) do
     t.string "name"
     t.integer "plant_type"
     t.float "size"
-    t.float "long"
-    t.float "lat"
+    t.float "longitude"
+    t.float "latitude"
     t.text "description"
     t.integer "cooperative_id"
     t.datetime "created_at", null: false

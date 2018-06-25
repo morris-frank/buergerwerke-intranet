@@ -1,17 +1,24 @@
 <p class="title is-2">Genossenschaften</p>
 
+<%= map(:center => {
+    :latlng => [51.100, 10.360],
+    :zoom => 6
+  },
+  :markers => @markers
+) %>
+
 <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
       <th>Name</th>
-      <th>E-Mail</th>
+      <th>Addresse</th>
     </tr>
   </thead>
   <tbody>
   <% @cooperatives.each do |cooperative| %>
     <tr>
       <td><%= link_to cooperative.name, cooperative_path(cooperative) %></td>
-      <td><a href="mailto:<%= cooperative.email %>"><%= cooperative.email %></a></td>
+      <td><%= cooperative.address %></td>
     </tr>
   <% end %>
   </tbody>

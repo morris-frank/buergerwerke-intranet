@@ -3,6 +3,8 @@ class CooperativesController < ApplicationController
 
     def index
         @cooperatives = Cooperative.all
+        @markers = Cooperative.pluck(:name, :latitude, :longitude)
+        @markers = @markers.collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
     end
 
     def show

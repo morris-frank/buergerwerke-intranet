@@ -5,6 +5,8 @@ class PlantsController < ApplicationController
         @cooperative = Cooperative.find(params[:cooperative_id])
         @plants = @cooperative.plants
         @current_member_can_edit = current_member_can_edit
+        @markers = @plants.pluck(:name, :latitude, :longitude)
+        @markers = @markers.collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
     end
 
     def show
