@@ -6,8 +6,8 @@
     <div id="error_explanation">
       <% @cooperative.errors.full_messages.each do |msg| %>
         <div class="message is-danger is-small">
-          <div class="message-body">
-        <%= msg %></div></div>
+          <div class="message-body"><%= msg %></div>
+        </div>
       <% end %>
     </div>
   <% end %>
@@ -16,35 +16,44 @@
     <%= form.label :name, class: 'label' %>
     <div class='control'>
       <%= form.text_field :name, class: 'input' %>
-      </div>
+    </div>
   </div>
 
   <div class='field'>
     <%= form.label :address, class: 'label' %>
-    <div class='control'>
+    <div class='control has-icons-left'>
       <%= form.text_field :address, class: 'input' %>
-      </div>
+      <span class="icon is-small is-left">
+        <i class="fas fa-location-arrow"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :email, class: 'label' %>
+    <div class='control has-icons-left'>
+      <%= form.text_field :email, class: 'input' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :website, class: 'label' %>
+    <div class='control has-icons-left'>
+      <%= form.text_field :website, class: 'input' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-globe"></i>
+      </span>
+    </div>
   </div>
 
   <div class='field'>
     <%= form.label :additional_board, class: 'label' %>
     <div class='control'>
       <%= form.text_field :additional_board, class: 'input' %>
-      </div>
-  </div>
-
-  <div class='field'>
-    <%= form.label :email, class: 'label' %>
-    <div class='control'>
-      <%= form.text_field :email, class: 'input' %>
-      </div>
-  </div>
-
-  <div class='field'>
-    <%= form.label :website, class: 'label' %>
-    <div class='control'>
-      <%= form.text_field :website, class: 'input' %>
-      </div>
+    </div>
   </div>
 
   <div class="field">
