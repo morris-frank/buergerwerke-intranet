@@ -1,20 +1,20 @@
 <p class="title is-2">Anlagen der <%= @cooperative.name %></p>
 
 <div class="buttons has-addons">
-  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>" class="button is-primary is-outlined is-small">
+  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>" class="button is-link is-outlined is-small">
     <span class="icon"><i class="fas fa-chevron-left"></i></span>
     <span>zurück</span>
   </a>
 
   <% if @current_member_can_edit %>
-  <a href="<%= url_for controller: 'plants', action: 'new', cooperative_id: @cooperative.id %>" class="button is-primary is-outlined is-small">
+  <a href="<%= url_for controller: 'plants', action: 'new', cooperative_id: @cooperative.id %>" class="button is-link is-outlined is-small">
     <span class="icon"><i class="fas fa-plus"></i></span>
     <span>Neue Anlage hinzufügen</span>
   </a>
   <% end %>
 </div>
 
-<table class="table is-fullwidth is-bordered is-hoverable">
+<table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
       <th>Name</th>

@@ -1,23 +1,23 @@
 <p class="title is-2"><%= @cooperative.name %></p>
 
 <div class="buttons has-addons">
-  <a href="<%= url_for controller: 'members', action: 'index', cooperative_id: @cooperative.id %>" class="button is-primary is-outlined">
+  <a href="<%= url_for controller: 'members', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
     <span class="icon"><i class="fas fa-users"></i></span>
     <span>Mitglieder</span>
   </a>
   <% if @current_member_cooperative %>
-  <a href="" class="button is-primary is-outlined">
+  <a href="" class="button is-link is-outlined">
     <span class="icon"><i class="fas fa-file"></i></span>
     <span>Dateien</span>
   </a>
   <% end %>
-  <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>" class="button is-primary is-outlined">
+  <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
     <span class="icon"><i class="fas fa-solar-panel"></i></span>
     <span>Anlagen</span>
   </a>
 
   <% if @current_member_can_edit %>
-  <a href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>" class="button is-primary is-outlined">
+  <a href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>" class="button is-link is-outlined">
     <span class="icon"><i class="fas fa-edit"></i></span>
     <span>bearbeiten</span>
   </a>
