@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '77e5003f517b34cf5b9eedd89000df42cd37f497bfef90c754a90d57141a08a80d43354fa7c241a11cc8d2b01cf0e356533e66c32ed1ded1982fbe63980e24aa'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -121,54 +121,6 @@ Devise.setup do |config|
 
   # Send a notification email when the user's password is changed.
   # config.send_password_change_notification = false
-
-  # ==> Configuration for :invitable
-  # The period the generated invitation token is valid, after
-  # this period, the invited resource won't be able to accept the invitation.
-  # When invite_for is 0 (the default), the invitation won't expire.
-  # config.invite_for = 2.weeks
-
-  # Number of invitations users can send.
-  # - If invitation_limit is nil, there is no limit for invitations, users can
-  # send unlimited invitations, invitation_limit column is not used.
-  # - If invitation_limit is 0, users can't send invitations by default.
-  # - If invitation_limit n > 0, users can send n invitations.
-  # You can change invitation_limit column for some users so they can send more
-  # or less invitations, even with global invitation_limit = 0
-  # Default: nil
-  # config.invitation_limit = 5
-
-  # The key to be used to check existing users when sending an invitation
-  # and the regexp used to test it when validate_on_invite is not set.
-  # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
-  # config.invite_key = {:email => /\A[^@]+@[^@]+\z/, :username => nil}
-
-  # Flag that force a record to be valid before being actually invited
-  # Default: false
-  # config.validate_on_invite = true
-
-  # Resend invitation if user with invited status is invited again
-  # Default: true
-  # config.resend_invitation = false
-
-  # The class name of the inviting model. If this is nil,
-  # the #invited_by association is declared to be polymorphic.
-  # Default: nil
-  # config.invited_by_class_name = 'User'
-
-  # The foreign key to the inviting model (if invited_by_class_name is set)
-  # Default: :invited_by_id
-  # config.invited_by_foreign_key = :invited_by_id
-
-  # The column name used for counter_cache column. If this is nil,
-  # the #invited_by association is declared without counter_cache.
-  # Default: nil
-  # config.invited_by_counter_cache = :invitations_count
-
-  # Auto-login after the user accepts the invite. If this is false,
-  # the user will need to manually log in after accepting the invite.
-  # Default: true
-  # config.allow_insecure_sign_in_after_accept = false
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -300,32 +252,4 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
-
-  # ==> OmniAuth
-  # Add a new OmniAuth provider. Check the wiki for more information on setting
-  # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
-  # ==> Warden configuration
-  # If you want to use other strategies, that are not supported by Devise, or
-  # change the failure app, you can configure them inside the config.warden block.
-  #
-  # config.warden do |manager|
-  #   manager.intercept_401 = false
-  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
-  # end
-
-  # ==> Mountable engine configurations
-  # When using Devise inside an engine, let's call it `MyEngine`, and this engine
-  # is mountable, there are some extra configurations to be taken into account.
-  # The following options are available, assuming the engine is mounted as:
-  #
-  #     mount MyEngine, at: '/my_engine'
-  #
-  # The router that invoked `devise_for`, in the example above, would be:
-  # config.router_name = :my_engine
-  #
-  # When using OmniAuth, Devise cannot automatically set OmniAuth path,
-  # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = '/my_engine/users/auth'
 end

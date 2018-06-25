@@ -21,27 +21,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Rememberable
       t.datetime :remember_created_at
 
-      ## Trackable
-      # t.integer  :sign_in_count, default: 0, null: false
-      # t.datetime :current_sign_in_at
-      # t.datetime :last_sign_in_at
-      # t.string   :current_sign_in_ip
-      # t.string   :last_sign_in_ip
-
       ## Confirmable
       t.string   :confirmation_token
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
       t.string   :unconfirmed_email # Only if using reconfirmable
-
-      ## Invitable
-      t.string     :invitation_token
-      t.datetime   :invitation_created_at
-      t.datetime   :invitation_sent_at
-      t.datetime   :invitation_accepted_at
-      t.integer    :invitation_limit
-      t.references :invited_by, polymorphic: true
-      t.integer    :invitations_count, default: 0
 
       t.timestamps null: false
 
@@ -51,8 +35,5 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
-    add_index :users, :invitations_count
-    add_index :users, :invitation_token, unique: true # for invitable
-    add_index :users, :invited_by_id
   end
 end
