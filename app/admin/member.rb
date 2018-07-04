@@ -1,5 +1,7 @@
 ActiveAdmin.register Member do
-    permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data, :groups#, :password, :password_confirmation
+    permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data,
+      group_ids: [],
+      groups_user_ids: []#, :password, :password_confirmation
 
     controller do
       def create
@@ -43,7 +45,7 @@ ActiveAdmin.register Member do
         f.input :firstname
         f.input :lastname
         f.input :cooperative
-        f.input :groups
+        f.input :groups, :as => :select, :input_html => {:multiple => true}
         f.input :is_coop_admin
         f.input :is_board_member
         f.input :is_editor

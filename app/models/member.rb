@@ -1,7 +1,8 @@
 class Member < User
   devise :confirmable
   belongs_to :cooperative
-  has_and_belongs_to_many :groups, joint_table: :groups_users
+  has_many :groups_users
+  has_many :groups, through: :groups_users
 
   before_save :inheritate_roles
 
