@@ -1,13 +1,11 @@
 ActiveAdmin.register Cooperative do
-    permit_params :email, :name, :address
+    permit_params :email, :name, :address, :description, :longitude, :latitude, :additional_board, :website
 
     index do
       selectable_column
       id_column
       column :name
       column :address
-      column :email
-      column :additional_board
       actions
     end
 
@@ -20,6 +18,11 @@ ActiveAdmin.register Cooperative do
         f.input :email
         f.input :name
         f.input :address
+        f.input :additional_board
+        f.input :website
+        f.input :latitude
+        f.input :longitude
+        f.input :description
       end
       f.actions
     end

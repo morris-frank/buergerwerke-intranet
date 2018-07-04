@@ -6,6 +6,9 @@ class Member < User
 
   before_save :inheritate_roles
 
+  validates :firstname, presence: true
+  validates :lastname, presence: true
+
   def inheritate_roles
     if self.is_coop_admin == true
       self.is_editor = true

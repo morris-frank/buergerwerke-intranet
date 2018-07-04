@@ -16,7 +16,7 @@ ActiveAdmin.register Fileclip do
       attributes_table do
         row :name
         row :file do |ad|
-          image_tag url_for(ad.file)
+          link_to 'Anzeigen', rails_blob_path(ad.file)
         end
       end
     end

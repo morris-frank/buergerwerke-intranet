@@ -5,4 +5,6 @@ class Group < ApplicationRecord
     has_many :fileclips, through: :fileclips_groups
 
     accepts_nested_attributes_for :fileclips
+
+    validates :name, presence: true
 end

@@ -1,5 +1,5 @@
 ActiveAdmin.register Plant do
-    permit_params :name, :plant_type, :cooperative_id, :size
+    permit_params :name, :plant_type, :cooperative_id, :size, :description, :longitude, :latitude
 
     index do
       selectable_column
@@ -22,6 +22,9 @@ ActiveAdmin.register Plant do
         f.input :plant_type
         f.input :cooperative
         f.input :size
+        f.input :latitude
+        f.input :longitude
+        f.input :description
       end
       f.actions
     end
