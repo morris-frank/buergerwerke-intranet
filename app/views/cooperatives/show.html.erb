@@ -6,7 +6,7 @@
     <span>Mitglieder</span>
   </a>
   <% if @current_member_cooperative %>
-  <a href="" class="button is-link is-outlined">
+  <a href="<%= url_for controller: 'fileclips', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
     <span class="icon"><i class="fas fa-file"></i></span>
     <span>Dateien</span>
   </a>

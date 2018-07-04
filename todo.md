@@ -10,7 +10,7 @@
 - [x] Liste der sichtbare Gruppen anzeigen
 - [x] Liste der Mitglieder einer sichtbaren Gruppen anzeigen
 - [ ] Dateien anzeigen die dem Benutzer zugewiesen wurden
-- [ ] Dateien anzeigen die der eigenen Genossenschaft zugewiesen wurden
+- [x] Dateien anzeigen die der eigenen Genossenschaft zugewiesen wurden
 - [ ] Dateien anzeigen die einer der eigenen Gruppen zugewiesen wurden
 - [ ] Vergangene Nachrichten anzeigen lassen (Html Nachrichten) als einfache Liste
 - [ ] Eigene Profildaten ändern

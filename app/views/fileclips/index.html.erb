@@ -1,0 +1,49 @@
+<p class="title is-2">Dateien</p>
+
+<p class="title is-3">Dateien der <%= @cooperative.name %></p>
+<table class="table is-fullwidth is-striped is-hoverable">
+  <thead>
+    <tr>
+      <th>Name der Datei</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @cooperative_fileclips.each do |fileclip| %>
+    <tr>
+      <td><%= fileclip.name %></td>
+      <td>
+        <a href="<%= rails_blob_path(fileclip.file, disposition: "attachment") %>" class="button is-link is-small">
+          <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
+          <span>Download</span>
+        </a>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<% @groups.each do |group| %>
+<p class="title is-3">Dateien der Gruppe <%= group.name %></p>
+<table class="table is-fullwidth is-striped is-hoverable">
+  <thead>
+    <tr>
+      <th>Name der Datei</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% group.fileclips.each do |fileclip| %>
+    <tr>
+      <td><%= fileclip.name %></td>
+      <td>
+        <a href="<%= rails_blob_path(fileclip.file, disposition: "attachment") %>" class="button is-link is-small">
+          <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
+          <span>Download</span>
+        </a>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% end %>
