@@ -1,0 +1,30 @@
+<p class="title is-2">Dateien der <%= @cooperative.name %></p>
+
+<div class="buttons has-addons">
+  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>" class="button is-link is-outlined is-small">
+    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+    <span>zurück</span>
+  </a>
+</div>
+
+<table class="table is-fullwidth is-striped is-hoverable">
+  <thead>
+    <tr>
+      <th>Name der Datei</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @files.each do |file| %>
+    <tr>
+      <td><%= file.name %></td>
+      <td>
+        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
+          <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
+          <span>Download</span>
+        </a>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

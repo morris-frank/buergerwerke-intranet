@@ -1,6 +1,6 @@
 <p class="title is-2">Dateien</p>
 
-<p class="title is-3">Dateien der <%= @cooperative.name %></p>
+<p class="title is-3"><%= @cooperative.name %></p>
 <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
@@ -24,7 +24,7 @@
 </table>
 
 <% @groups.each do |group| %>
-<p class="title is-3">Dateien der Gruppe <%= group.name %></p>
+<p class="title is-3"><%= group.name %></p>
 <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
