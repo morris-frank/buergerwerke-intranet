@@ -7,14 +7,13 @@
 // For example, to change the sidebar width:
 // $sidebar-width: 242px;
 
-$primary-color: #2dbb43;
+$primary-color: #ffa600;
 
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 // @import "active_admin/base";
 @import "arctic_admin/base";
 
-// Overriding any non-variable SASS must be done after the fact.
-// For example, to change the default status-tag color:
-//
-//   .status_tag { background: #6090DB; }
+body.logged_in.new .input select, body.logged_in.edit .input select, body.logged_in.create .input select, body.logged_in.update .input select {
+    height: initial;
+}
