@@ -47,11 +47,16 @@ ActiveRecord::Schema.define(version: 2018_07_04_104616) do
     t.index ["email"], name: "index_cooperatives_on_email", unique: true
   end
 
+  create_table "file_categories", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "fileclips", force: :cascade do |t|
     t.string "name"
-    t.boolean "customer_data"
+    t.integer "file_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["file_category_id"], name: "index_fileclips_on_file_category_id"
   end
 
   create_table "fileclips_cooperatives", force: :cascade do |t|

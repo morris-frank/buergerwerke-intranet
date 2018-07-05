@@ -1,6 +1,8 @@
 <p class="title is-2">Dateien</p>
 
 <p class="title is-3"><%= @cooperative.name %></p>
+<% @cooperative_fileclips_grouped.each do |category, files| %>
+<p class="title is-4"><%= category.name %></p>
 <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
@@ -9,11 +11,11 @@
     </tr>
   </thead>
   <tbody>
-  <% @cooperative_fileclips.each do |fileclip| %>
+  <% files.each do |file| %>
     <tr>
-      <td><%= fileclip.name %></td>
+      <td><%= file.name %></td>
       <td>
-        <a href="<%= rails_blob_path(fileclip.file, disposition: "attachment") %>" class="button is-link is-small">
+        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
           <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
           <span>Download</span>
         </a>
@@ -22,6 +24,7 @@
   <% end %>
   </tbody>
 </table>
+<% end %>
 
 <% @groups.each do |group| %>
 <p class="title is-3"><%= group.name %></p>
@@ -33,11 +36,11 @@
     </tr>
   </thead>
   <tbody>
-  <% group.fileclips.each do |fileclip| %>
+  <% group.fileclips.each do |file| %>
     <tr>
-      <td><%= fileclip.name %></td>
+      <td><%= file.name %></td>
       <td>
-        <a href="<%= rails_blob_path(fileclip.file, disposition: "attachment") %>" class="button is-link is-small">
+        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
           <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
           <span>Download</span>
         </a>

@@ -7,6 +7,9 @@
   </a>
 </div>
 
+
+<% @files_grouped.each do |category, files| %>
+<p class="title is-4"><%= category.name %></p>
 <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
@@ -15,7 +18,7 @@
     </tr>
   </thead>
   <tbody>
-  <% @files.each do |file| %>
+  <% files.each do |file| %>
     <tr>
       <td><%= file.name %></td>
       <td>
@@ -28,3 +31,4 @@
   <% end %>
   </tbody>
 </table>
+<% end %>
