@@ -9,9 +9,8 @@
 - [x] Informationen zu einer Anlage
 - [x] Liste der sichtbare Gruppen anzeigen
 - [x] Liste der Mitglieder einer sichtbaren Gruppen anzeigen
-- [ ] Dateien anzeigen die dem Benutzer zugewiesen wurden
 - [x] Dateien anzeigen die der eigenen Genossenschaft zugewiesen wurden
-- [ ] Dateien anzeigen die einer der eigenen Gruppen zugewiesen wurden
+- [x] Dateien anzeigen die einer der eigenen Gruppen zugewiesen wurden
 - [ ] Vergangene Nachrichten anzeigen lassen (Html Nachrichten) als einfache Liste
 - [ ] Eigene Profildaten ändern
 
@@ -36,3 +35,14 @@ Alle Aktionen von **Benutzer** und **Redaktuer** plus:
 - [x] Genossenschafts-interne Rollen vergeben
 - [x] Kundendatenerlaubnis vergeben
 - [x] Redakteurrolle vergeben
+
+
+# Aufgabenliste 05.07 nach Priorität geordnet
+- [ ] Auf Artfiles in Production installieren
+- [ ] One-to-One Kundendaten <-> BEG
+- [ ] Sammelupload ZIP Kundendaten
+- [ ] Willkommensseite Dummy-Daten
+- [ ] Kategorien für Dateien (nicht-Kundendaten)
+- [ ] Für alle Member einer BEG Eigenschaft “vorstand” sichtbar machen in Mitgliederübersicht für alle BEGen
+- [ ] Ansicht auf Kundendaten (csv-Visualisierung)
+- [ ] Dokumentation Inhaltsverzeichnis
