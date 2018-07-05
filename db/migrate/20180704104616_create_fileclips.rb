@@ -2,7 +2,6 @@ class CreateFileclips < ActiveRecord::Migration[5.2]
   def change
     create_table :fileclips do |t|
       t.string :name
-      t.boolean :customer_data
 
       t.timestamps
     end

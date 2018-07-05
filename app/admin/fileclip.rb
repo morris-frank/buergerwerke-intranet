@@ -15,9 +15,9 @@ ActiveAdmin.register Fileclip do
     show do
       attributes_table do
         row :name
-        # row :file do |ad|
-        #   link_to 'Anzeigen', rails_blob_path(ad.file)
-        # end
+        row :file do |ad|
+          link_to 'Anzeigen', rails_blob_path(ad.file)
+        end
       end
     end
 
@@ -26,7 +26,7 @@ ActiveAdmin.register Fileclip do
         f.input :name
         f.input :cooperatives, :as => :select, :input_html => {:multiple => true}
         f.input :groups, :as => :select, :input_html => {:multiple => true}
-        f.input :file, as: :file, input_html: { multiple: true }
+        f.input :file, as: :file
       end
 
       f.actions
