@@ -7,6 +7,7 @@ class PlantsController < ApplicationController
         @current_member_can_edit = current_member_can_edit
         @markers = @plants.pluck(:name, :latitude, :longitude)
         @markers = @markers.collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
+        @current_member_can_edit = current_member_can_edit
     end
 
     def show

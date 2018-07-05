@@ -27,6 +27,7 @@
       <th>Name</th>
       <th>Type</th>
       <th>Größe</th>
+      <% if @current_member_can_edit %><th></th><% end %>
     </tr>
   </thead>
   <tbody>
@@ -35,6 +36,14 @@
       <td><%= link_to plant.name, cooperative_plant_path(plant.cooperative_id, plant) %></td>
       <td><%= plant.plant_type %></td>
       <td><%= plant.size %></td>
+      <% if @current_member_can_edit %>
+      <td>
+        <a href="<%= url_for controller: 'plants', action: 'edit', id: plant, cooperative_id: @cooperative.id %>" class="button is-link is-small">
+          <span class="icon"><i class="fas fa-edit"></i></span>
+          <span>bearbeiten</span>
+        </a>
+      </td>
+      <% end %>
     </tr>
   <% end %>
   </tbody>
