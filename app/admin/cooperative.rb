@@ -1,5 +1,5 @@
 ActiveAdmin.register Cooperative do
-    permit_params :email, :name, :address, :description, :longitude, :latitude, :additional_board, :website
+    permit_params :email, :name, :address, :description, :longitude, :latitude, :additional_board, :website, :customer_data
 
     index do
       selectable_column
@@ -23,6 +23,7 @@ ActiveAdmin.register Cooperative do
         f.input :latitude
         f.input :longitude
         f.input :description
+        f.input :customer_data, as: :file
       end
       f.actions
     end

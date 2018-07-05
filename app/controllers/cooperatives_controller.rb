@@ -10,6 +10,7 @@ class CooperativesController < ApplicationController
     def show
         @cooperative = Cooperative.find(params[:id])
         @current_member_can_edit = current_member_can_edit
+        @current_member_can_customer_data = current_member_can_customer_data
         @current_member_cooperative = @cooperative.id == current_member.cooperative_id
     end
 
@@ -36,6 +37,16 @@ class CooperativesController < ApplicationController
     private
     def cooperative_params
         params.require(:cooperative).permit(:name, :email, :address, :additional_board, :website, :description)
+    end
+
+    def current_member_can_customer_data
+        if @cooperative.id != current_member.cooperative_id
+            return false
+        end
+        if !current_member.can_see_customer_data
+            return false
+        end
+        return true
     end
 
     def current_member_can_edit

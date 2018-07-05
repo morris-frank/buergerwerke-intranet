@@ -5,12 +5,21 @@
     <span class="icon"><i class="fas fa-users"></i></span>
     <span>Mitglieder</span>
   </a>
+
   <% if @current_member_cooperative %>
   <a href="<%= url_for controller: 'coop_files', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
     <span class="icon"><i class="fas fa-file"></i></span>
     <span>Dateien</span>
   </a>
   <% end %>
+
+  <% if @current_member_can_customer_data %>
+  <a href="<%= url_for controller: 'customer_data', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
+    <span class="icon"><i class="fas fa-th-list"></i></span>
+    <span>Kundendaten</span>
+  </a>
+  <% end %>
+
   <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
     <span class="icon"><i class="fas fa-solar-panel"></i></span>
     <span>Anlagen</span>

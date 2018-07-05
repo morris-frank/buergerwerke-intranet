@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :plants, only: [:index, :show, :new, :create, :edit, :update]
     resources :members, only: [:index, :update]
     get 'files', to: 'coop_files#index'
+    get 'customer_data', to: 'customer_data#index'
   end
   resources :groups, only: [:index, :show]
   resources :fileclips, only: [:index], path: :files
