@@ -1,10 +1,14 @@
 <p class="title is-2"><%= @group.name %></p>
 
-<div class="buttons has-addons">
-  <a href="<%= url_for controller: 'groups', action: 'index' %>" class="button is-link is-outlined">
+<div class="tabs is-boxed">
+  <ul>
+  <li>
+  <a href="<%= url_for controller: 'groups', action: 'index' %>">
     <span class="icon"><i class="fas fa-chevron-left"></i></span>
     <span>zurück</span>
   </a>
+  </li>
+  </ul>
 </div>
 
 <table class="table is-fullwidth is-striped is-hoverable">
