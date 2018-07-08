@@ -3,7 +3,8 @@ class Cooperative < ApplicationRecord
     has_many :plants
     has_many :fileclips_cooperatives
     has_many :fileclips, through: :fileclips_cooperatives
-    has_one_attached :customer_data
+    has_one_attached :customer_data_xls
+    has_one_attached :customer_data_pdf
 
     accepts_nested_attributes_for :fileclips
 

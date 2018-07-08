@@ -39,8 +39,8 @@ Alle Aktionen von **Benutzer** und **Redaktuer** plus:
 
 # Aufgabenliste 05.07 nach Priorität geordnet
 - [ ] Auf Artfiles in Production installieren
-- [ ] One-to-One Kundendaten <-> BEG
-    - [ ] Validate CSV
+- [x] One-to-One Kundendaten <-> BEG
+    - ~~[ ] Validate CSV~~
     - [ ] File Access restriction???
 - [ ] Sammelupload ZIP Kundendaten
 - [ ] Willkommensseite Dummy-Daten
@@ -48,4 +48,4 @@ Alle Aktionen von **Benutzer** und **Redaktuer** plus:
 - [x] Für alle Member einer BEG Eigenschaft “vorstand” sichtbar machen in Mitgliederübersicht für alle BEGen
 - [ ] Ansicht auf Kundendaten (csv-Visualisierung)
 - [ ] Dokumentation Inhaltsverzeichnis
-- [ ] Order Lists in Views semantically correctly
+- [ ] Listen in Views semantisch passend sortieren
