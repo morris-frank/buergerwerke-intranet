@@ -1,24 +1,33 @@
 <p class="title is-2">Kundendaten der <%= @cooperative.name %></p>
 
-<div class="buttons has-addons">
-  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>" class="button is-link is-outlined">
+<div class="tabs is-boxed">
+  <ul>
+  <li>
+  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
     <span class="icon"><i class="fas fa-chevron-left"></i></span>
     <span>zurück</span>
   </a>
+  </li>
 
-  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>" class="button is-link is-outlined">
+  <li>
+  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
     <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
     <span>PDF</span>
   </a>
+  </li>
 
-  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>" class="button is-link is-outlined">
+  <li>
+  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
     <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
     <span>CSV</span>
   </a>
-  </a>
+  </li>
 
-  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>" class="button is-link is-outlined">
+  <li>
+  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
     <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
     <span>XLS</span>
   </a>
+  </li>
+  </ul>
 </div>

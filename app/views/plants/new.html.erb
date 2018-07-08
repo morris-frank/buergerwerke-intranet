@@ -1,7 +1,17 @@
 <p class="title is-2">Neue Anlage hinzufügen</p>
 
-<%= form_with scope: :plant, url: cooperative_plants_path, local: true do |form| %>
+<div class="tabs is-boxed">
+  <ul>
+  <li>
+  <a href="<%= url_for controller: 'plants', action: 'index', id: @cooperative.id %>">
+    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+    <span>abbrechen</span>
+  </a>
+  </li>
+  </ul>
+</div>
 
+<%= form_with scope: :plant, url: cooperative_plants_path, local: true do |form| %>
   <% if @plant.errors.any? %>
     <div id="error_explanation">
       <% @plant.errors.full_messages.each do |msg| %>

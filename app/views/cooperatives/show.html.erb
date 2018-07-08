@@ -1,36 +1,48 @@
 <p class="title is-2"><%= @cooperative.name %></p>
 
-<div class="buttons has-addons">
-  <a href="<%= url_for controller: 'members', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
-    <span class="icon"><i class="fas fa-users"></i></span>
-    <span>Mitglieder</span>
-  </a>
+<div class="tabs is-boxed">
+  <ul>
+  <li>
+    <a href="<%= url_for controller: 'members', action: 'index', cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-users"></i></span>
+      <span>Mitglieder</span>
+    </a>
+  </li>
 
   <% if @current_member_cooperative %>
-  <a href="<%= url_for controller: 'coop_files', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
-    <span class="icon"><i class="fas fa-file"></i></span>
-    <span>Dateien</span>
-  </a>
+  <li>
+    <a href="<%= url_for controller: 'coop_files', action: 'index', cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-file"></i></span>
+      <span>Dateien</span>
+    </a>
+  </li>
   <% end %>
 
   <% if @current_member_can_customer_data %>
-  <a href="<%= url_for controller: 'customer_data', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
-    <span class="icon"><i class="fas fa-th-list"></i></span>
-    <span>Kundendaten</span>
-  </a>
+  <li>
+    <a href="<%= url_for controller: 'customer_data', action: 'index', cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-th-list"></i></span>
+      <span>Kundendaten</span>
+    </a>
+  </li>
   <% end %>
 
-  <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>" class="button is-link is-outlined">
-    <span class="icon"><i class="fas fa-solar-panel"></i></span>
-    <span>Anlagen</span>
-  </a>
+  <li>
+    <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-solar-panel"></i></span>
+      <span>Anlagen</span>
+    </a>
+  </li>
 
   <% if @current_member_can_edit %>
-  <a href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>" class="button is-link is-outlined">
-    <span class="icon"><i class="fas fa-edit"></i></span>
-    <span>bearbeiten</span>
-  </a>
+  <li>
+    <a href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-edit"></i></span>
+      <span>bearbeiten</span>
+    </a>
+  </li>
   <% end %>
+  </ul>
 </div>
 
 <div class="columns">

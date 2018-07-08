@@ -1,5 +1,16 @@
 <p class="title is-2">Anlage bearbeiten</p>
 
+<div class="tabs is-boxed">
+  <ul>
+  <li>
+  <a href="<%= url_for controller: 'plants', action: 'show', id: @plant, cooperative_id: @cooperative.id %>">
+    <span class="icon"><i class="fas fa-chevron-left"></i></span>
+    <span>abbrechen</span>
+  </a>
+  </li>
+  </ul>
+</div>
+
 <%= form_with model: @plant, url: cooperative_plant_path, local: true do |form| %>
 
   <% if @plant.errors.any? %>
