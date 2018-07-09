@@ -48,4 +48,4 @@ Alle Aktionen von **Benutzer** und **Redaktuer** plus:
 - [x] Für alle Member einer BEG Eigenschaft “vorstand” sichtbar machen in Mitgliederübersicht für alle BEGen
 - [ ] Ansicht auf Kundendaten (csv-Visualisierung)
 - [ ] Dokumentation Inhaltsverzeichnis
-- [ ] Listen in Views semantisch passend sortieren
+- [x] Listen in Views semantisch passend sortieren
