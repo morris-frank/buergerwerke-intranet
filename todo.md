@@ -40,9 +40,9 @@ Alle Aktionen von **Benutzer** und **Redaktuer** plus:
 # Aufgabenliste 05.07 nach Priorität geordnet
 - [ ] Auf Artfiles in Production installieren
 - [x] One-to-One Kundendaten <-> BEG
-    - ~~[ ] Validate CSV~~
+    - [ ] ~~Validate CSV~~ (Nicht machbar)
     - [ ] File Access restriction???
-- [ ] Sammelupload ZIP Kundendaten
+- [x] Sammelupload ZIP Kundendaten
 - [ ] Willkommensseite Dummy-Daten
 - [x] Kategorien für Dateien (nicht-Kundendaten)
 - [x] Für alle Member einer BEG Eigenschaft “vorstand” sichtbar machen in Mitgliederübersicht für alle BEGen
