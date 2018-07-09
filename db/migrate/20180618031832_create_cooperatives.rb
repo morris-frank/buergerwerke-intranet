@@ -9,6 +9,7 @@ class CreateCooperatives < ActiveRecord::Migration[5.2]
       t.string :website,            null: true
       t.float  :latitude,           null: true
       t.float  :longitude,          null: true
+      t.string :coopnumber,         null: false
 
       t.timestamps
     end

@@ -14,4 +14,13 @@ class Cooperative < ApplicationRecord
     validates :website, presence: false, :format => URI::regexp(%w(http https))
     validates :latitude, numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
     validates :longitude, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 180}
+    validates :coopnumber, presence: true
+    validate :coopnumber_style
+
+    private
+    def coopnumber_style
+        if !(/[MP]\d{2}/.match?(coopnumber))
+            errors.add(:coopnumber, 'The Cooperative project number must be M or P followed by two decimals.')
+        end
+    end
 end

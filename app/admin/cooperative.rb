@@ -1,9 +1,10 @@
 ActiveAdmin.register Cooperative do
-    permit_params :email, :name, :address, :description, :longitude, :latitude, :additional_board, :website, :customer_data_xls, :customer_data_pdf
+    permit_params :email, :name, :address, :description, :longitude, :latitude, :additional_board, :website, :coopnumber, :customer_data_xls, :customer_data_pdf
 
     index do
       selectable_column
       id_column
+      column :coopnumber
       column :name
       column :address
       actions
@@ -16,6 +17,7 @@ ActiveAdmin.register Cooperative do
     form do |f|
       f.inputs "Cooperative Details" do
         f.input :email
+        f.input :coopnumber
         f.input :name
         f.input :address
         f.input :additional_board
