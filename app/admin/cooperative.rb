@@ -10,9 +10,34 @@ ActiveAdmin.register Cooperative do
       actions
     end
 
+    filter :coopnumber
     filter :name
     filter :address
     filter :email
+
+    show do
+      attributes_table do
+        row :coopnumber
+        row :name
+        row :email
+        row :address
+        row :additional_board
+        row :website
+        row :latitude
+        row :longitude
+        row :description
+        row :customer_data_pdf do |ad|
+          if ad.customer_data_pdf.attached?
+            link_to 'Anzeigen', rails_blob_path(ad.customer_data_pdf)
+          end
+        end
+        row :customer_data_xls do |ad|
+          if ad.customer_data_xls.attached?
+            link_to 'Anzeigen', rails_blob_path(ad.customer_data_xls)
+          end
+        end
+      end
+    end
 
     form do |f|
       f.inputs "Cooperative Details" do
