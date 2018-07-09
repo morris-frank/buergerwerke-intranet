@@ -41,16 +41,24 @@ ActiveAdmin.register_page "Customer Data" do
           # Somehow rails assumes ASCII encoding, but we have Umlaute so we force UTF-8:
           filename = matches.to_s.encode("UTF-8", "UTF-8")
           if matches['extension'] == 'pdf'
-            # coop.customer_data_pdf.attach(io: File.open(extract_filepath + 'pdf', 'rb'), filename: filename, content_type: 'application/pdf')
+            coop.customer_data_pdf.attach(io: File.open(extract_filepath + 'pdf', 'rb'), filename: filename, content_type: 'application/pdf')
           else
-            # coop.customer_data_xls.attach(io: File.open(extract_filepath + 'xls', 'rb'), filename: filename, content_type: 'application/vnd.ms-excel')
+            coop.customer_data_xls.attach(io: File.open(extract_filepath + 'xls', 'rb'), filename: filename, content_type: 'application/vnd.ms-excel')
           end
         end
       end
 
-      existing_coops = existing_coops.uniq.to_s.gsub!('"', '')
-      missing_coops = missing_coops.uniq.to_s.gsub!('"', '')
-      redirect_to admin_customer_data_path, notice: "Attached files for " + existing_coops + ". Did not attach files for missing Cooperatives " + missing_coops
+      notice_str = ''
+      if existing_coops.length > 0
+        notice_str += 'Attached files for: '
+        notice_str += existing_coops.uniq.to_s.gsub('"', '')
+        notice_str += ' '
+      end
+      if missing_coops.length > 0
+        notice_str += 'Did not attach files for missing Cooperatives: '
+        notice_str += missing_coops.uniq.to_s.gsub!('"', '')
+      end
+      redirect_to admin_customer_data_path, notice: notice_str
     end
 
     content title: proc{ I18n.t("active_admin.customer_data") } do
@@ -74,9 +82,7 @@ ActiveAdmin.register_page "Customer Data" do
             end
           end
         end
-        # </li><li class="file input optional" id="cooperative_customer_data_xls_input"><label for="cooperative_customer_data_xls" class="label">Customer data xls</label><input />
 
       end
     end # content
-
   end
