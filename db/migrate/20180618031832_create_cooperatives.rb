@@ -15,6 +15,7 @@ class CreateCooperatives < ActiveRecord::Migration[5.2]
     end
 
     add_index :cooperatives, :email, unique: true
+    add_index :cooperatives, :coopnumber, unique: true
 
     change_table :users do |t|
       t.belongs_to :cooperative, index: true

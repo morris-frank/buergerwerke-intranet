@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_07_04_104616) do
     t.string "coopnumber", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["coopnumber"], name: "index_cooperatives_on_coopnumber", unique: true
     t.index ["email"], name: "index_cooperatives_on_email", unique: true
   end
 
