@@ -3,7 +3,7 @@ class MembersController < ApplicationController
 
     def index
         @cooperative = Cooperative.find(params[:cooperative_id])
-        @members = @cooperative.members
+        @members = @cooperative.members.order('lastname ASC')
         @current_member_is_admin = current_member_is_admin
     end
 

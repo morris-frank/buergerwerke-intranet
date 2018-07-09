@@ -2,7 +2,7 @@ class CooperativesController < ApplicationController
     before_action :authenticate_member!
 
     def index
-        @cooperatives = Cooperative.all
+        @cooperatives = Cooperative.order(:name)
         @markers = Cooperative.pluck(:name, :latitude, :longitude)
         @markers = @markers.collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
     end
