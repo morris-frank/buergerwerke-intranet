@@ -43,7 +43,7 @@ Alle Aktionen von **Benutzer** und **Redaktuer** plus:
     - [ ] ~~Validate CSV~~ (Nicht machbar)
     - [ ] File Access restriction???
 - [x] Sammelupload ZIP Kundendaten
-- [ ] Willkommensseite Dummy-Daten
+- [x] Willkommensseite Dummy-Daten
 - [x] Kategorien für Dateien (nicht-Kundendaten)
 - [x] Für alle Member einer BEG Eigenschaft “vorstand” sichtbar machen in Mitgliederübersicht für alle BEGen
 - [ ] Ansicht auf Kundendaten (csv-Visualisierung)
