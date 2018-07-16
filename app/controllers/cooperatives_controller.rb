@@ -35,27 +35,27 @@ class CooperativesController < ApplicationController
     end
 
     private
-    def cooperative_params
-        params.require(:cooperative).permit(:name, :email, :address, :additional_board, :website, :description)
-    end
+        def cooperative_params
+            params.require(:cooperative).permit(:name, :email, :address, :additional_board, :website, :description)
+        end
 
-    def current_member_can_customer_data
-        if @cooperative.id != current_member.cooperative_id
-            return false
+        def current_member_can_customer_data
+            if @cooperative.id != current_member.cooperative_id
+                return false
+            end
+            if !current_member.can_see_customer_data
+                return false
+            end
+            return true
         end
-        if !current_member.can_see_customer_data
-            return false
-        end
-        return true
-    end
 
-    def current_member_can_edit
-        if @cooperative.id != current_member.cooperative_id
-            return false
+        def current_member_can_edit
+            if @cooperative.id != current_member.cooperative_id
+                return false
+            end
+            if !current_member.is_editor
+                return false
+            end
+            return true
         end
-        if !current_member.is_editor
-            return false
-        end
-        return true
-    end
 end

@@ -67,17 +67,17 @@ class PlantsController < ApplicationController
     end
 
     private
-    def plant_params
-        params.require(:plant).permit(:name, :size, :description, :plant_type)
-    end
+        def plant_params
+            params.require(:plant).permit(:name, :size, :description, :plant_type)
+        end
 
-    def current_member_can_edit
-        if @cooperative.id != current_member.cooperative_id
-            return false
+        def current_member_can_edit
+            if @cooperative.id != current_member.cooperative_id
+                return false
+            end
+            if !current_member.is_editor
+                return false
+            end
+            return true
         end
-        if !current_member.is_editor
-            return false
-        end
-        return true
-    end
 end
