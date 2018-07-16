@@ -107,6 +107,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.6.4)
+      devise (>= 4.4)
     erubi (1.7.1)
     exception_notification (4.2.2)
       actionmailer (>= 4.0, < 6)
@@ -291,6 +293,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  devise-i18n
   exception_notification
   jbuilder (~> 2.5)
   leaflet-rails
