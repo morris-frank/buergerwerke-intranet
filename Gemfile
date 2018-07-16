@@ -73,7 +73,6 @@ gem 'devise'
 
 # active admin integration
 gem 'activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'arctic_admin'
 gem "active_admin_import" , '3.0.0'
 
