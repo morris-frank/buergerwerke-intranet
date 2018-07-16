@@ -1,5 +1,5 @@
 ActiveAdmin.register Plant do
-    permit_params :name, :plant_type, :cooperative_id, :size, :description, :longitude, :latitude
+    permit_params :name, :plant_type, :cooperative_id, :peak_power, :annual_generation, :street, :city, :description
 
     active_admin_import
 
@@ -9,23 +9,25 @@ ActiveAdmin.register Plant do
       column :name
       column :plant_type
       column :cooperative
-      column :size
+      column :peak_power
+      column :city
       actions
     end
 
     filter :name
     filter :plant_type
     filter :cooperative
-    filter :size
+    filter :city
 
     form do |f|
       f.inputs "Plant Details" do
         f.input :name
         f.input :plant_type
         f.input :cooperative
-        f.input :size
-        f.input :latitude
-        f.input :longitude
+        f.input :peak_power
+        f.input :annual_generation
+        f.input :street
+        f.input :city
         f.input :description
       end
       f.actions
