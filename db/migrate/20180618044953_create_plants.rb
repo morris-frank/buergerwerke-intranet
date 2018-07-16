@@ -4,7 +4,7 @@ class CreatePlants < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :plant_type
       t.float :peak_power
-      t.float :annual_generation
+      t.float :annual_generation, default: 1
       t.float :longitude
       t.float :latitude
       t.string :street

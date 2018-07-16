@@ -31,6 +31,20 @@
   </div>
 
   <div class='field'>
+    <%= form.label :street, class: 'label' %>
+    <div class='control'>
+      <%= form.text_field :street, class: 'input' %>
+      </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :city, class: 'label' %>
+    <div class='control'>
+      <%= form.text_field :city, class: 'input' %>
+      </div>
+  </div>
+
+  <div class='field'>
     <%= form.label :peak_power, class: 'label' %>
     <div class='control'>
       <%= form.number_field :peak_power, class: 'input' %>

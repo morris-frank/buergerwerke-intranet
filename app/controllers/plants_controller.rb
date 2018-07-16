@@ -68,7 +68,7 @@ class PlantsController < ApplicationController
 
     private
         def plant_params
-            params.require(:plant).permit(:name, :size, :description, :plant_type)
+            params.require(:plant).permit(:name, :peak_power, :city, :street, :description, :plant_type)
         end
 
         def current_member_can_edit

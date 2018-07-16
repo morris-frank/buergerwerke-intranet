@@ -3,7 +3,8 @@ class CreateCooperatives < ActiveRecord::Migration[5.2]
     create_table :cooperatives do |t|
       t.string :name,               null: false, default: ""
       t.string :email,              null: false, default: ""
-      t.string :address,            default: ""
+      t.string :street
+      t.string :city
       t.string :additional_board,   default: ""
       t.text   :description,        default: ""
       t.string :website,            null: true

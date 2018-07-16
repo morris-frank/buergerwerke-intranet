@@ -13,14 +13,14 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Addresse</th>
+      <th>Stadt</th>
     </tr>
   </thead>
   <tbody>
   <% @cooperatives.each do |cooperative| %>
     <tr>
       <td><%= link_to cooperative.name, cooperative_path(cooperative) %></td>
-      <td><%= cooperative.address %></td>
+      <td><%= cooperative.city %></td>
     </tr>
   <% end %>
   </tbody>

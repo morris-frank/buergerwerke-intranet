@@ -36,7 +36,7 @@ class CooperativesController < ApplicationController
 
     private
         def cooperative_params
-            params.require(:cooperative).permit(:name, :email, :address, :additional_board, :website, :description)
+            params.require(:cooperative).permit(:name, :email, :street, :city, :additional_board, :website, :description)
         end
 
         def current_member_can_customer_data

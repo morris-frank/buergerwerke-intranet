@@ -31,9 +31,19 @@
   </div>
 
   <div class='field'>
-    <%= form.label :address, class: 'label' %>
+    <%= form.label :street, class: 'label' %>
     <div class='control has-icons-left'>
-      <%= form.text_field :address, class: 'input' %>
+      <%= form.text_field :street, class: 'input' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-location-arrow"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :city, class: 'label' %>
+    <div class='control has-icons-left'>
+      <%= form.text_field :city, class: 'input' %>
       <span class="icon is-small is-left">
         <i class="fas fa-location-arrow"></i>
       </span>

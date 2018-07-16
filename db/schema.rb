@@ -36,7 +36,8 @@ ActiveRecord::Schema.define(version: 2018_07_04_104616) do
   create_table "cooperatives", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
-    t.string "address", default: ""
+    t.string "street"
+    t.string "city"
     t.string "additional_board", default: ""
     t.text "description", default: ""
     t.string "website"
@@ -93,9 +94,12 @@ ActiveRecord::Schema.define(version: 2018_07_04_104616) do
   create_table "plants", force: :cascade do |t|
     t.string "name"
     t.integer "plant_type"
-    t.float "size"
+    t.float "peak_power"
+    t.float "annual_generation", default: 1.0
     t.float "longitude"
     t.float "latitude"
+    t.string "street"
+    t.string "city"
     t.text "description"
     t.integer "cooperative_id"
     t.datetime "created_at", null: false
