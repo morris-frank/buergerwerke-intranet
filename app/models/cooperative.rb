@@ -19,8 +19,8 @@ class Cooperative < ApplicationRecord
 
     private
     def coopnumber_style
-        if !(/[MP]\d{2}$/.match?(coopnumber))
-            errors.add(:coopnumber, 'The Cooperative project number must be M or P followed by two decimals.')
+        if !(/[MP]\d{4}$/.match?(coopnumber))
+            errors.add(:coopnumber, 'The Cooperative project number must be M or P followed by 4 decimals.')
         end
     end
 end
