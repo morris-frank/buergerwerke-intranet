@@ -27,7 +27,7 @@ ActiveAdmin.register Fileclip do
       f.inputs "Fileclip Details" do
         f.input :name
         f.input :file_category
-        f.input :cooperatives, :as => :select, :input_html => {:multiple => true}
+        f.input :cooperatives, :as => :select, :input_html => {:multiple => true, :select_all => true}
         f.input :groups, :as => :select, :input_html => {:multiple => true}
         f.input :file, as: :file
       end
