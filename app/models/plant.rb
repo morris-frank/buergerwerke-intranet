@@ -1,7 +1,7 @@
 class Plant < ApplicationRecord
     belongs_to :cooperative
 
-    enum plant_type: [ :solar, :wind, :water ]
+    enum plant_type: [ :solar, :wind, :wasser ]
 
     validates :name, presence: true
     validates :size, numericality: { greater_than_or_equal_to: 1 }

@@ -1,3 +1,60 @@
 de:
   active_admin:
     customer_data: 'Kundendaten'
+
+  activerecord:
+    activerecord_commons: &commons
+      address: 'Addresse'
+      cooperative: 'Genossenschaft'
+      created_at: 'Erstellt am'
+      description: 'Beschreibung'
+      file_category: 'Datekategorie'
+      file: 'Datei'
+      groups: 'Gruppe'
+      latitude: 'Breitengrad'
+      longitude: 'Längengrad'
+      size: 'Größe'
+      updated_at: 'Aktualisiert am'
+      visible: 'Sichtbar'
+      website: 'Webseite'
+    attributes:
+      plant:
+        <<: *commons
+        plant_type: 'Anlagentyp'
+      user:
+        <<: *commons
+        firstname: 'Vorname'
+        lastname: 'Nachname'
+        is_coop_admin: 'BEG Admin'
+        is_board_member: 'Vorstand'
+        is_editor: 'Redakteurin'
+        can_see_customer_data: 'Kundendatenberechtigung'
+      fileclip:
+        <<: *commons
+      cooperative:
+        <<: *commons
+        additional_board: 'Zusätzliche Vorstandmitglieder'
+        coopnumber: 'Projektnummer'
+        customer_data_pdf: 'Kundendaten PDF'
+        customer_data_xls: 'Kundendaten XLS'
+      group:
+        <<: *commons
+    models:
+      cooperative:
+        one: 'Genossenschaft'
+        other: 'Genossenschaften'
+      admin:
+        one: 'Administrator'
+        other: 'Administratoren'
+      member:
+        one: 'Mitglied'
+        other: 'Mitglieder'
+      fileclip:
+        one: 'Datei'
+        other: 'Dateien'
+      file_category:
+        one: 'Dateikategorie'
+        other: 'Dateikategorien'
+      plant:
+        one: 'Anlage'
+        other: 'Anlagen'
