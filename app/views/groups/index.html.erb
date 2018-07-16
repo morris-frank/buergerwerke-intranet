@@ -1,6 +1,8 @@
 <p class="title is-2">Gruppen</p>
 
-<table class="table is-fullwidth is-striped is-hoverable">
+<%= render "/table_filter" %>
+
+<table class="table is-filterable is-fullwidth is-striped is-hoverable">
   <tbody>
   <% @groups.each do |group| %>
     <tr>
