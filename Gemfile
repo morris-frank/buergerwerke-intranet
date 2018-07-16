@@ -12,8 +12,6 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -21,16 +19,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -63,6 +51,9 @@ end
 group :production do
   # Add passenger for Artfiles
   gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+
+  # Artfiles has no node.js installed so we use the gem instead:
+  gem 'mini_racer', platforms: :ruby
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -80,9 +71,16 @@ gem "active_admin_import" , '3.0.0'
 # for exception notifier
 gem 'exception_notification'
 
+# bulma.io is used as the sass framework
 gem 'bulma-rails', '~> 0.7.1'
+# For embedding OSMaps for plants and cooperatives
 gem 'leaflet-rails'
 
+# For german translations
 gem 'rails-i18n'
 
+# For Unzipping of the customer data
 gem 'rubyzip'
+
+# To geocode plants and cooperatives addresses
+gem 'geocoder'
