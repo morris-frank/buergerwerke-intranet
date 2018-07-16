@@ -1,8 +1,4 @@
 de:
-  active_admin:
-    customer_data: 'Kundendaten'
-    powered_by: "Adminpanel basiert auf %{active_admin} %{version}"
-
   activerecord:
     activerecord_commons: &commons
       address: 'Addresse'

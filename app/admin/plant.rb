@@ -1,6 +1,8 @@
 ActiveAdmin.register Plant do
     permit_params :name, :plant_type, :cooperative_id, :size, :description, :longitude, :latitude
 
+    active_admin_import
+
     index do
       selectable_column
       id_column

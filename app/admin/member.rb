@@ -3,6 +3,8 @@ ActiveAdmin.register Member do
       group_ids: [],
       groups_user_ids: []#, :password, :password_confirmation
 
+    active_admin_import
+
     controller do
       def create
         @member = Member.invite!(permitted_params[:member], current_admin)

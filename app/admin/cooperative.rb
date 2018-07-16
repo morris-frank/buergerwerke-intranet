@@ -1,6 +1,8 @@
 ActiveAdmin.register Cooperative do
     permit_params :email, :name, :address, :description, :longitude, :latitude, :additional_board, :website, :coopnumber, :customer_data_xls, :customer_data_pdf
 
+    active_admin_import
+
     index do
       selectable_column
       id_column
