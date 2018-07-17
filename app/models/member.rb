@@ -1,5 +1,5 @@
 class Member < User
-  devise :confirmable
+  # devise :confirmable
   belongs_to :cooperative
   has_many :groups_users
   has_many :groups, through: :groups_users

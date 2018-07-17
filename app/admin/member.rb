@@ -1,20 +1,20 @@
 ActiveAdmin.register Member do
-    permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data,
+    permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data, :password, :password_confirmation,
       group_ids: [],
-      groups_user_ids: []#, :password, :password_confirmation
+      groups_user_ids: []
 
     active_admin_import
 
-    controller do
-      def create
-        @member = Member.invite!(permitted_params[:member], current_admin)
-        if @member.new_record?
-          render action: 'new'
-        else
-          redirect_to resource_path(@member), notice: 'Member invited successfully!'
-        end
-      end
-    end
+    # controller do
+    #   def create
+    #     @member = Member.invite!(permitted_params[:member], current_admin)
+    #     if @member.new_record?
+    #       render action: 'new'
+    #     else
+    #       redirect_to resource_path(@member), notice: 'Member invited successfully!'
+    #     end
+    #   end
+    # end
 
     index do
       selectable_column
@@ -52,8 +52,8 @@ ActiveAdmin.register Member do
         f.input :is_board_member
         f.input :is_editor
         f.input :can_see_customer_data
-        # f.input :password
-        # f.input :password_confirmation
+        f.input :password
+        f.input :password_confirmation
       end
       f.actions
     end
