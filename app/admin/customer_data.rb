@@ -7,11 +7,11 @@ ActiveAdmin.register_page "Customer Data" do
     page_action :create, method: :post do
       uploaded_file = params[:zip_file]
       if uploaded_file.nil?
-        redirect_to admin_customer_data_path, notice: "You didn't upload a file."
+        redirect_to admin_customer_data_path, notice: "Sie haben keine Datei hochgeladen."
         return
       end
       if uploaded_file.content_type != 'application/zip'
-        redirect_to admin_customer_data_path, notice: "You didn't upload a zip file."
+        redirect_to admin_customer_data_path, notice: "Sie haben keine ZIP Datei hochgeladen."
         return
       end
 
@@ -50,12 +50,12 @@ ActiveAdmin.register_page "Customer Data" do
 
       notice_str = ''
       if existing_coops.length > 0
-        notice_str += 'Attached files for: '
+        notice_str += 'Datei hinzugefügt für: '
         notice_str += existing_coops.uniq.to_s.gsub('"', '')
         notice_str += ' '
       end
       if missing_coops.length > 0
-        notice_str += 'Did not attach files for missing Cooperatives: '
+        notice_str += 'Datei ignoriert für fehlende BEGs:'
         notice_str += missing_coops.uniq.to_s.gsub!('"', '')
       end
       redirect_to admin_customer_data_path, notice: notice_str
@@ -78,7 +78,7 @@ ActiveAdmin.register_page "Customer Data" do
         fieldset clas: 'actions' do
           ol do
             li class: 'action input_action' do
-              f.input :submit, type: :submit, value: 'Upload ZIP File'
+              f.input :submit, type: :submit, value: 'ZIP Datei hochladen'
             end
           end
         end
