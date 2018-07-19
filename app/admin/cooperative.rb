@@ -1,5 +1,5 @@
 ActiveAdmin.register Cooperative do
-    permit_params :email, :name, :street, :city, :description, :additional_board, :website, :coopnumber, :customer_data_xls, :customer_data_pdf, :zip
+    permit_params :email, :name, :street, :city, :description, :additional_board, :website, :coopnumber, :zip
 
     active_admin_import
 
@@ -53,8 +53,6 @@ ActiveAdmin.register Cooperative do
         f.input :additional_board
         f.input :website
         f.input :description
-        f.input :customer_data_xls, as: :file
-        f.input :customer_data_pdf, as: :file
       end
       f.actions
     end
