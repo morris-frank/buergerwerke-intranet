@@ -13,7 +13,7 @@
   <tbody>
   <% files.each do |file| %>
     <tr>
-      <td><%= file.name %></td>
+      <td><% if file.name? %><%= file.name %><% else %><%= file.file.filename %><% end %></td>
       <td>
         <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
           <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
@@ -38,7 +38,7 @@
   <tbody>
   <% group.fileclips.each do |file| %>
     <tr>
-      <td><%= file.name %></td>
+      <td><% if file.name? %><%= file.name %><% else %><%= file.file.filename %><% end %></td>
       <td>
         <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
           <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>

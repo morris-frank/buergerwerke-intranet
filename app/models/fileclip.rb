@@ -12,8 +12,6 @@ class Fileclip < ApplicationRecord
     accepts_nested_attributes_for :fileclips_groups
     accepts_nested_attributes_for :fileclips_cooperatives
 
-
-    validates :name, presence: true
     validates :file, presence: true
     validates :file_category, presence: true
 end
