@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BuergerwerkePortal</title>
+    <title>
+      <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+      BuergerwerkePortal
+    </title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +16,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+
+    <%= yield :head %>
 
   </head>
 

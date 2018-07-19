@@ -1,3 +1,7 @@
+<% content_for :head do %>
+<script src="https://taca.buergerwerke.de/bundles/taca/js/seamless.js" async defer></script>
+<% end %>
+
 <p class="title is-2"><%= @cooperative.name %></p>
 
 <div class="tabs is-boxed">
@@ -9,6 +13,13 @@
     </a>
   </li>
 
+  <li>
+    <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-solar-panel"></i></span>
+      <span>Anlagen</span>
+    </a>
+  </li>
+
   <% if @current_member_cooperative %>
   <li>
     <a href="<%= url_for controller: 'coop_files', action: 'index', cooperative_id: @cooperative.id %>">
@@ -16,7 +27,6 @@
       <span>Dateien</span>
     </a>
   </li>
-  <% end %>
 
   <% if @current_member_can_customer_data %>
   <li>
@@ -27,13 +37,6 @@
   </li>
   <% end %>
 
-  <li>
-    <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
-      <span class="icon"><i class="fas fa-solar-panel"></i></span>
-      <span>Anlagen</span>
-    </a>
-  </li>
-
   <% if @current_member_can_edit %>
   <li>
     <a href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>">
@@ -41,6 +44,7 @@
       <span>bearbeiten</span>
     </a>
   </li>
+  <% end %>
   <% end %>
   </ul>
 </div>
@@ -79,3 +83,9 @@
     </div>
   </div>
 </div>
+
+<% if @current_member_cooperative %>
+  <p class="title is-4" style="margin-top: 4em;">Interner Tarifrechner</p>
+  <iframe src="https://taca.buergerwerke.de/?stakeholder=<%= @cooperative.coopnumber %>&intern=1" name="tacaframe" frameborder="0" style="border:0" width="100%" height="650px"></iframe>
+  <script>seamless.parent()</script>
+<% end %>

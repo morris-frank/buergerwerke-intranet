@@ -32,6 +32,7 @@
 <div id="customer-data-table-container" class="content">
 </div>
 
+<% content_for :head do %>
 <script>
 var url = "<%= rails_blob_path(@cooperative.customer_data_xls) %>";
 
@@ -51,6 +52,7 @@ req.onload = function(e) {
 
 req.send();
 </script>
+<% end %>
 <% end %>
 
 <% if !@cooperative.customer_data_pdf.attached? and !@cooperative.customer_data_xls.attached? %>
