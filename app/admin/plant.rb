@@ -27,8 +27,8 @@ ActiveAdmin.register Plant do
         f.input :peak_power
         f.input :annual_generation
         f.input :street
-        f.input :city
         f.input :zip
+        f.input :city
         f.input :description
       end
       f.actions

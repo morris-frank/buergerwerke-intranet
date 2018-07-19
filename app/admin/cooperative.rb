@@ -48,8 +48,8 @@ ActiveAdmin.register Cooperative do
         f.input :coopnumber
         f.input :name
         f.input :street
-        f.input :city
         f.input :zip
+        f.input :city
         f.input :additional_board
         f.input :website
         f.input :description
