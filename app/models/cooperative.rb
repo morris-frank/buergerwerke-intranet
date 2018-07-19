@@ -11,9 +11,9 @@ class Cooperative < ApplicationRecord
     validates :name, presence: true
     validates :email, presence: true
     validates :city, presence: true
-    # validates :website, presence: false, :format => URI::regexp(%w(http https))
-    # validates :latitude, numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
-    # validates :longitude, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 180}
+    validates :website, allow_blank: true, :format => URI::regexp(%w(http https))
+    validates :latitude, allow_blank: true, numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
+    validates :longitude, allow_blank: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 180}
     validates :coopnumber, presence: true
     validate :coopnumber_style
 
