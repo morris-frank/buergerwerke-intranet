@@ -9,4 +9,5 @@ class Plant < ApplicationRecord
     validates :plant_type, presence: true
     validates :latitude, numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
     validates :longitude, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 180}
+    validates_format_of :zip, :with => /\d{5}/, :message => "sollte 5-stellige Nummer sein", allow_blank: true
 end

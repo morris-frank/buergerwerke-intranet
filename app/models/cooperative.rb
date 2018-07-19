@@ -16,11 +16,12 @@ class Cooperative < ApplicationRecord
     validates :longitude, allow_blank: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 180}
     validates :coopnumber, presence: true
     validate :coopnumber_style
+    validates_format_of :zip, :with => /\d{5}/, :message => "sollte 5-stellige Nummer sein", allow_blank: true
 
     private
         def coopnumber_style
             if !(/[MP]\d{3}$/.match?(coopnumber))
-                errors.add(:coopnumber, 'The Cooperative project number must be M or P followed by 3 decimals.')
+                errors.add(:coopnumber, 'sollte mit M oder P beginnen dann 3 stellige Nummer.')
             end
         end
 end

@@ -1,5 +1,5 @@
 ActiveAdmin.register Plant do
-    permit_params :name, :plant_type, :cooperative_id, :peak_power, :annual_generation, :street, :city, :description
+    permit_params :name, :plant_type, :cooperative_id, :peak_power, :annual_generation, :street, :city, :description, :zip
 
     active_admin_import
 
@@ -28,6 +28,7 @@ ActiveAdmin.register Plant do
         f.input :annual_generation
         f.input :street
         f.input :city
+        f.input :zip
         f.input :description
       end
       f.actions

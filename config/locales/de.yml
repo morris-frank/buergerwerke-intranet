@@ -14,6 +14,7 @@ de:
       updated_at: 'Aktualisiert am'
       visible: 'Sichtbar'
       website: 'Webseite'
+      zip: 'Postleizahl'
     attributes:
       plant:
         <<: *commons
