@@ -35,6 +35,13 @@ class CooperativesController < ApplicationController
         end
     end
 
+    def calculator
+        @cooperative = Cooperative.find(params[:cooperative_id])
+        if @cooperative.id != current_member.cooperative_id
+            redirect_to @cooperative
+        end
+    end
+
     private
         def cooperative_params
             params.require(:cooperative).permit(:name, :email, :street, :city, :additional_board, :website, :description)

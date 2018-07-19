@@ -1,7 +1,3 @@
-<% content_for :head do %>
-<script src="https://taca.buergerwerke.de/bundles/taca/js/seamless.js" async defer></script>
-<% end %>
-
 <p class="title is-2"><%= @cooperative.name %></p>
 
 <div class="tabs is-boxed">
@@ -36,6 +32,13 @@
     </a>
   </li>
   <% end %>
+
+  <li>
+    <a href="<%= url_for controller: 'cooperatives', action: 'calculator', cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-calculator"></i></span>
+      <span>Tarifrechner</span>
+    </a>
+  </li>
 
   <% if @current_member_can_edit %>
   <li>
@@ -83,9 +86,3 @@
     </div>
   </div>
 </div>
-
-<% if @current_member_cooperative %>
-  <p class="title is-4" style="margin-top: 4em;">Interner Tarifrechner</p>
-  <iframe src="https://taca.buergerwerke.de/?stakeholder=<%= @cooperative.coopnumber %>&intern=1" name="tacaframe" frameborder="0" style="border:0" width="100%" height="650px"></iframe>
-  <script>seamless.parent()</script>
-<% end %>
