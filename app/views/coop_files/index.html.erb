@@ -1,4 +1,6 @@
-<p class="title is-2">Dateien der <%= @cooperative.name %></p>
+<% title 'Dateien der ' + @cooperative.name %>
+
+<p class="title is-2"><%= yield :title %></p>
 
 <div class="tabs is-boxed">
   <ul>

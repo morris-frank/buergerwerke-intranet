@@ -1,4 +1,6 @@
-<p class="title is-2"><%= @cooperative.name %></p>
+<% title @cooperative.name %>
+
+<p class="title is-2"><%= yield :title %></p>
 
 <div class="tabs is-boxed">
   <ul>

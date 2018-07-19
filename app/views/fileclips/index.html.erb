@@ -1,4 +1,6 @@
-<p class="title is-2">Dateien</p>
+<% title 'Dateien' %>
+
+<p class="title is-2"><%= yield :title %></p>
 
 <p class="title is-3"><%= @cooperative.name %></p>
 <% @cooperative_fileclips_grouped.each do |category, files| %>
