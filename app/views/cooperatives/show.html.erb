@@ -74,13 +74,7 @@
       </p>
 
       <div class="panel-block">
-        Vorstand:
-        <% @cooperative.members.each do |member| %>
-          <% if member.is_board_member? %>
-            <%= member.firstname %> <%= member.lastname %>,
-          <% end %>
-        <% end %>
-        <%= @cooperative.additional_board %>
+        Vorstand: <%= @board %>
       </div>
     </div>
   </div>

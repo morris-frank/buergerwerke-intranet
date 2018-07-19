@@ -12,6 +12,7 @@ class CooperativesController < ApplicationController
         @current_member_can_edit = current_member_can_edit
         @current_member_can_customer_data = current_member_can_customer_data
         @current_member_cooperative = @cooperative.id == current_member.cooperative_id
+        @board = calc_board
     end
 
     def edit
@@ -57,5 +58,19 @@ class CooperativesController < ApplicationController
                 return false
             end
             return true
+        end
+
+        def calc_board
+            board = @cooperative.additional_board
+
+            @cooperative.members.each do |member|
+                if member.is_board_member?
+                    board_member_name = member.firstname + ' ' + member.lastname
+                    if !board.include? board_member_name
+                        board += ', ' + board_member_name
+                    end
+                end
+            end
+            return board
         end
 end
