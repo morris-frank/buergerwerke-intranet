@@ -10,7 +10,7 @@ ActiveAdmin.register Group do
     end
 
     form do |f|
-      f.inputs "Group Details" do
+      f.inputs "Details der Gruppe" do
         f.input :name
         f.input :visible
       end

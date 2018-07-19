@@ -25,7 +25,7 @@ ActiveAdmin.register Admin do
     filter :email
 
     form do |f|
-      f.inputs "Admin Details" do
+      f.inputs "Details des Administrators" do
         f.input :firstname
         f.input :lastname
         f.input :email

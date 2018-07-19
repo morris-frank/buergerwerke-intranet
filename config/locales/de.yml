@@ -3,6 +3,7 @@ de:
     activerecord_commons: &commons
       address: 'Addresse'
       cooperative: 'Genossenschaft'
+      cooperatives: 'Genossenschaften'
       created_at: 'Erstellt am'
       description: 'Beschreibung'
       file_category: 'Datekategorie'
@@ -10,6 +11,8 @@ de:
       groups: 'Gruppe'
       latitude: 'Breitengrad'
       longitude: 'Längengrad'
+      street: 'Straße und Hausnummer'
+      city: 'Stadt'
       size: 'Größe'
       updated_at: 'Aktualisiert am'
       visible: 'Sichtbar'
@@ -32,7 +35,7 @@ de:
       cooperative:
         <<: *commons
         additional_board: 'Zusätzliche Vorstandmitglieder'
-        coopnumber: 'Projektnummer'
+        coopnumber: 'Mitgliedernummer'
         customer_data_pdf: 'Kundendaten PDF'
         customer_data_xls: 'Kundendaten XLS'
       group:
@@ -56,3 +59,6 @@ de:
       plant:
         one: 'Anlage'
         other: 'Anlagen'
+      group:
+        one: 'Gruppe'
+        other: 'Gruppen'

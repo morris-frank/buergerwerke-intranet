@@ -24,7 +24,7 @@ ActiveAdmin.register Fileclip do
     end
 
     form do |f|
-      f.inputs "Fileclip Details" do
+      f.inputs "Datei Details" do
         f.input :name
         f.input :file_category
         f.input :cooperatives, :as => :select, :input_html => {:multiple => true, :select_all => true}

@@ -11,7 +11,7 @@ ActiveAdmin.register FileCategory do
     filter :name
 
     form do |f|
-      f.inputs "FileCategory Details" do
+      f.inputs "Details der Dateikategorie" do
         f.input :name
       end
       f.actions
