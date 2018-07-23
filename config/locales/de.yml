@@ -9,6 +9,7 @@ de:
       description: 'Beschreibung'
       file: 'Datei'
       file_category: 'Datekategorie'
+      filetags: 'Datei-Tags'
       groups: 'Gruppe'
       latitude: 'Breitengrad'
       longitude: 'Längengrad'
@@ -52,6 +53,9 @@ de:
       fileclip:
         one: 'Datei'
         other: 'Dateien'
+      filetag:
+        one: 'Datei-Tag'
+        other: 'Datei-Tags'
       file_category:
         one: 'Dateikategorie'
         other: 'Dateikategorien'

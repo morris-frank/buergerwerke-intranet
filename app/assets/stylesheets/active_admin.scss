@@ -18,3 +18,7 @@ $primary-color: #ffa600;
 body.logged_in.new .input select, body.logged_in.edit .input select, body.logged_in.create .input select, body.logged_in.update .input select {
     height: initial;
 }
+
+.selected-list-container {
+    width: 50%;
+}
