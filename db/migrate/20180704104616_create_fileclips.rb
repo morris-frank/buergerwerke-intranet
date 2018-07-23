@@ -11,14 +11,13 @@ class CreateFileclips < ActiveRecord::Migration[5.2]
       t.string :name
     end
 
-    create_table :fileclips_cooperatives do |t|
-        t.belongs_to :fileclip, index: true
-        t.belongs_to :cooperative, index: true
+
+    create_join_table :fileclips, :cooperatives do |t|
+      t.index [:fileclip_id, :cooperative_id]
     end
 
-    create_table :fileclips_groups do |t|
-        t.belongs_to :fileclip, index: true
-        t.belongs_to :group, index: true
+    create_join_table :fileclips, :groups do |t|
+      t.index [:fileclip_id, :group_id]
     end
   end
 end
