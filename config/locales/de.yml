@@ -48,8 +48,8 @@ de:
         one: 'Administrator'
         other: 'Administratoren'
       member:
-        one: 'Mitglied'
-        other: 'Mitglieder'
+        one: 'Benutzer'
+        other: 'Benutzer'
       fileclip:
         one: 'Datei'
         other: 'Dateien'
