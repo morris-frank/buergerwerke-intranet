@@ -2,23 +2,35 @@ de:
   activerecord:
     activerecord_commons: &commons
       address: 'Addresse'
+      city: 'Stadt'
       cooperative: 'Genossenschaft'
       cooperatives: 'Genossenschaften'
       created_at: 'Erstellt am'
       description: 'Beschreibung'
-      file_category: 'Datekategorie'
       file: 'Datei'
+      file_category: 'Datekategorie'
       groups: 'Gruppe'
       latitude: 'Breitengrad'
       longitude: 'Längengrad'
-      street: 'Straße und Hausnummer'
-      city: 'Stadt'
       size: 'Größe'
+      street: 'Straße und Hausnummer'
       updated_at: 'Aktualisiert am'
       visible: 'Sichtbar'
       website: 'Webseite'
       zip: 'Postleizahl'
     attributes:
+      cooperative:
+        <<: *commons
+        additional_board: 'Zusätzliche Vorstandmitglieder'
+        coopnumber: 'Mitgliedernummer'
+        customer_data_pdf: 'Kundendaten PDF'
+        customer_data_xls: 'Kundendaten XLS'
+      fileclip:
+        <<: *commons
+      file_category:
+        <<: *commons
+      group:
+        <<: *commons
       plant:
         <<: *commons
         plant_type: 'Anlagentyp'
@@ -30,35 +42,25 @@ de:
         is_board_member: 'Vorstand'
         is_editor: 'Redakteurin'
         can_see_customer_data: 'Kundendatenberechtigung'
-      fileclip:
-        <<: *commons
-      cooperative:
-        <<: *commons
-        additional_board: 'Zusätzliche Vorstandmitglieder'
-        coopnumber: 'Mitgliedernummer'
-        customer_data_pdf: 'Kundendaten PDF'
-        customer_data_xls: 'Kundendaten XLS'
-      group:
-        <<: *commons
     models:
-      cooperative:
-        one: 'Genossenschaft'
-        other: 'Genossenschaften'
       admin:
         one: 'Administrator'
         other: 'Administratoren'
-      member:
-        one: 'Benutzer'
-        other: 'Benutzer'
+      cooperative:
+        one: 'Genossenschaft'
+        other: 'Genossenschaften'
       fileclip:
         one: 'Datei'
         other: 'Dateien'
       file_category:
         one: 'Dateikategorie'
         other: 'Dateikategorien'
-      plant:
-        one: 'Anlage'
-        other: 'Anlagen'
       group:
         one: 'Gruppe'
         other: 'Gruppen'
+      member:
+        one: 'Benutzer'
+        other: 'Benutzer'
+      plant:
+        one: 'Anlage'
+        other: 'Anlagen'
