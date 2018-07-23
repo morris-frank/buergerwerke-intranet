@@ -35,6 +35,8 @@ de:
       plant:
         <<: *commons
         plant_type: 'Anlagentyp'
+        peak_power: 'Peakleistung kW/p'
+        annual_generation: 'Jährliche Erzeugung kWh'
       user:
         <<: *commons
         firstname: 'Vorname'

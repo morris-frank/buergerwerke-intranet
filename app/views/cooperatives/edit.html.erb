@@ -43,6 +43,16 @@
   </div>
 
   <div class='field'>
+    <%= form.label :zip, class: 'label' %>
+    <div class='control has-icons-left'>
+      <%= form.text_field :zip, class: 'input' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-location-arrow"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class='field'>
     <%= form.label :city, class: 'label' %>
     <div class='control has-icons-left'>
       <%= form.text_field :city, class: 'input' %>

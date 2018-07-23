@@ -34,29 +34,51 @@
 
   <div class='field'>
     <%= form.label :street, class: 'label' %>
-    <div class='control'>
+    <div class='control has-icons-left'>
       <%= form.text_field :street, class: 'input' %>
-      </div>
+      <span class="icon is-small is-left">
+        <i class="fas fa-location-arrow"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= form.label :zip, class: 'label' %>
+    <div class='control has-icons-left'>
+      <%= form.text_field :zip, class: 'input' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-location-arrow"></i>
+      </span>
+    </div>
   </div>
 
   <div class='field'>
     <%= form.label :city, class: 'label' %>
-    <div class='control'>
+    <div class='control has-icons-left'>
       <%= form.text_field :city, class: 'input' %>
-      </div>
+      <span class="icon is-small is-left">
+        <i class="fas fa-location-arrow"></i>
+      </span>
+    </div>
   </div>
 
   <div class='field'>
     <%= form.label :peak_power, class: 'label' %>
-    <div class='control'>
+    <div class='control has-icons-left'>
       <%= form.number_field :peak_power, class: 'input' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-plug"></i>
+      </span>
     </div>
   </div>
 
   <div class='field'>
     <%= form.label :annual_generation, class: 'label' %>
-    <div class='control'>
+    <div class='control has-icons-left'>
       <%= form.number_field :annual_generation, class: 'input' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-plug"></i>
+      </span>
     </div>
   </div>
 
