@@ -14,27 +14,17 @@
 </div>
 
 
+<div class="columns is-multiline filecategories">
 <% @files_grouped.each do |category, files| %>
-<p class="title is-4"><%= category.name %></p>
-<table class="table is-fullwidth is-striped is-hoverable">
-  <thead>
-    <tr>
-      <th>Name der <%= Fileclip.model_name.human %></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% files.each do |file| %>
-    <tr>
-      <td><% if file.name? %><%= file.name %><% else %><%= file.file.filename %><% end %></td>
-      <td>
-        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
-          <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
-          <span>Download</span>
-        </a>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+  <div class="column is-offset-2 is-3 is-paddingless">
+    <a class="card" href="<%= url_for controller: 'coop_files', action: 'show', cooperative_id: @cooperative.id, id: category.id %>">
+      <span class="card-header">
+        <p class="card-header-title"><%= category.name %></p>
+      </span>
+      <span class="card-content">
+        <p><%= category.description %></p>
+      </span>
+    </a>
+  </div>
 <% end %>
+</div>
