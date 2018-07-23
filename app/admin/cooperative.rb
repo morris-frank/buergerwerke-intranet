@@ -43,7 +43,7 @@ ActiveAdmin.register Cooperative do
     end
 
     form do |f|
-      f.inputs "Details der Genossenschaft" do
+      f.inputs "Details der " + Cooperative.model_name.human do
         f.input :email
         f.input :coopnumber
         f.input :name

@@ -20,7 +20,7 @@ ActiveAdmin.register Plant do
     filter :city
 
     form do |f|
-      f.inputs "Details der Anlage" do
+      f.inputs "Details der " + Plant.model_name.human do
         f.input :name
         f.input :plant_type
         f.input :cooperative

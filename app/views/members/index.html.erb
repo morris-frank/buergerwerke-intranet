@@ -1,4 +1,4 @@
-<% title 'Mitglieder der ' + @cooperative.name %>
+<% title Member.model_name.human(count: 2) + ' der ' + @cooperative.name %>
 
 <p class="title is-2"><%= yield :title %></p>
 
@@ -12,6 +12,8 @@
   </li>
   </ul>
 </div>
+
+<div class="notification">Die <%= Member.model_name.human(count: 2) %> sind alle im Portal registrierten und der <%= @cooperative.name %> zugeordneten Personen. Sie sind nicht zwangsläufig Mitglieder und/oder Kunden eben dieser.</div>
 
 <%= render "/table_filter" %>
 

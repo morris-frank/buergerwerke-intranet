@@ -3,10 +3,10 @@
 <p class="title is-5">Im Mitgliederportal der Bürgerwerke finden sie:</p>
 
 <ul>
-    <li>Unter <%= link_to 'Meine Genossenschaft', cooperative_path(current_member.cooperative) %> finden sie Informationen zu Ihrer eigenen Genossenschaft.</li>
-    <li>Unter <%= link_to 'Genossenschaften', cooperatives_path %> eine Auflistung aller Eingetragener Genossenschaften.</li>
+    <li>Unter <%= link_to 'Meine ' + Cooperative.model_name.human, cooperative_path(current_member.cooperative) %> finden sie Informationen zu Ihrer eigenen Genossenschaft.</li>
+    <li>Unter <%= link_to Cooperative.model_name.human(count: 2), cooperatives_path %> eine Auflistung aller Eingetragener Genossenschaften.</li>
     <li>Unter <%= link_to 'Gruppen', groups_path %> eine Auflistung aller öffentlicher Gruppen.</li>
-    <li>Unter <%= link_to 'Dateien', fileclips_path %> alle Dateien die für eine Ihrer Genossenschaft oder einer Ihrer Gruppen hochgeladen wurde.</li>
+    <li>Unter <%= link_to Fileclip.model_name.human(count: 2), fileclips_path %> alle Dateien die für eine Ihrer Genossenschaft oder einer Ihrer Gruppen hochgeladen wurde.</li>
 </ul>
 
 <p class="title is-4" style="margin-top:3em">Neueste Änderungen<p>

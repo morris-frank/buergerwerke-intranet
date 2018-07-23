@@ -7,14 +7,14 @@
   <li>
     <a href="<%= url_for controller: 'members', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-users"></i></span>
-      <span>Mitglieder</span>
+      <span><%= Member.model_name.human(count: 2) %></span>
     </a>
   </li>
 
   <li>
     <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-solar-panel"></i></span>
-      <span>Anlagen</span>
+      <span><%= Plant.model_name.human(count: 2) %></span>
     </a>
   </li>
 
@@ -22,7 +22,7 @@
   <li>
     <a href="<%= url_for controller: 'coop_files', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-file"></i></span>
-      <span>Dateien</span>
+      <span><%= Fileclip.model_name.human(count: 2) %></span>
     </a>
   </li>
 

@@ -1,4 +1,4 @@
-<% title 'Dateien' %>
+<% title Fileclip.model_name.human(count: 2) %>
 
 <p class="title is-2"><%= yield :title %></p>
 
@@ -8,7 +8,7 @@
 <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
-      <th>Name der Datei</th>
+      <th>Name der <%= Fileclip.model_name.human %></th>
       <th></th>
     </tr>
   </thead>
@@ -33,7 +33,7 @@
 <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
-      <th>Name der Datei</th>
+      <th>Name der <%= Fileclip.model_name.human %></th>
       <th></th>
     </tr>
   </thead>

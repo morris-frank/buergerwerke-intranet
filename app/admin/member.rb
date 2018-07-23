@@ -42,7 +42,7 @@ ActiveAdmin.register Member do
     filter :can_see_customer_data
 
     form do |f|
-      f.inputs "Mitglied einladen #{current_admin.inspect}" do
+      f.inputs Member.model_name.human + " einladen #{current_admin.inspect}" do
         f.input :email
         f.input :firstname
         f.input :lastname
