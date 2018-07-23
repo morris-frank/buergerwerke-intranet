@@ -24,10 +24,10 @@ ActiveAdmin.register Member do
       column :email
       column :cooperative
       column :groups
-      column :is_coop_admin
-      column :is_board_member
-      column :is_editor
-      column :can_see_customer_data
+      toggle_bool_column :is_coop_admin
+      toggle_bool_column :is_board_member
+      toggle_bool_column :is_editor
+      toggle_bool_column :can_see_customer_data
       actions
     end
 

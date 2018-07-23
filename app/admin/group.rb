@@ -5,7 +5,7 @@ ActiveAdmin.register Group do
       selectable_column
       id_column
       column :name
-      column :visible
+      toggle_bool_column :visible
       actions
     end
 
