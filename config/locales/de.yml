@@ -1,4 +1,6 @@
 de:
+  intranet: 'Intranet'
+
   activerecord:
     activerecord_commons: &commons
       address: 'Addresse'

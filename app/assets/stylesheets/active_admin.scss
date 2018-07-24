@@ -22,3 +22,11 @@ body.logged_in.new .input select, body.logged_in.edit .input select, body.logged
 .selected-list-container {
     width: 50%;
 }
+
+.header .site_title {
+    width: 400px;
+}
+
+.header #utility_nav {
+    width: calc(100% - 400px);
+}

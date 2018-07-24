@@ -13,7 +13,7 @@
   </ul>
 </div>
 
-<div class="notification">Die <%= Member.model_name.human(count: 2) %> sind alle im Portal registrierten und der <%= @cooperative.name %> zugeordneten Personen. Sie sind nicht zwangsläufig Mitglieder und/oder Kunden eben dieser.</div>
+<div class="notification">Die <%= Member.model_name.human(count: 2) %> sind alle im <%= t 'intranet' %> registrierten und der <%= @cooperative.name %> zugeordneten Personen. Sie sind nicht zwangsläufig Mitglieder und/oder Kunden eben dieser.</div>
 
 <%= render "/table_filter" %>
 

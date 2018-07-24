@@ -1,1 +1,1 @@
-# Mitgliederportal der Bürgerwerke
+# Intranet der Bürgerwerke
