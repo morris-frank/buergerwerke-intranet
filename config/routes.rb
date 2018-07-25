@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
   root to: "home#index"
 
+  get '/members', to: redirect('/members/sign_in')
+
   resources :cooperatives, only: [:index, :show, :edit, :update] do
     resources :plants, only: [:index, :show, :new, :create, :edit, :update]
     resources :members, only: [:index, :update]
