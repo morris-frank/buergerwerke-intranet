@@ -6,11 +6,7 @@ Rails.application.routes.draw do
 
   # below code to fix the active admin issue when table not exists in database as activeadmin tries to load every model.
   # for reference https://github.com/activeadmin/activeadmin/issues/783
-  begin
-    ActiveAdmin.routes(self)
-  rescue Exception => e
-    puts "ActiveAdmin: #{e.class}: #{e}"
-  end
+  ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
   root to: "home#index"
 
   resources :cooperatives, only: [:index, :show, :edit, :update] do
