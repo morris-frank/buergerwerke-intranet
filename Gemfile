@@ -67,7 +67,6 @@ gem 'devise-i18n'
 gem 'activeadmin'
 gem 'arctic_admin'
 gem "active_admin_import" , '3.0.0'
-gem 'activeadmin_addons'
 
 # for exception notifier
 gem 'exception_notification'

@@ -31,7 +31,7 @@ ActiveAdmin.register Fileclip do
         f.input :file_category
         f.input :cooperatives, :as => :select, :input_html => {:multiple => true, :select_all => true}
         f.input :groups, :as => :select, :input_html => {:multiple => true}
-        f.input :filetags, :as => :selected_list
+        f.input :filetags, :as => :check_boxes
         f.input :file, as: :file
       end
 
