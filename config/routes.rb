@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     get 'calculator', to: 'cooperatives#calculator'
   end
   resources :groups, only: [:index, :show]
-  resources :fileclips, only: [:index], path: :files
+  # resources :fileclips, only: [:index], path: :files
 
 end
