@@ -14,22 +14,31 @@
   </ul>
 </div>
 
-<table class="table is-fullwidth is-striped is-hoverable">
-  <thead>
-    <tr>
-      <th>Name der <%= Fileclip.model_name.human %></th>
-      <th></th>
-    </tr>
-  </thead>
+<%= render "/table_filter" %>
+
+<table class="table is-fullwidth is-striped is-hoverable is-filterable">
   <tbody>
   <% @files.each do |file| %>
     <tr>
-      <td><% if file.name? %><%= file.name %><% else %><%= file.file.filename %><% end %></td>
       <td>
-        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
-          <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
-          <span>Download</span>
+        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" download>
+          <span class="icon"><i class="fas fa-cloud-download-alt" aria-hidden="true"></i></span>
+          <% if file.name? %><%= file.name %><% else %><%= file.file.filename %><% end %>
         </a>
+      </td>
+      <td>
+        <div class="tags">
+          <% file.filetags.each do |tag| %>
+          <span class="tag">
+            <span class="icon"><i class="fas fa-tags" aria-hidden="true"></i></span>
+            <span><%= tag.name %></span>
+          </span>
+          <% end %>
+        </div>
+      </td>
+      <td>
+        <span class="icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
+        <span><%= l file.file.created_at, format: :short %></span>
       </td>
     </tr>
   <% end %>
