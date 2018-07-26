@@ -24,7 +24,7 @@
       <th>Nachname</th>
       <th>E-Mail</th>
       <th>Vorstand</th>
-      <% if @current_member_is_admin %>
+      <% if is_admin %>
       <th>Redakteur</th>
       <th>Kundendaten</th>
       <th></th>
@@ -37,7 +37,7 @@
       <td><%= member.firstname %></td>
       <td><%= member.lastname %></td>
       <td><%= member.email %></td>
-      <% if !@current_member_is_admin %>
+      <% if !is_admin %>
       <td><span class="icon has-text-info">
         <% if member.is_board_member %>
           <i class="fas fa-check-square"></i>

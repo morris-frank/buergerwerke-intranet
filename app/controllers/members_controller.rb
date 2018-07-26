@@ -4,12 +4,11 @@ class MembersController < ApplicationController
     def index
         @cooperative = Cooperative.find(params[:cooperative_id])
         @members = @cooperative.members.order('lastname ASC')
-        @current_member_is_admin = current_member_is_admin
     end
 
     def update
         @cooperative = Cooperative.find(params[:cooperative_id])
-        if !current_member_is_admin
+        if !is_admin
             redirect_to cooperative_members_path(@cooperative)
         end
 
@@ -28,13 +27,8 @@ class MembersController < ApplicationController
             params.require(:member).permit(:is_board_member, :is_editor, :can_see_customer_data)
         end
 
-        def current_member_is_admin
-            if @cooperative.id != current_member.cooperative_id
-                return false
-            end
-            if !current_member.is_coop_admin
-                return false
-            end
-            return true
+        def is_admin
+            own_coop = @cooperative.id == current_member.cooperative_id
+            return own_coop && current_member.is_coop_admin
         end
 end

@@ -18,7 +18,7 @@
     </a>
   </li>
 
-  <% if @current_member_cooperative %>
+  <% if @cooperative.id == current_member.cooperative_id %>
   <li>
     <a href="<%= url_for controller: 'coop_files', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-file"></i></span>
@@ -26,7 +26,7 @@
     </a>
   </li>
 
-  <% if @current_member_can_customer_data %>
+  <% if can_customer_data %>
   <li>
     <a href="<%= url_for controller: 'customer_data', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-th-list"></i></span>
@@ -44,7 +44,7 @@
   </li>
   <% end %>
 
-  <% if @current_member_can_edit %>
+  <% if can_edit %>
   <li>
     <a href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-edit"></i></span>

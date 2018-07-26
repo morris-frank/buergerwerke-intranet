@@ -9,22 +9,19 @@ class CooperativesController < ApplicationController
 
     def show
         @cooperative = Cooperative.find(params[:id])
-        @current_member_can_edit = current_member_can_edit
-        @current_member_can_customer_data = current_member_can_customer_data
-        @current_member_cooperative = @cooperative.id == current_member.cooperative_id
         @board = calc_board
     end
 
     def edit
         @cooperative = Cooperative.find(params[:id])
-        if !current_member_can_edit
+        if !can_edit
             redirect_to @cooperative
         end
     end
 
     def update
         @cooperative = Cooperative.find(params[:id])
-        if !current_member_can_edit
+        if !can_edit
             redirect_to @cooperative
         end
 
@@ -50,14 +47,7 @@ class CooperativesController < ApplicationController
             params.require(:cooperative).permit(:name, :email, :street, :city, :zip, :additional_board, :website, :description)
         end
 
-        def current_member_can_customer_data
-            own_coop = @cooperative.id == current_member.cooperative_id
-            tariff = @cooperative.has_tariff
-            mem_allow = current_member.can_see_customer_data
-            return own_coop && tariff && mem_allow
-        end
-
-        def current_member_can_edit
+        def can_edit
             own_coop = @cooperative.id == current_member.cooperative_id
             return own_coop && current_member.is_editor
         end

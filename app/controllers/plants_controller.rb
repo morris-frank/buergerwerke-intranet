@@ -4,16 +4,13 @@ class PlantsController < ApplicationController
     def index
         @cooperative = Cooperative.find(params[:cooperative_id])
         @plants = @cooperative.plants.order('name ASC')
-        @current_member_can_edit = current_member_can_edit
         @markers = @plants.pluck(:name, :latitude, :longitude)
         @markers = @markers.collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
-        @current_member_can_edit = current_member_can_edit
     end
 
     def show
         @cooperative = Cooperative.find(params[:cooperative_id])
         @plant = Plant.find(params[:id])
-        @current_member_can_edit = current_member_can_edit
     end
 
     def new
@@ -21,14 +18,14 @@ class PlantsController < ApplicationController
         @plants = @cooperative.plants
         @plant = Plant.new
 
-        if !current_member_can_edit
+        if !can_edit
             redirect_to cooperative_plants_path(@cooperative)
         end
     end
 
     def create
         @cooperative = Cooperative.find(params[:cooperative_id])
-        if !current_member_can_edit
+        if !can_edit
             redirect_to cooperative_plants_path(@cooperative)
         end
 
@@ -44,7 +41,7 @@ class PlantsController < ApplicationController
 
     def edit
         @cooperative = Cooperative.find(params[:cooperative_id])
-        if !current_member_can_edit
+        if !can_edit
             redirect_to cooperative_plants_path(@cooperative)
         end
         @plant = Plant.find(params[:id])
@@ -52,7 +49,7 @@ class PlantsController < ApplicationController
 
     def update
         @cooperative = Cooperative.find(params[:cooperative_id])
-        if !current_member_can_edit
+        if !can_edit
             redirect_to cooperative_plants_path(@cooperative)
         end
 
@@ -71,13 +68,8 @@ class PlantsController < ApplicationController
             params.require(:plant).permit(:name, :peak_power, :city, :street, :zip, :description, :plant_type)
         end
 
-        def current_member_can_edit
-            if @cooperative.id != current_member.cooperative_id
-                return false
-            end
-            if !current_member.is_editor
-                return false
-            end
-            return true
+        def can_edit
+            own_coop = @cooperative.id == current_member.cooperative_id
+            return own_coop && current_member.is_editor
         end
 end
