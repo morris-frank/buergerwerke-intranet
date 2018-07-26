@@ -9,9 +9,9 @@ class CreateGroups < ActiveRecord::Migration[5.2]
 
     add_index :groups, :name, unique: true
 
-
-    create_join_table :groups, :users do |t|
-      t.index [:member_id, :group_id]
+    create_table :groups_users do |t|
+      t.integer :member_id, index: true
+      t.integer :group_id, index: true
     end
   end
 end
