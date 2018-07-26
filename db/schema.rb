@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_23_110826) do
+ActiveRecord::Schema.define(version: 2018_07_25_132838) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_07_23_110826) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "zip"
+    t.boolean "has_tariff"
     t.index ["coopnumber"], name: "index_cooperatives_on_coopnumber", unique: true
     t.index ["email"], name: "index_cooperatives_on_email", unique: true
   end

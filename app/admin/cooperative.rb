@@ -1,5 +1,5 @@
 ActiveAdmin.register Cooperative do
-    permit_params :email, :name, :street, :city, :description, :additional_board, :website, :coopnumber, :zip
+    permit_params :email, :name, :street, :city, :description, :additional_board, :website, :coopnumber, :zip, :has_tariff
 
     active_admin_import
 
@@ -8,12 +8,14 @@ ActiveAdmin.register Cooperative do
       id_column
       column :coopnumber
       column :name
+      column :has_tariff
       column :city
       actions
     end
 
     filter :coopnumber
     filter :name
+    filter :has_tariff
     filter :city
 
     show do
@@ -21,6 +23,7 @@ ActiveAdmin.register Cooperative do
         row :coopnumber
         row :name
         row :email
+        row :has_tariff
         row :city
         row :zip
         row :street
@@ -47,6 +50,7 @@ ActiveAdmin.register Cooperative do
         f.input :email
         f.input :coopnumber
         f.input :name
+        f.input :has_tariff
         f.input :street
         f.input :zip
         f.input :city

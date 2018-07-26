@@ -37,6 +37,9 @@ class CooperativesController < ApplicationController
 
     def calculator
         @cooperative = Cooperative.find(params[:cooperative_id])
+        if !@cooperative.has_tariff
+            redirect_to @cooperative
+        end
         if @cooperative.id != current_member.cooperative_id
             redirect_to @cooperative
         end
@@ -48,23 +51,15 @@ class CooperativesController < ApplicationController
         end
 
         def current_member_can_customer_data
-            if @cooperative.id != current_member.cooperative_id
-                return false
-            end
-            if !current_member.can_see_customer_data
-                return false
-            end
-            return true
+            own_coop = @cooperative.id == current_member.cooperative_id
+            tariff = @cooperative.has_tariff
+            mem_allow = current_member.can_see_customer_data
+            return own_coop && tariff && mem_allow
         end
 
         def current_member_can_edit
-            if @cooperative.id != current_member.cooperative_id
-                return false
-            end
-            if !current_member.is_editor
-                return false
-            end
-            return true
+            own_coop = @cooperative.id == current_member.cooperative_id
+            return own_coop && current_member.is_editor
         end
 
         def calc_board

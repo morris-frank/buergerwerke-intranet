@@ -35,12 +35,14 @@
   </li>
   <% end %>
 
+  <% if @cooperative.has_tariff %>
   <li>
     <a href="<%= url_for controller: 'cooperatives', action: 'calculator', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-calculator"></i></span>
       <span>Tarifrechner</span>
     </a>
   </li>
+  <% end %>
 
   <% if @current_member_can_edit %>
   <li>

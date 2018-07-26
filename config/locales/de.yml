@@ -28,6 +28,7 @@ de:
         coopnumber: 'Mitgliedernummer'
         customer_data_pdf: 'Kundendaten PDF'
         customer_data_xls: 'Kundendaten XLS'
+        has_tariff: 'Bietet Tarif an'
       fileclip:
         <<: *commons
       file_category:
