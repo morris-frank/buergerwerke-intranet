@@ -24,13 +24,6 @@
 
 <div class="columns">
   <div class="column is-6">
-    <article class="message is-primary">
-      <div class="message-body">
-        <%= @plant.description %>
-      </div>
-    </article>
-  </div>
-  <div class="column is-6">
     <div class="panel">
       <p class="panel-heading"><%= @plant.name %></p>
 
@@ -50,5 +43,14 @@
         Type: <%= @plant.plant_type %></a>
       </p>
     </div>
+  </div>
+  <div class="column is-6">
+    <% if @plant.description? %>
+    <article class="message is-primary">
+      <div class="message-body">
+        <%= @plant.description %>
+      </div>
+    </article>
+    <% end %>
   </div>
 </div>

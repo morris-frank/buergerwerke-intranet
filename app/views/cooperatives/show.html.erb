@@ -58,14 +58,6 @@
 
 <div class="columns">
   <div class="column is-6">
-    <article class="message is-primary">
-      <div class="message-body">
-        <%= @cooperative.description %>
-      </div>
-    </article>
-  </div>
-
-  <div class="column is-6">
     <div class="panel">
       <p class="panel-heading"><%= @cooperative.name %></p>
 
@@ -88,5 +80,15 @@
         Vorstand: <%= @board %>
       </div>
     </div>
+  </div>
+
+  <div class="column is-6">
+    <% if @cooperative.description? %>
+    <article class="message is-primary">
+      <div class="message-body">
+        <%= @cooperative.description %>
+      </div>
+    </article>
+    <% end %>
   </div>
 </div>
