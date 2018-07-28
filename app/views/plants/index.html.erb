@@ -11,7 +11,7 @@
   </a>
   </li>
 
-  <% if @current_member_can_edit %>
+  <% if can_edit %>
   <li>
   <a href="<%= url_for controller: 'plants', action: 'new', cooperative_id: @cooperative.id %>">
     <span class="icon"><i class="fas fa-plus"></i></span>
