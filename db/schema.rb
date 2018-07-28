@@ -74,23 +74,11 @@ ActiveRecord::Schema.define(version: 2018_07_28_170057) do
     t.index ["fileclip_id"], name: "index_fileclips_cooperatives_on_fileclip_id"
   end
 
-  create_table "fileclips_filetags", id: false, force: :cascade do |t|
-    t.integer "fileclip_id", null: false
-    t.integer "filetag_id", null: false
-    t.index ["fileclip_id", "filetag_id"], name: "index_fileclips_filetags_on_fileclip_id_and_filetag_id"
-  end
-
   create_table "fileclips_groups", force: :cascade do |t|
     t.integer "fileclip_id"
     t.integer "group_id"
     t.index ["fileclip_id"], name: "index_fileclips_groups_on_fileclip_id"
     t.index ["group_id"], name: "index_fileclips_groups_on_group_id"
-  end
-
-  create_table "filetags", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "groups", force: :cascade do |t|

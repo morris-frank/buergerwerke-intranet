@@ -13,7 +13,6 @@ de:
       description: 'Beschreibung'
       file: 'Datei'
       file_category: 'Datekategorie'
-      filetags: 'Datei-Tags'
       groups: 'Gruppe'
       latitude: 'Breitengrad'
       longitude: 'Längengrad'
@@ -36,7 +35,6 @@ de:
         is_standard: 'Ist Standarddatei'
         is_standard_with_tariff: 'Ist Standarddatei mit Tarif'
       file_category:
-        <<: *commons
         <<: *commons
       plant:
         <<: *commons
@@ -61,14 +59,9 @@ de:
       fileclip:
         one: 'Datei'
         other: 'Dateien'
-      filetag:
-        one: 'Datei-Tag'
-        other: 'Datei-Tags'
       file_category:
         one: 'Dateikategorie'
         other: 'Dateikategorien'
-        one: 'Gruppe'
-        other: 'Gruppen'
       member:
         one: 'Benutzer'
         other: 'Benutzer'

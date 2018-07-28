@@ -2,7 +2,6 @@ class Fileclip < ApplicationRecord
     has_one_attached :file
     belongs_to :file_category
 
-    has_and_belongs_to_many :filetags
     has_many :fileclips_cooperatives
     has_many :cooperatives, through: :fileclips_cooperatives
 

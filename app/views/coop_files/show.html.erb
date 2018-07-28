@@ -27,16 +27,6 @@
         </a>
       </td>
       <td>
-        <div class="tags">
-          <% file.filetags.each do |tag| %>
-          <span class="tag">
-            <span class="icon"><i class="fas fa-tags" aria-hidden="true"></i></span>
-            <span><%= tag.name %></span>
-          </span>
-          <% end %>
-        </div>
-      </td>
-      <td>
         <span class="icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
         <span><%= l file.file.created_at, format: :short %></span>
       </td>

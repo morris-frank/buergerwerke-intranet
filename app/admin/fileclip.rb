@@ -1,9 +1,7 @@
 ActiveAdmin.register Fileclip do
     permit_params :name, :file, :file_category_id, :is_standard, :is_standard_with_tariff,
       cooperative_ids: [],
-      fileclips_cooperative_ids: [],
-      filetag_ids: [],
-      fileclips_filetag_ids: []
+      fileclips_cooperative_ids: []
 
     index do
       selectable_column
@@ -37,7 +35,6 @@ ActiveAdmin.register Fileclip do
         f.input :is_standard_with_tariff
         f.input :file_category
         f.input :cooperatives, :as => :select, :input_html => {:multiple => true, :select_all => true}
-        f.input :filetags, :as => :check_boxes
         f.input :file, as: :file
       end
 
