@@ -4,7 +4,5 @@ class FileclipsController < ApplicationController
     def index
         @cooperative = current_member.cooperative
         @cooperative_fileclips_grouped = @cooperative.fileclips.group_by(&:file_category)
-
-        @groups = current_member.groups
     end
 end

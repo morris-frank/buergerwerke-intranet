@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     get 'customer_data', to: 'customer_data#index'
     get 'calculator', to: 'cooperatives#calculator'
   end
-  resources :groups, only: [:index, :show]
   # resources :fileclips, only: [:index], path: :files
 
 end

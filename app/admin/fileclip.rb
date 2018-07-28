@@ -1,7 +1,5 @@
 ActiveAdmin.register Fileclip do
     permit_params :name, :file, :file_category_id,
-      group_ids: [],
-      fileclips_group_ids: [],
       cooperative_ids: [],
       fileclips_cooperative_ids: [],
       filetag_ids: [],
@@ -30,7 +28,6 @@ ActiveAdmin.register Fileclip do
         f.input :name
         f.input :file_category
         f.input :cooperatives, :as => :select, :input_html => {:multiple => true, :select_all => true}
-        f.input :groups, :as => :select, :input_html => {:multiple => true}
         f.input :filetags, :as => :check_boxes
         f.input :file, as: :file
       end

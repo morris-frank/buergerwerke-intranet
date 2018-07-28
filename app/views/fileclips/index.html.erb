@@ -27,28 +27,3 @@
   </tbody>
 </table>
 <% end %>
-
-<% @groups.each do |group| %>
-<p class="title is-3"><%= group.name %></p>
-<table class="table is-fullwidth is-striped is-hoverable">
-  <thead>
-    <tr>
-      <th>Name der <%= Fileclip.model_name.human %></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% group.fileclips.each do |file| %>
-    <tr>
-      <td><% if file.name? %><%= file.name %><% else %><%= file.file.filename %><% end %></td>
-      <td>
-        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
-          <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
-          <span>Download</span>
-        </a>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-<% end %>

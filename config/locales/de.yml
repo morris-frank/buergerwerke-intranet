@@ -35,7 +35,6 @@ de:
         <<: *commons
       file_category:
         <<: *commons
-      group:
         <<: *commons
       plant:
         <<: *commons
@@ -66,7 +65,6 @@ de:
       file_category:
         one: 'Dateikategorie'
         other: 'Dateikategorien'
-      group:
         one: 'Gruppe'
         other: 'Gruppen'
       member:

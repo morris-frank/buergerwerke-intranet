@@ -20,9 +20,5 @@ Member.create!(firstname: 'Daniel', lastname: 'Düsentrieb', email: 'd.duesentri
 Plant.create!(name: 'Dagoberts Solarpark', cooperative_id: 2, plant_type: 'solar', peak_power: 22.22, latitude: 53.2824, longitude: 9.7680)
 Plant.create!(name: 'Dagoberts Windpark', cooperative_id: 2, plant_type: 'wind', peak_power: 200, latitude: 53.2868, longitude: 9.7591)
 
-Group.create!(name: 'Hanseatische Genossen', visible: false) if Rails.env.development?
-Group.create!(name: 'Badische Solarfachgruppe', visible: true) if Rails.env.development?
-Group.create!(name: 'Schwäbischer Windpark', visible: true) if Rails.env.development?
-
 FileCategory.create!(name: 'Design Dateien') if Rails.env.development?
 FileCategory.create!(name: 'Texte') if Rails.env.development?

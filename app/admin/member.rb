@@ -1,7 +1,5 @@
 ActiveAdmin.register Member do
-    permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data, :password, :password_confirmation,
-      group_ids: [],
-      groups_user_ids: []
+    permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data, :password, :password_confirmation
 
     active_admin_import
 
@@ -23,7 +21,6 @@ ActiveAdmin.register Member do
       column :lastname
       column :email
       column :cooperative
-      column :groups
       column :is_coop_admin
       column :is_board_member
       column :is_editor
@@ -47,7 +44,6 @@ ActiveAdmin.register Member do
         f.input :firstname
         f.input :lastname
         f.input :cooperative
-        f.input :groups, :as => :select, :input_html => {:multiple => true}
         f.input :is_coop_admin
         f.input :is_board_member
         f.input :is_editor
