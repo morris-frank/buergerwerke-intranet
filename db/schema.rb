@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_28_170057) do
+ActiveRecord::Schema.define(version: 2018_07_28_172054) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_07_28_170057) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "zip"
-    t.boolean "has_tariff"
+    t.boolean "has_tariff", default: false, null: false
     t.index ["coopnumber"], name: "index_cooperatives_on_coopnumber", unique: true
     t.index ["email"], name: "index_cooperatives_on_email", unique: true
   end
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 2018_07_28_170057) do
   create_table "file_categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.integer "parent_id"
+    t.index ["parent_id"], name: "index_file_categories_on_parent_id"
   end
 
   create_table "fileclips", force: :cascade do |t|
@@ -62,8 +64,8 @@ ActiveRecord::Schema.define(version: 2018_07_28_170057) do
     t.integer "file_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_standard"
-    t.boolean "is_standard_with_tariff"
+    t.boolean "is_standard", default: false, null: false
+    t.boolean "is_standard_with_tariff", default: false, null: false
     t.index ["file_category_id"], name: "index_fileclips_on_file_category_id"
   end
 

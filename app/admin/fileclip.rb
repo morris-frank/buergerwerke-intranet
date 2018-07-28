@@ -33,7 +33,7 @@ ActiveAdmin.register Fileclip do
         f.input :name
         f.input :is_standard
         f.input :is_standard_with_tariff
-        f.input :file_category
+        f.input :file_category, :collection => FileCategory.paths_for_collection
         f.input :cooperatives, :as => :select, :input_html => {:multiple => true, :select_all => true}
         f.input :file, as: :file
       end

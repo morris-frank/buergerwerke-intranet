@@ -36,6 +36,7 @@ de:
         is_standard_with_tariff: 'Ist Standarddatei mit Tarif'
       file_category:
         <<: *commons
+        parent: 'Oberkategorie'
       plant:
         <<: *commons
         plant_type: 'Anlagentyp'
