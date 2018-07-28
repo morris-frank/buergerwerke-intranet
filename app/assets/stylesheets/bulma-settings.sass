@@ -1,25 +1,6 @@
-// Colors
-$primary: #f4950c
-$secondary: #B8161A
-$danger: #ea6359
-
-$black:        hsl(0, 0%, 4%)
-$black-bis:    hsl(0, 0%, 7%)
-$black-ter:    #2e2d30
-
-$grey-darker:  #424242
-$grey-dark:    #424242
-$grey:         #58585a
-$grey-light:   #9c9e9f
-$grey-lighter: hsl(0, 0%, 86%)
-
-$white-ter:    hsl(0, 0%, 95%)
-$white-bis:    hsl(0, 0%, 97%)
-$white:        hsl(0, 0%, 99%)
-
 // Typography
 @import 'https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700'
-$family-sans-serif: 'Archivo Narrow', sans-serif, Arial, Helvetica
+$family-sans-serif: $font
 $family-monospace: monospace
 $render-mode: optimizeLegibility
 
@@ -58,13 +39,8 @@ $radius-large: 3px
 $radius-rounded: 290486px
 $speed: 120ms
 
-$box-radius: $radius-small
-$box-shadow: 0 0 0 1px rgba($black, 0.1)
-
 // Flags
 $variable-columns: true
-$light: $white-ter
-$dark: $grey-darker
 
 // Invert colors
 $primary-invert: findColorInvert($primary)
@@ -73,13 +49,9 @@ $light-invert: $dark
 $dark-invert: $light
 
 // General colors
-$background: $white-ter
-
-$border: $grey-lighter
 $border-hover: $grey-light
 
 // Text colors
-$text: $grey
 $text-invert: findColorInvert($text)
 $text-light: $grey
 $text-strong: $grey-darker
