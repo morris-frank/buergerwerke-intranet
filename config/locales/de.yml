@@ -33,6 +33,8 @@ de:
         has_tariff: 'Bietet Tarif an'
       fileclip:
         <<: *commons
+        is_standard: 'Ist Standarddatei'
+        is_standard_with_tariff: 'Ist Standarddatei mit Tarif'
       file_category:
         <<: *commons
         <<: *commons
