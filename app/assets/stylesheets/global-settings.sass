@@ -1,7 +1,12 @@
 // This files contains the variables for the Admin and the Member area.
 // Naming convention comes from the Bulma settings.
 
-// Colors
+
+// Typography
+@import 'https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700'
+$font: 'Archivo Narrow', sans-serif, Arial, Helvetica
+
+// Color Scheme
 $primary: #f4950c
 $secondary: #B8161A
 $danger: #ea6359
@@ -20,16 +25,17 @@ $white-ter:    hsl(0, 0%, 95%)
 $white-bis:    hsl(0, 0%, 97%)
 $white:        hsl(0, 0%, 99%)
 
-// Typography
-@import 'https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700'
-$font: 'Archivo Narrow', sans-serif, Arial, Helvetica
-
-// General colors
+// General derived colors
 $background: $white-ter
 $light: $white-ter
 $dark: $grey-darker
 $text: $grey
+$text-strong: $grey-darker
 $border: $grey-lighter
 
-$box-radius: 0
+// Block design
+$radius-small: 0px
+$radius: 2px
+$radius-large: 3px
+$box-radius: $radius
 $box-shadow: 0 0 0 1px rgba($black, 0.1)

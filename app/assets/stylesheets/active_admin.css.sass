@@ -2,7 +2,6 @@
 
 // Map global Settings to Artic Admin Setting variables:
 $primary-color: $primary
-$border-radius: $box-radius
 $body-background: $background
 $header-border-color: $border
 $header-background: $dark
@@ -13,23 +12,21 @@ $sidebar-background: $grey-lighter
 $sidebar-item-hover-background: $grey-light
 $sidebar-nested-item-hover-background: $grey-light
 $text-color: $text
-$text-color-important: $danger
+$text-color-important: $text-strong
+$border-radius: $radius
 //
 
 @import "active_admin/mixins"
 @import "arctic_admin/base"
-@import 'https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700'
 
 body
-  font-family: 'Archivo Narrow', sans-serif, Arial, Helvetica
+  font-family: $font
 
 body.logged_in.new .input select, body.logged_in.edit .input select, body.logged_in.create .input select, body.logged_in.update .input select
     height: initial
 
-
 .selected-list-container
     width: 50%
-
 
 .header .site_title #site_title_image
     max-width: 100%
