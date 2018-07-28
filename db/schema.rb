@@ -52,12 +52,6 @@ ActiveRecord::Schema.define(version: 2018_07_25_132838) do
     t.index ["email"], name: "index_cooperatives_on_email", unique: true
   end
 
-  create_table "cooperatives_fileclips", id: false, force: :cascade do |t|
-    t.integer "fileclip_id", null: false
-    t.integer "cooperative_id", null: false
-    t.index ["fileclip_id", "cooperative_id"], name: "index_cooperatives_fileclips_on_fileclip_id_and_cooperative_id"
-  end
-
   create_table "file_categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -71,16 +65,24 @@ ActiveRecord::Schema.define(version: 2018_07_25_132838) do
     t.index ["file_category_id"], name: "index_fileclips_on_file_category_id"
   end
 
+  create_table "fileclips_cooperatives", force: :cascade do |t|
+    t.integer "fileclip_id"
+    t.integer "cooperative_id"
+    t.index ["cooperative_id"], name: "index_fileclips_cooperatives_on_cooperative_id"
+    t.index ["fileclip_id"], name: "index_fileclips_cooperatives_on_fileclip_id"
+  end
+
   create_table "fileclips_filetags", id: false, force: :cascade do |t|
     t.integer "fileclip_id", null: false
     t.integer "filetag_id", null: false
     t.index ["fileclip_id", "filetag_id"], name: "index_fileclips_filetags_on_fileclip_id_and_filetag_id"
   end
 
-  create_table "fileclips_groups", id: false, force: :cascade do |t|
-    t.integer "fileclip_id", null: false
-    t.integer "group_id", null: false
-    t.index ["fileclip_id", "group_id"], name: "index_fileclips_groups_on_fileclip_id_and_group_id"
+  create_table "fileclips_groups", force: :cascade do |t|
+    t.integer "fileclip_id"
+    t.integer "group_id"
+    t.index ["fileclip_id"], name: "index_fileclips_groups_on_fileclip_id"
+    t.index ["group_id"], name: "index_fileclips_groups_on_group_id"
   end
 
   create_table "filetags", force: :cascade do |t|
@@ -97,10 +99,11 @@ ActiveRecord::Schema.define(version: 2018_07_25_132838) do
     t.index ["name"], name: "index_groups_on_name", unique: true
   end
 
-  create_table "groups_users", id: false, force: :cascade do |t|
-    t.integer "group_id", null: false
-    t.integer "user_id", null: false
-    t.index [nil, "group_id"], name: "index_groups_users_on_member_id_and_group_id"
+  create_table "groups_users", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "group_id"
+    t.index ["group_id"], name: "index_groups_users_on_group_id"
+    t.index ["member_id"], name: "index_groups_users_on_member_id"
   end
 
   create_table "plants", force: :cascade do |t|
