@@ -1,5 +1,7 @@
 de:
   intranet: 'Intranet'
+  submit: 'Abschicken'
+  abort: 'abbrechen'
 
   activerecord:
     activerecord_commons: &commons
