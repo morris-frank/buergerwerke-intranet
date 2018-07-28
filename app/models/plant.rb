@@ -18,7 +18,7 @@ class Plant < ApplicationRecord
     # geocoded_by :address
     # after_validation :geocode
 
-    enum plant_type: [ :solar, :wind, :wasser ]
+    enum plant_type: [ :solar, :wind, :wasser, :biomasse, :bhkw, :speicher ]
 
     validates :name, presence: true
     validates :peak_power, allow_blank: true, numericality: { greater_than_or_equal_to: 1 }
