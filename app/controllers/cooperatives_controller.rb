@@ -63,6 +63,9 @@ class CooperativesController < ApplicationController
                     end
                 end
             end
+            if board[0] == ','
+                board = board[2..-1]
+            end
             return board
         end
 end
