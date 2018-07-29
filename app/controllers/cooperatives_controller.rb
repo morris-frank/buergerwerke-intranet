@@ -4,7 +4,8 @@ class CooperativesController < ApplicationController
     def index
         @cooperatives = Cooperative.order(:name)
         @markers = Cooperative.pluck(:name, :latitude, :longitude)
-        @markers = @markers.collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
+            .reject{|name, latitude, longitude| latitude == nil || longitude == nil}
+            .collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
     end
 
     def show

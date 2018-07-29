@@ -5,7 +5,8 @@ class PlantsController < ApplicationController
         @cooperative = Cooperative.find(params[:cooperative_id])
         @plants = @cooperative.plants.order('name ASC')
         @markers = @plants.pluck(:name, :latitude, :longitude)
-        @markers = @markers.collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
+            .reject{|name, latitude, longitude| latitude == nil || longitude == nil}
+            .collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
     end
 
     def show
