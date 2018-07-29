@@ -2,28 +2,9 @@
 
 <p class="title is-2"><%= yield :title %></p>
 
-<p class="title is-3"><%= @cooperative.name %></p>
-<% @cooperative_fileclips_grouped.each do |category, files| %>
-<p class="title is-4"><%= category.name %></p>
-<table class="table is-fullwidth is-striped is-hoverable">
-  <thead>
-    <tr>
-      <th>Name der <%= Fileclip.model_name.human %></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% files.each do |file| %>
-    <tr>
-      <td><% if file.name? %><%= file.name %><% else %><%= file.file.filename %><% end %></td>
-      <td>
-        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
-          <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
-          <span>Download</span>
-        </a>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-<% end %>
+<div class="tabs is-boxed">
+  <ul>
+  </ul>
+</div>
+
+<%= render partial: 'fileclips/categories', object:  @categories %>

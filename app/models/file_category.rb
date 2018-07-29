@@ -2,6 +2,8 @@ class FileCategory < ApplicationRecord
     has_many :fileclips
     belongs_to :parent, optional: true, class_name: "FileCategory"
 
+    scope :roots, -> { where(parent_id: nil) }
+
     validate :parent_not_same, on: :update
 
     def path
@@ -12,6 +14,14 @@ class FileCategory < ApplicationRecord
             _path = _current.name + '/' + _path
         end
         return _path
+    end
+
+    def children
+        return FileCategory.where('parent_id = ?', self.id)
+    end
+
+    def fileclips
+        return Fileclip.where('file_category_id = ?', self.id)
     end
 
     def self.paths_for_collection

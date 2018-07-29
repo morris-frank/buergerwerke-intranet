@@ -1,18 +1,23 @@
 <% title @category.name %>
 
 <p class="title is-2"><%= yield :title %></p>
-<p class="subtitle is-4"><%= Fileclip.model_name.human(count: 2) + ' der ' + @cooperative.name %></p>
 
 <div class="tabs is-boxed">
   <ul>
   <li>
-  <a href="<%= url_for controller: 'coop_files', action: 'index', cooperative_id: @cooperative.id %>">
-    <span class="icon"><i class="fas fa-chevron-left"></i></span>
-    <span>zurück</span>
-  </a>
+  <% if @category.parent_id.nil? %>
+    <a href="<%= url_for controller: 'fileclips', action: 'index' %>">
+  <% else %>
+    <a href="<%= url_for controller: 'fileclips', action: 'show', id: @category.parent_id %>">
+  <% end %>
+      <span class="icon"><i class="fas fa-chevron-left"></i></span>
+      <span>zurück</span>
+    </a>
   </li>
   </ul>
 </div>
+
+<%= render partial: 'fileclips/categories', object: @category.children %>
 
 <%= render "/table_filter" %>
 
