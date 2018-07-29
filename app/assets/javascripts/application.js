@@ -12,7 +12,7 @@
 //
 //= require polyfill
 //= require rails-ujs
-//= require activestorage
 //= require turbolinks
 //= require leaflet
-//= require list
+//= require table-filter
+//= require bulma

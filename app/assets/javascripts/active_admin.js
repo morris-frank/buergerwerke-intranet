@@ -1,4 +1,5 @@
 //= require arctic_admin/base
+//= require activestorage
 
 
 $(document).ready(function(){

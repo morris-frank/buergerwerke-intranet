@@ -17,3 +17,7 @@ Array.prototype.indexOf || (Array.prototype.indexOf = function(d, e) {
     }
     return -1
 });
+
+HTMLDocument.prototype.getAll || (HTMLDocument.prototype.getAll = function(s) {
+    return Array.prototype.slice.call(this.querySelectorAll(s), 0);
+});
