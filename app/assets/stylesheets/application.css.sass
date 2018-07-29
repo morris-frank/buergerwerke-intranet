@@ -24,12 +24,15 @@
 @import "sass/grid/_all"
 @import "sass/layout/_all"
 
-#error_explanation
-    margin: 2em 0 2em
+// General layouting. From Top(nav) to bottom (footer)
 
 .navbar
     +desktop
         box-shadow: 0 0 30px 0 $white
+
+    .navbar-burger
+        width: 2.4rem
+        height: 2.4rem
 
 body > section.section > div.container
     padding: 1.5em 0 0
@@ -38,9 +41,6 @@ body > section.section > div.container
         box-shadow: 0px 10px 20px 1px rgba($black,0.1)
         border-bottom-left-radius: 5px
         border-bottom-right-radius: 5px
-
-.section
-    padding: 0.5rem 1.5rem
 
 footer
     box-shadow: $box-shadow
@@ -55,11 +55,19 @@ footer
         &:hover
             color: $primary
 
+// Single elements/components, global
+
+.section
+    padding: 0.5rem 1.5rem
+
 .button.is-link
     background: linear-gradient(135deg, #fab41a 0%,#fab41a 40%,#f49503 60%,#f49503 100%)
     &:hover
         color: $black
         border-color: $grey-light
+
+#error_explanation
+    margin: 2em 0 2em
 
 a, .button
     transition: 300ms

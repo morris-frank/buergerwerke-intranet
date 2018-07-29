@@ -5,8 +5,8 @@ $primary-color: $primary
 $body-background: $background
 $header-border-color: $border
 $header-background: $dark
-$header-nav-action-hover-background: $grey-light
-$header-nav-action-active-background: $grey-light
+$header-nav-action-hover-background: $grey-lighter
+$header-nav-action-active-background: $grey-lighter
 $sidebar-border-color: $border
 $sidebar-background: $grey-lighter
 $sidebar-item-hover-background: $grey-light
@@ -24,6 +24,9 @@ body
 
 body.logged_in.new .input select, body.logged_in.edit .input select, body.logged_in.create .input select, body.logged_in.update .input select
     height: initial
+
+.header #utility_nav li
+    background: $background
 
 .selected-list-container
     width: 50%
