@@ -11,7 +11,7 @@ class FileCategory < ApplicationRecord
         _current = self
         until _current.parent.nil? do
             _current = _current.parent
-            _path = _current.name + '/' + _path
+            _path = _current.name + ' / ' + _path
         end
         return _path
     end

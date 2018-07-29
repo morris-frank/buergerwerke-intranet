@@ -69,24 +69,20 @@ footer
 #error_explanation
     margin: 2em 0 2em
 
-a, .button
-    transition: 300ms
-    &.card
+.filecategories
+    .card
+        transition: 300ms
         display: block
         &:hover
             color: $primary
+            border-color: $primary
+            box-shadow: 0 2px 3px rgba($primary, 0.4), 0 0 0 1px rgba($primary, 0.4)
             .card-header-title
                 color: $primary
-            border-color: $primary
-            box-shadow: 0 2px 3px rgba($primary, 0.1), 0 0 0 1px rgba($primary, 0.1)
             .card-header
-                box-shadow: 0 1px 2px rgba($primary, 0.1)
+                box-shadow: 0 1px 2px rgba($primary, 0.4)
         .card-content
             display: block
-
-.filecategories
-    .column
-        margin-bottom: 2em
 
 .tacaframe
     width: 800px

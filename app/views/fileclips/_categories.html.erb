@@ -1,13 +1,18 @@
 <div class="columns is-multiline filecategories">
 <% categories.each do |category| %>
-  <div class="column is-offset-2 is-3 is-paddingless">
+  <div class="column is-4">
     <a class="card" href="<%= url_for controller: 'fileclips', action: 'show', id: category.id %>">
       <span class="card-header">
-        <p class="card-header-title"><%= category.name %></p>
+        <p class="card-header-title">
+          <span class="icon"><i class="fas fa-folder"></i></span>
+          <%= category.name %>
+        </p>
       </span>
+      <% if category.description? %>
       <span class="card-content">
         <p><%= category.description %></p>
       </span>
+      <% end %>
     </a>
   </div>
 <% end %>
