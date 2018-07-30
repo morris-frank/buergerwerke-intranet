@@ -1,0 +1,27 @@
+<p>
+    <%= raw(@active_admin_import_model.hint) %>
+</p>
+<%= semantic_form_for @active_admin_import_model, url: {action: :do_import}, html: {multipart: true} do |f| %>
+    <div class="section">
+        <ul>
+            <li>Die Spalten müssen durch ',' Kommas getrennt sein.</li>
+            <li>Keine Leerzeichen um die Kommas herum.</li>
+            <li>Die Datei muss in UTF-8 Kodiert sein.</li>
+            <li>Die Datei muss Spaltenköpfe haben.</li>
+            <li>Die Reihenfolge der Spalten ist egal.</li>
+        </ul>
+
+        Die Datei sollte nur Spalten mit folgenden Namen enthalten:
+
+        <%= @active_admin_import_model.headers %>
+    </div>
+
+    <%= f.inputs do %>
+        <%= f.input :file, as: :file %>
+    <% end %>
+
+
+    <%= f.actions do %>
+        <%= f.action :submit, label: t("active_admin_import.import_btn"), button_html: {disable_with: t("active_admin_import.import_btn_disabled")} %>
+    <% end %>
+<% end %>
