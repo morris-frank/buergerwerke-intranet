@@ -1,16 +1,14 @@
 ActiveAdmin.register Cooperative do
     permit_params :email, :name, :street, :city, :description, :additional_board, :website, :coopnumber, :zip, :has_tariff
 
-    headers_rewrites =  { :"mail" => :email, :"Stadt" => :city, :"Homepage" => :website, :"Mitgliedernummer" => :coopnumber, :"Mitgliedsnummer" => :coopnumber, :"PLZ" => :zip, :"Postleitzahl" => :zip, :"HatTarif" => :has_tariff, :"MitTarif" => :has_tariff }
-
     active_admin_import validate: false,
-                        headers_rewrites: headers_rewrites,
+                        headers_rewrites: { :"Name" => :name, :"mail" => :email, :"Stadt" => :city, :"Homepage" => :website, :"Mitgliedernummer" => :coopnumber, :"Mitgliedsnummer" => :coopnumber, :"PLZ" => :zip, :"Postleitzahl" => :zip, :"HatTarif" => :has_tariff, :"MitTarif" => :has_tariff },
                         csv_options: {col_sep: "," },
                         timestamps: true,
                         template: 'activeadmin/import',
                         template_object: ActiveAdminImport::Model.new(
                           force_encoding: 'UTF-8',
-                          headers: (headers_rewrites.keys + headers_rewrites.values).uniq.to_s.gsub!(':', '')
+                          headers: 'Name, (mail, email), (Stadt, city), (Homepage, website), (Mitgliedernummer, coopnumber, Mitgliedsnummer), (PLZ, zip, Postleitzahl), (HatTarif, has_tariff, MitTarif)'
                         )
 
     index do

@@ -1,7 +1,7 @@
 ActiveAdmin.register Member do
     permit_params :email, :cooperative_id, :firstname, :lastname, :is_coop_admin, :is_board_member, :is_editor, :can_see_customer_data, :password, :password_confirmation
 
-    active_admin_import
+    # active_admin_import
 
     # controller do
     #   def create
