@@ -13,8 +13,25 @@ class Cooperative < ApplicationRecord
     end
 
     def last_customer_update
-        self.customer_data.first.created_at
+        self.customer_data.empty? ? false : self.customer_data.first.created_at
     end
+
+    def address
+        address = ''
+        if street?
+            address += street + ', '
+        end
+        if  zip?
+            address += zip + ', '
+        end
+        if city?
+            address += city + ', '
+        end
+        address += 'Germany'
+    end
+
+    geocoded_by :address
+    after_validation :geocode
 
     validates :name, presence: true
     validates :email, presence: true

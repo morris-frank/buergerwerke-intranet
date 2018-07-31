@@ -15,8 +15,8 @@ class Plant < ApplicationRecord
         address += 'Germany'
     end
 
-    # geocoded_by :address
-    # after_validation :geocode
+    geocoded_by :address
+    after_validation :geocode
 
     enum plant_type: [ :solar, :wind, :wasser, :biomasse, :bhkw, :speicher ]
 
