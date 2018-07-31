@@ -1,10 +1,11 @@
 <p class="title is-2">Hallo <%= current_member.firstname %> <%= current_member.lastname %>,</p>
 
-<p class="title is-5">Im <%= Rails.configuration.site_title %> finden sie:</p>
+<p class="title is-5">Im <%= Rails.configuration.site_title %> finden Sie:</p>
 
 <ul>
-    <li>Unter <%= link_to 'Meine ' + Cooperative.model_name.human, cooperative_path(current_member.cooperative) %> finden sie Informationen zu Ihrer eigenen Genossenschaft.</li>
-    <li>Unter <%= link_to Cooperative.model_name.human(count: 2), cooperatives_path %> eine Auflistung aller Eingetragener Genossenschaften.</li>
+    <li>Unter <%= link_to 'Meine ' + Cooperative.model_name.human, cooperative_path(current_member.cooperative) %> finden Sie Informationen zu Ihrer eigenen Genossenschaft.</li>
+    <li>Unter <%= link_to Cooperative.model_name.human(count: 2), cooperatives_path %> finden Sie eine Auflistung aller Eingetragener Genossenschaften.</li>
+    <li>Unter <%= link_to Fileclip.model_name.human(count: 2), fileclips_path %> finden Sie Dateien der <%= current_member.cooperative.name %>.</li>
 </ul>
 
 <p class="title is-4" style="margin-top:3em">Neueste Dateien<p>

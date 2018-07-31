@@ -8,8 +8,8 @@ de:
     file_error: "Fehler: %{message}"
     file_format_error: "Sie können nur valide CSV Dateien importieren"
     file_empty_error: "Sie können keine leere Datei importieren"
-    no_file_error: "Bitte wählen sie eine Datei für den Upload aus"
-    details: "Bitte wählen sie eine Datei aus"
+    no_file_error: "Bitte wählen Sie eine Datei für den Upload aus"
+    details: "Bitte wählen Sie eine Datei aus"
     imported:
       one: "Erfolgreich 1 %{model} importiert"
       other: "Erfolgreich %{count} %{plural_model} importiert"
