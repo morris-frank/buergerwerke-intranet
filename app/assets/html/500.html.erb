@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>500 - Etwas ist schiefgelaufen.</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel='shortcut icon' href='<%= image_url('favicon.ico') %>' type='image/x-icon'>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+
+</head>
+
+<body class="rails-default-error-page">
+  <nav class="navbar is-dark is-spaced" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <%= image_tag "logo_header.png", alt: Rails.configuration.site_title, width: "112", height: "28" %>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="message is-danger">
+        <div class="message-header">
+          <h1>Etwas ist schiefgelaufen.</h1>
+        </div>
+        <div class="message-body">
+          Bitte melden Sie diesen Vorfall dem <a href="mailto:info@buergerwerke.de?subject=Fehler im Intranet entdeckt.">Administrator</a>.
+        </div>
+      </div>
+     <p><a href="https://intranet.buergerwerke.de">Zurück zur Startseite.</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="level">
+        <div class="level-item">
+          <div>
+            <p>Bürgerwerke eG</p>
+            <p>Hans-Bunte-Straße 8-10</p>
+            <p>69123 Heidelberg</p>
+          </div>
+        </div>
+
+        <div class="level-item">
+          <div>
+            <p><a><span class="icon"><i class="fas fa-phone"></i></span><span>+49 (0) 6221 39289 20</span></a></p>
+            <p><a><span class="icon"><i class="fas fa-envelope"></i></span><span>info@buergerwerke.de</span></a></p>
+          </div>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>

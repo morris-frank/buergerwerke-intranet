@@ -80,3 +80,6 @@ gem 'rubyzip'
 
 # To geocode plants and cooperatives addresses
 gem 'geocoder'
+
+# To generate non-digest Error pages
+gem "non-digest-assets"
