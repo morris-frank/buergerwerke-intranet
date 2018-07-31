@@ -34,7 +34,21 @@ de:
         resend_confirmation_instructions: Anleitung zur Bestätigung noch mal schicken
       send_instructions: Sie erhalten in wenigen Minuten eine E-Mail, mit der Sie Ihre Registrierung bestätigen können.
       send_paranoid_instructions: Falls Ihre E-Mail-Adresse in unserer Datenbank existiert, erhalten Sie in wenigen Minuten eine E-Mail, mit der Sie Ihre Registrierung bestätigen können.
+    invitations:
+      send_instructions: "An invitation email has been sent to %{email}."
+      invitation_token_invalid: "The invitation token provided is not valid!"
+      updated: "Your password was set successfully. You are now signed in."
+      updated_not_active: "Your password was set successfully."
+      no_invitations_remaining: "No invitations remaining"
+      invitation_removed: "Your invitation was removed."
+      new:
+        header: "Send invitation"
+        submit_button: "Send an invitation"
+      edit:
+        header: "Set your password"
+        submit_button: "Set my password"
     failure:
+      invited: "You have a pending invitation, accept it to finish creating your account."
       already_authenticated: Sie sind bereits angemeldet.
       inactive: Ihr Account ist nicht aktiv.
       invalid: "%{authentication_keys} oder Passwort ungültig."
@@ -71,6 +85,13 @@ de:
         instruction: 'Folgen Sie dem untenstehenden Link, um Ihr Konto zu entsperren:'
         message: Ihr Konto wurde aufgrund einer großen Anzahl von fehlgeschlagenen Anmeldeversuchen gesperrt.
         subject: Anleitung für die Account-Freischaltung
+      invitation_instructions:
+        subject: "Invitation instructions"
+        hello: "Hello %{email}"
+        someone_invited_you: "Someone has invited you to %{url}, you can accept it through the link below."
+        accept: "Accept invitation"
+        accept_until: "This invitation will be due in %{due_date}."
+        ignore: "If you don't want to accept the invitation, please ignore this email. Your account won't be created until you access the link above and set your password."
     omniauth_callbacks:
       failure: Sie konnten nicht mit Ihrem %{kind}-Account angemeldet werden, weil "%{reason}".
       success: Sie haben sich erfolgreich mit Ihrem %{kind}-Account angemeldet.

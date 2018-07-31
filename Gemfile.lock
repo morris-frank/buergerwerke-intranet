@@ -114,6 +114,9 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.6.4)
       devise (>= 4.4)
+    devise_invitable (1.7.4)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
     erubi (1.7.1)
     exception_notification (4.2.2)
       actionmailer (>= 4.0, < 6)
@@ -294,6 +297,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-i18n
+  devise_invitable
   exception_notification
   geocoder
   leaflet-rails

@@ -57,6 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # for user authentication
 gem 'devise'
 gem 'devise-i18n'
+gem 'devise_invitable'
 
 # active admin integration
 gem 'activeadmin'
