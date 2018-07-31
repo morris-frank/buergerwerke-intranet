@@ -1,5 +1,5 @@
 class Member < User
-  # devise :confirmable
+  devise :confirmable
   belongs_to :cooperative
 
   before_save :inheritate_roles
