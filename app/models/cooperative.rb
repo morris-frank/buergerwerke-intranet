@@ -1,12 +1,20 @@
 class Cooperative < ApplicationRecord
     has_many :members
     has_many :plants
+    has_many :customer_data
     has_many :fileclips_cooperatives
     has_many :fileclips, through: :fileclips_cooperatives
-    has_one_attached :customer_data_xls
     has_one_attached :customer_data_pdf
 
     accepts_nested_attributes_for :fileclips
+
+    def customer_count
+        self.customer_data.count
+    end
+
+    def last_customer_update
+        self.customer_data.first.created_at
+    end
 
     validates :name, presence: true
     validates :email, presence: true

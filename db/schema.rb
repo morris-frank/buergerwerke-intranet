@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_28_172054) do
+ActiveRecord::Schema.define(version: 2018_07_31_095000) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,42 @@ ActiveRecord::Schema.define(version: 2018_07_28_172054) do
     t.boolean "has_tariff", default: false, null: false
     t.index ["coopnumber"], name: "index_cooperatives_on_coopnumber", unique: true
     t.index ["email"], name: "index_cooperatives_on_email", unique: true
+  end
+
+  create_table "customer_data", force: :cascade do |t|
+    t.string "ra_company"
+    t.string "ra_company_co"
+    t.string "ra_titel"
+    t.string "ra_firstname"
+    t.string "ra_lastname"
+    t.string "ra_street"
+    t.string "ra_zip"
+    t.string "ra_city"
+    t.string "ra_mail"
+    t.string "ls_firstname"
+    t.string "ls_lastname"
+    t.string "ls_street"
+    t.string "ls_zip"
+    t.string "ls_city"
+    t.string "meter_number"
+    t.integer "consumption_ht"
+    t.integer "consumption_nt"
+    t.string "meter_process"
+    t.date "meter_read_date"
+    t.integer "cooperative_id"
+    t.string "t_id"
+    t.boolean "accepted_privacy_statement"
+    t.string "status"
+    t.date "deliver_from"
+    t.date "free_from"
+    t.string "provider"
+    t.string "customer_origin"
+    t.integer "customer_number"
+    t.date "input_date"
+    t.integer "running_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cooperative_id"], name: "index_customer_data_on_cooperative_id"
   end
 
   create_table "file_categories", force: :cascade do |t|

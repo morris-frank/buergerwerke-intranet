@@ -23,7 +23,7 @@ ActiveAdmin.register_page "Customer Data" do
       Zip::File.open(uploaded_file.tempfile) do |zip_file|
         zip_file.each do |entry|
           # Match the filename and extract Projectnumber of Coop and the file extension:
-          matches = /(?<coopnumber>[MP]\d{2})_.*(?<extension>xls|pdf)/.match(entry.name)
+          matches = /(?<coopnumber>[MP]\d{3})_.*(?<extension>csv|pdf)/.match(entry.name)
           # If invalid filename, ignore:
           if !matches
             next
@@ -43,7 +43,43 @@ ActiveAdmin.register_page "Customer Data" do
           if matches['extension'] == 'pdf'
             coop.customer_data_pdf.attach(io: File.open(extract_filepath + 'pdf', 'rb'), filename: filename, content_type: 'application/pdf')
           else
-            coop.customer_data_xls.attach(io: File.open(extract_filepath + 'xls', 'rb'), filename: filename, content_type: 'application/vnd.ms-excel')
+            CustomerDatum.where('cooperative_id = ?', coop.id).delete_all
+            CSV.foreach(extract_filepath + 'csv', headers: true, col_sep: ';') do |row|
+              row = row.to_h
+              db_row = {
+                  :ra_company => row['RA Firma'],
+                  :ra_company_co => row['RA c/o bei Firma'],
+                  :ra_titel => (row['RA Anrede'] || '') + (row['RA Titel'] ? ' ' + row['RA Titel'] : ''),
+                  :ra_firstname => row['RA Vorname'],
+                  :ra_lastname => row['RA Lastname'],
+                  :ra_street => (row['RA Straße'] ? row['RA Straße'] + ' ' : '') + (row['RA Hausnummer'] || '') + (row['RA Hausnummerergänzung'] || ''),
+                  :ra_zip => row['RA Postleitzahl'],
+                  :ra_city => row['RA Ort'],
+                  :ra_mail => row['RA E-Mailadresse'],
+                  :ls_firstname => row['LS Vorname'],
+                  :ls_lastname => row['LS Lastname'],
+                  :ls_street => (row['LS Straße'] ? row['LS Straße'] + ' ' : '') + (row['LS Hausnummer'] || '') + (row['LS Hausnummerergänzung'] || ''),
+                  :ls_zip => row['LS Postleitzahl'],
+                  :ls_city => row['LS Ort'],
+                  :meter_number => row['Zählernummer'],
+                  :consumption_ht => row['Verbrauch kWh/a HT'],
+                  :consumption_nt => row['Verbrauch kWh/a NT'],
+                  :meter_process => row['Zählverfahren (SLP/RLM)'],
+                  :meter_read_date => row['Ablesedatum'],
+                  :cooperative_id => coop.id,
+                  :t_id => row['T-ID'],
+                  :accepted_privacy_statement => row['Einverstanden mit Datenschutzerklärung'],
+                  :status => row['Status'],
+                  :deliver_from => row['Liefern ab'],
+                  :free_from => row['Frei zum'],
+                  :provider => row['Netzbetreiber aus Exportliste'],
+                  :customer_origin => (row['Kundenherkunft'] || '') + (row['Kundenherkunft Sonstiges'] ? ' ' + row['Kundenherkunft Sonstiges'] : ''),
+                  :customer_number => row['Kundennummer'],
+                  :input_date => row['Datum Dateneingabe'],
+                  :running_number => row['Laufende Nummer']
+              }
+              CustomerDatum.create!(db_row)
+            end
           end
         end
       end

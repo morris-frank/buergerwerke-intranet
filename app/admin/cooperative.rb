@@ -18,6 +18,7 @@ ActiveAdmin.register Cooperative do
       column :name
       column :has_tariff
       column :city
+      column :customer_count
       actions
     end
 
@@ -45,11 +46,8 @@ ActiveAdmin.register Cooperative do
             link_to 'Anzeigen', rails_blob_path(ad.customer_data_pdf)
           end
         end
-        row :customer_data_xls do |ad|
-          if ad.customer_data_xls.attached?
-            link_to 'Anzeigen', rails_blob_path(ad.customer_data_xls)
-          end
-        end
+        row :customer_count
+        row :last_customer_update
       end
     end
 
