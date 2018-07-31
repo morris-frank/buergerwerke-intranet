@@ -7,14 +7,22 @@
     <li>Unter <%= link_to Cooperative.model_name.human(count: 2), cooperatives_path %> eine Auflistung aller Eingetragener Genossenschaften.</li>
 </ul>
 
-<p class="title is-4" style="margin-top:3em">Neueste Änderungen<p>
-<ul>
-  <% @newest_coop_files.each do |file| %>
-      <li><%= file.updated_at.strftime('%a %b %d %H:%M') %>: <i style="margin: 0 2em"><%= file.name %></i>
-        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" class="button is-link is-small">
-          <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
-          <span>Download</span>
+<p class="title is-4" style="margin-top:3em">Neueste Dateien<p>
+<table class="table is-fullwidth is-striped is-hoverable is-filterable">
+  <tbody>
+  <% current_member.cooperative.fileclips.last(5).each do |file| %>
+    <tr>
+      <td>
+        <a href="<%= rails_blob_path(file.file, disposition: "attachment") %>" download>
+          <span class="icon"><i class="fas fa-cloud-download-alt" aria-hidden="true"></i></span>
+          <% if file.name? %><%= file.name %><% else %><%= file.file.filename %><% end %>
         </a>
-      </li>
+      </td>
+      <td>
+        <span class="icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
+        <span><%= l file.file.created_at, format: :short %></span>
+      </td>
+    </tr>
   <% end %>
-</ul>
+  </tbody>
+</table>
