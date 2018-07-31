@@ -2,7 +2,6 @@
 
 <p class="title is-2"><%= yield :title %></p>
 
-<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 
 <div class="tabs is-boxed">
   <ul>
@@ -30,35 +29,39 @@
 </object>
 <% end %>
 
-<% if @cooperative.customer_data_xls.attached? %>
-<div id="customer-data-table-container" class="content">
+<%= render "/table_filter" %>
+
+<div class="tabs is-fullwidth">
+  <ul>
+  <li>
+    Anzahl Kundendaten: <%= @cooperative.customer_count %>
+  </li>
+  <li>
+    Letzte Aktualisierung Kundendaten: <%= l @cooperative.last_customer_update %>
+  </li>
+  </ul>
 </div>
-
-<% content_for :head do %>
-<script>
-var url = "<%= rails_blob_path(@cooperative.customer_data_xls) %>";
-
-/* set up async GET request */
-var req = new XMLHttpRequest();
-req.open("GET", url, true);
-req.responseType = "arraybuffer";
-
-req.onload = function(e) {
-  var data = new Uint8Array(req.response);
-  var workbook = XLSX.read(data, {type:"array"});
-
-  var worksheet = workbook.Sheets[workbook.SheetNames[1]];
-  var container = document.getElementById('customer-data-table-container');
-  container.innerHTML = XLSX.utils.sheet_to_html(worksheet);
-}
-
-req.send();
-</script>
-<% end %>
-<% end %>
-
-<% if !@cooperative.customer_data_pdf.attached? and !@cooperative.customer_data_xls.attached? %>
-<div class="notification is-danger">
-Keine Kundendaten verfügbar.
-</div>
-<% end %>
+<table class="table is-filterable is-fullwidth is-striped is-hoverable">
+  <thead>
+    <tr>
+      <td>LS Vorname</td>
+      <td>LS Lastname</td>
+      <td>LS Ort</td>
+      <td>Zählernummer</td>
+      <td>Status</td>
+      <td>Liefern ab</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @cooperative.customer_data.each do |customer_datum| %>
+    <tr>
+      <td><%= customer_datum.ls_firstname %></td>
+      <td><%= customer_datum.ls_lastname %></td>
+      <td><%= customer_datum.ls_city %></td>
+      <td><%= customer_datum.meter_number %></td>
+      <td><%= customer_datum.status %></td>
+      <td><%= customer_datum.deliver_from %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

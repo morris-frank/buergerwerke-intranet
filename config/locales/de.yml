@@ -28,8 +28,9 @@ de:
         additional_board: 'Zusätzliche Vorstandmitglieder'
         coopnumber: 'Mitgliedernummer'
         customer_data_pdf: 'Kundendaten PDF'
-        customer_data_xls: 'Kundendaten XLS'
         has_tariff: 'Bietet Tarif an'
+        customer_count: 'Kundenanzahl'
+        last_customer_update: 'Letzte Aktualisierung der Kundendaten'
       fileclip:
         <<: *commons
         is_standard: 'Ist Standarddatei'
