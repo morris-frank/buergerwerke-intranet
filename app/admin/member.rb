@@ -3,17 +3,6 @@ ActiveAdmin.register Member do
 
     # active_admin_import
 
-    controller do
-      def create
-        @member = Member.invite!(permitted_params[:member], current_admin)
-        if @member.new_record?
-          render action: 'new'
-        else
-          redirect_to resource_path(@member), notice: 'Member invited successfully!'
-        end
-      end
-    end
-
     index do
       selectable_column
       id_column
