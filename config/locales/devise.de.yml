@@ -87,8 +87,8 @@ de:
         subject: Anleitung für die Konto-Freischaltung
       invitation_instructions:
         subject: "Einladung zum Bürgerwerke-Intranet"
-        hello: "Hallo EnergiebürgerIn,"
-        someone_invited_you: "Sie wurden mit der E-Mail: %{email} zum Bürgerwerke-Intranet %{url} eingeladen. Bitte nehmen Sie die Einladung an, indem Sie auf folgenden Link klicken: "
+        hello: "Hallo EnergiebürgerIn - %{email},"
+        someone_invited_you: "Sie wurden zum Bürgerwerke-Intranet %{url} eingeladen. Bitte nehmen Sie die Einladung an, indem Sie auf folgenden Link klicken: "
         accept: "Einladung annehmen"
         accept_until: "Diese Einladung ist gültig bis: %{due_date}."
         ignore: "Wenn Sie die Einladung nicht annehmen möchten, ignorieren Sie bitte diese E-Mail. Ihr Konto wird nicht eingerichtet, bis Sie den Einladungslink genutzt und Ihr Passwort gesetzt haben."
