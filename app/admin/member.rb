@@ -35,6 +35,7 @@ ActiveAdmin.register Member do
       column :is_board_member
       column :is_editor
       column :can_see_customer_data
+      column :invitation_accepted_at?
       actions
     end
 
@@ -47,6 +48,7 @@ ActiveAdmin.register Member do
     filter :is_board_member
     filter :is_editor
     filter :can_see_customer_data
+    filter :invitation_accepted_at
 
     form do |f|
       f.inputs Member.model_name.human + " einladen #{current_admin.inspect}" do

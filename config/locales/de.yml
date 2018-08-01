@@ -51,6 +51,8 @@ de:
         is_board_member: 'Vorstand'
         is_editor: 'Redakteurin'
         can_see_customer_data: 'Kundendatenberechtigung'
+        invitation_accepted_at?: 'Einladung akzeptiert'
+        invitation_accepted_at: 'Einladung akzeptiert'
     models:
       admin:
         one: 'Administrator'

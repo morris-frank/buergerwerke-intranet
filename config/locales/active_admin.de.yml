@@ -2,6 +2,10 @@ de:
   active_admin:
     customer_data: 'Kundendaten'
     powered_by: "Adminpanel basiert auf %{active_admin} %{version}"
+    filters:
+      predicates:
+        from: 'von'
+        to: 'bis'
 
   active_admin_import:
     file: 'Datei'
