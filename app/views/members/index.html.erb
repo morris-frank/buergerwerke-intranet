@@ -23,12 +23,7 @@
       <th>Vorname</th>
       <th>Nachname</th>
       <th>E-Mail</th>
-      <th>Vorstand</th>
-      <% if is_admin %>
-      <th>Redakteur</th>
-      <th>Kundendaten</th>
-      <th></th>
-      <% end %>
+      <th>Vorstand<% if is_admin %> | Redakteur | Kundendaten<% end %></th>
     </tr>
   </thead>
   <tbody>
@@ -37,30 +32,30 @@
       <td><%= member.firstname %></td>
       <td><%= member.lastname %></td>
       <td><%= member.email %></td>
+      <td>
       <% if !is_admin %>
-      <td><span class="icon has-text-info">
-        <% if member.is_board_member %>
-          <i class="fas fa-check-square"></i>
-        <% else %>
-          <i class="fas fa-square"></i>
-        <% end %>
-      </span></td>
+        <span class="icon has-text-info">
+          <% if member.is_board_member %>
+            <i class="fas fa-check-square"></i>
+          <% else %>
+            <i class="fas fa-square"></i>
+          <% end %>
+        </span>
       <% else %>
-      <%= form_with model: member, url: cooperative_member_path(@cooperative.id, member.id), local: true do |form| %>
-      <td>
-        <%= form.check_box :is_board_member, class: 'checkbox' %>
-      </td>
-      <td>
-        <%= form.check_box :is_editor, class: 'checkbox' %>
-      </td>
-      <td>
-        <%= form.check_box :can_see_customer_data, class: 'checkbox' %>
-      </td>
-      <td>
-        <%= form.submit 'Ändern', class: 'button is-link is-small' %>
-      </td>
+        <%= form_with model: member, url: cooperative_member_path(@cooperative.id, member.id), local: true do |form| %>
+          <span style="width: 5rem; display:inline-block;">
+          <%= form.check_box :is_board_member, class: 'checkbox' %>
+          <% if member.is_coop_admin %>
+            <span class="tag is-danger">Admin</span>
+          <% else %>
+            <%= form.check_box :is_editor, class: 'checkbox' %>
+            <%= form.check_box :can_see_customer_data, class: 'checkbox' %>
+          <% end %>
+          </span>
+          <%= form.submit 'Ändern', class: 'button is-link is-small' %>
+        <% end %>
       <% end %>
-      <% end %>
+      </td>
     </tr>
   <% end %>
   </tbody>
