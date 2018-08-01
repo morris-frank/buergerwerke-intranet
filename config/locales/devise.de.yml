@@ -35,20 +35,20 @@ de:
       send_instructions: Sie erhalten in wenigen Minuten eine E-Mail, mit der Sie Ihre Registrierung bestätigen können.
       send_paranoid_instructions: Falls Ihre E-Mail-Adresse in unserer Datenbank existiert, erhalten Sie in wenigen Minuten eine E-Mail, mit der Sie Ihre Registrierung bestätigen können.
     invitations:
-      send_instructions: "An invitation email has been sent to %{email}."
-      invitation_token_invalid: "The invitation token provided is not valid!"
-      updated: "Your password was set successfully. You are now signed in."
-      updated_not_active: "Your password was set successfully."
-      no_invitations_remaining: "No invitations remaining"
-      invitation_removed: "Your invitation was removed."
+      send_instructions: "Eine Einladungsmail wurde an %{email} versendet."
+      invitation_token_invalid: "Der eingegebene Einladungsschlüssel ist nicht gültig!"
+      updated: "Ihr Passwort wurde erfolgreich gesetzt. Sie sind jetzt eingeloggt."
+      updated_not_active: "Ihr Passwort wurde erfolgreich gesetzt."
+      no_invitations_remaining: "Keine offenen Einladungen"
+      invitation_removed: "Ihre Einladung wurde zurückgenommen."
       new:
-        header: "Send invitation"
-        submit_button: "Send an invitation"
+        header: "Sende Einladung"
+        submit_button: "Einladung senden"
       edit:
-        header: "Set your password"
-        submit_button: "Set my password"
+        header: "Bitte geben Sie Ihr Passwort ein"
+        submit_button: "Passwort setzen"
     failure:
-      invited: "You have a pending invitation, accept it to finish creating your account."
+      invited: "Sie haben eine ausstehende Einladung, bitte akzeptieren Sie die Einladung um die Einrichtung Ihres Accounts abzuschließen."
       already_authenticated: Sie sind bereits angemeldet.
       inactive: Ihr Account ist nicht aktiv.
       invalid: "%{authentication_keys} oder Passwort ungültig."
@@ -84,14 +84,14 @@ de:
         greeting: Hallo %{recipient}!
         instruction: 'Folgen Sie dem untenstehenden Link, um Ihr Konto zu entsperren:'
         message: Ihr Konto wurde aufgrund einer großen Anzahl von fehlgeschlagenen Anmeldeversuchen gesperrt.
-        subject: Anleitung für die Account-Freischaltung
+        subject: Anleitung für die Konto-Freischaltung
       invitation_instructions:
-        subject: "Invitation instructions"
-        hello: "Hello %{email}"
-        someone_invited_you: "Someone has invited you to %{url}, you can accept it through the link below."
-        accept: "Accept invitation"
-        accept_until: "This invitation will be due in %{due_date}."
-        ignore: "If you don't want to accept the invitation, please ignore this email. Your account won't be created until you access the link above and set your password."
+        subject: "Einladung zum Bürgerwerke-Intranet"
+        hello: "Hallo EnergiebürgerIn,"
+        someone_invited_you: "Sie wurden mit der E-Mail: %{email} zum Bürgerwerke-Intranet %{url} eingeladen. Bitte nehmen Sie die Einladung an, indem Sie auf folgenden Link klicken: "
+        accept: "Einladung annehmen"
+        accept_until: "Diese Einladung ist gültig bis: %{due_date}."
+        ignore: "Wenn Sie die Einladung nicht annehmen möchten, ignorieren Sie bitte diese E-Mail. Ihr Konto wird nicht eingerichtet, bis Sie den Einladungslink genutzt und Ihr Passwort gesetzt haben."
     omniauth_callbacks:
       failure: Sie konnten nicht mit Ihrem %{kind}-Account angemeldet werden, weil "%{reason}".
       success: Sie haben sich erfolgreich mit Ihrem %{kind}-Account angemeldet.
@@ -119,7 +119,7 @@ de:
         title: "%{resource} bearbeiten"
         unhappy: Unglücklich?
         update: Aktualisieren
-        we_need_your_current_password_to_confirm_your_changes: wir benötigen Ihr aktuelles Passwort, um die Änderung zu bestätigen
+        we_need_your_current_password_to_confirm_your_changes: Wir benötigen Ihr aktuelles Passwort, um die Änderung zu bestätigen
       new:
         sign_up: Registrieren
       signed_up: Sie haben sich erfolgreich registriert.
