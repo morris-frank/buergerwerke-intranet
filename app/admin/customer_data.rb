@@ -78,7 +78,9 @@ ActiveAdmin.register_page "Customer Data" do
                   :input_date => row['Datum Dateneingabe'],
                   :running_number => row['Laufende Nummer']
               }
-              CustomerDatum.create!(db_row)
+              if db_row.any?
+                CustomerDatum.create!(db_row)
+              end
             end
           end
         end
