@@ -41,27 +41,23 @@
   </li>
   </ul>
 </div>
+<div class="table-container">
 <table class="table is-filterable is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
-      <td>LS Vorname</td>
-      <td>LS Nachname</td>
-      <td>LS Ort</td>
-      <td>Zählernummer</td>
-      <td>Status</td>
-      <td>Liefern ab</td>
+      <% @cd_attributes.each do |cd_attribute| %>
+      <th><%= CustomerDatum.human_attribute_name(cd_attribute) %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
-  <% @cooperative.customer_data.each do |customer_datum| %>
+  <% @cooperative.customer_data.each do |cd| %>
     <tr>
-      <td><%= customer_datum.ls_firstname %></td>
-      <td><%= customer_datum.ls_lastname %></td>
-      <td><%= customer_datum.ls_city %></td>
-      <td><%= customer_datum.meter_number %></td>
-      <td><%= customer_datum.status %></td>
-      <td><%= customer_datum.deliver_from %></td>
+      <% @cd_attributes.each do |cd_attribute| %>
+      <td><%= cd.read_attribute(cd_attribute) %></td>
+      <% end %>
     </tr>
   <% end %>
   </tbody>
 </table>
+</div>
