@@ -14,6 +14,16 @@ ActiveAdmin.register Member do
       end
     end
 
+
+    member_action :reinvite do
+      resource.invite!(current_admin)
+      redirect_to resource_path(resource), notice: "Benutzer erneut eingeladen."
+    end
+
+    action_item :reinvite, only: :show do
+      link_to 'Benutzer neu einladen', reinvite_admin_member_path(member)
+    end
+
     index do
       selectable_column
       id_column
