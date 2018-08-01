@@ -54,15 +54,16 @@ de:
         invitation_accepted_at?: 'Einladung akzeptiert'
         invitation_accepted_at: 'Einladung akzeptiert'
       customer_datum:
+        <<: *commons
         ra_company: 'RA Firma'
         ra_company_co: 'RA c/o bei Firma'
         ra_firstname: 'RA Vorname'
-        ra_lastname: 'RA Lastname'
+        ra_lastname: 'RA Nachname'
         ra_zip: 'RA Postleitzahl'
         ra_city: 'RA Ort'
         ra_mail: 'RA E-Mailadresse'
         ls_firstname: 'LS Vorname'
-        ls_lastname: 'LS Lastname'
+        ls_lastname: 'LS Nachname'
         ls_zip: 'LS Postleitzahl'
         ls_city: 'LS Ort'
         meter_number: 'Zählernummer'
