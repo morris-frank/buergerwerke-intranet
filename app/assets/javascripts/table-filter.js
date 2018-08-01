@@ -1,8 +1,8 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
-	var filters = document.getAll('.table-filter');
 	var tables = document.getAll('table.is-filterable');
+	var filters = document.getAll('.table-filter');
 
 	if (filters.length > 0) setFilterListeners();
 
@@ -28,4 +28,24 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
+	var tags = document.getAll('.table-select .tag');
+
+	if (tags.length > 0) setSelectsListeners();
+
+	function setSelectsListeners () {
+		tags.forEach(function (tag) {
+			tag.addEventListener('click', function () {
+				toggle_tag(tag);
+			});
+		});
+	}
+
+	function toggle_tag (tag) {
+		tag.classList.toggle('is-primary');
+		var target = '.' + tag.dataset.target;
+		var active = tag.classList.contains('is-primary');
+		document.getAll(target).forEach(function (col) {
+			col.style.visibility=active?"":"collapse";
+		});
+	}
 });

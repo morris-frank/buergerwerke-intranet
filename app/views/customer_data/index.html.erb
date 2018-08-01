@@ -41,20 +41,36 @@
   </li>
   </ul>
 </div>
+
+<div class="tags table-select">
+  <% @attributes.each do |attribute| %>
+  <span data-target="<%= attribute %>" class="tag<%= (@active_attributes.include? attribute) ? ' is-primary' : '' %>">
+    <%= CustomerDatum.human_attribute_name(attribute) %>
+  </span>
+  <% end %>
+</div>
+
 <div class="table-container">
 <table class="table is-filterable is-fullwidth is-striped is-hoverable">
+  <colgroup>
+    <% @attributes.each do |attribute| %>
+    <col class="<%= attribute %>" style="<%= (@active_attributes.include? attribute) ? '' : 'visibility: collapse;' %>">
+    <% end %>
+  </colgroup>
+
   <thead>
     <tr>
-      <% @cd_attributes.each do |cd_attribute| %>
-      <th><%= CustomerDatum.human_attribute_name(cd_attribute) %></th>
+      <% @attributes.each do |attribute| %>
+      <th><%= CustomerDatum.human_attribute_name(attribute) %></th>
       <% end %>
     </tr>
   </thead>
+
   <tbody>
   <% @cooperative.customer_data.each do |cd| %>
     <tr>
-      <% @cd_attributes.each do |cd_attribute| %>
-      <td><%= cd.read_attribute(cd_attribute) %></td>
+      <% @attributes.each do |attribute| %>
+      <td><%= cd.read_attribute(attribute) %></td>
       <% end %>
     </tr>
   <% end %>
