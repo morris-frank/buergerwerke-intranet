@@ -3,7 +3,7 @@ ActiveAdmin.register Cooperative do
 
     active_admin_import validate: false,
                         headers_rewrites: { :"Name" => :name, :"mail" => :email, :"Stadt" => :city, :"Homepage" => :website, :"Mitgliedernummer" => :coopnumber, :"Mitgliedsnummer" => :coopnumber, :"PLZ" => :zip, :"Postleitzahl" => :zip, :"HatTarif" => :has_tariff, :"MitTarif" => :has_tariff },
-                        csv_options: {col_sep: "," },
+                        csv_options: {col_sep: ";" },
                         timestamps: true,
                         template: 'activeadmin/import',
                         template_object: ActiveAdminImport::Model.new(

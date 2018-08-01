@@ -3,7 +3,7 @@ ActiveAdmin.register Plant do
 
     active_admin_import validate: false,
                         headers_rewrites: { :"Stadt" => :city, :"Mitgliedernummer" => :cooperative_id, :"Mitgliedsnummer" => :cooperative_id, :"coopnumber" => :cooperative_id, :"PLZ" => :zip, :"Postleitzahl" => :zip, :"Typ" => :plant_type, :"Anlagentyp" => :plant_type, :"Peakleistung" => :peak_power, :"Leistung" => :peak_power, :"Größe" => :peak_power, :"Jährliche Erzeugung" => :annual_generation },
-                        csv_options: {col_sep: "," },
+                        csv_options: {col_sep: ";" },
                         timestamps: true,
                         template: 'activeadmin/import',
                         template_object: ActiveAdminImport::Model.new(
