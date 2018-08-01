@@ -10,10 +10,10 @@ ActiveAdmin.register_page "Customer Data" do
         redirect_to admin_customer_data_path, notice: "Sie haben keine Datei hochgeladen."
         return
       end
-      # if uploaded_file.content_type != 'application/zip'
-      #   redirect_to admin_customer_data_path, notice: "Sie haben keine ZIP Datei hochgeladen."
-      #   return
-      # end
+      if uploaded_file.content_type != 'application/zip' || uploaded_file.content_type != 'application/x-zip-compressed'
+        redirect_to admin_customer_data_path, notice: "Sie haben keine ZIP Datei hochgeladen."
+        return
+      end
 
       extract_filepath = '/tmp/buergerwerke_upload_customer_data.'
 
