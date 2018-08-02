@@ -8,10 +8,10 @@
 
 ## Installation
 
-([Tutorial in German](https://github.com/morris-frank/buergerwerke-portal/wiki/Deployment))
+([Tutorial in German](https://github.com/morris-frank/buergerwerke-intranet/wiki/Deployment))
 
 ```bash
-git clone https://github.com/morris-frank/buergerwerke-portal.git .
+git clone https://github.com/morris-frank/buergerwerke-intranet.git .
 bundle install
 rails db:create
 rails db:migrate
