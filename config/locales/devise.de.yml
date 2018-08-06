@@ -140,7 +140,7 @@ de:
         didn_t_receive_confirmation_instructions: Keine Anleitung zur Bestätigung erhalten?
         didn_t_receive_unlock_instructions: Keine Anleitung zum Entsperren erhalten?
         forgot_your_password: Passwort vergessen?
-        sign_in: Bürgerwerke-Intranet
+        sign_in: Anmelden
         sign_in_with_provider: Mit %{provider} anmelden
         sign_up: Registrieren
       minimum_password_length:
