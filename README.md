@@ -15,6 +15,7 @@ git clone https://github.com/morris-frank/buergerwerke-intranet.git .
 bundle install
 rails db:create
 rails db:migrate
+(rails db:seed)
 rails assets:precompile
 ```
 
