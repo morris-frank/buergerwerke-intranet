@@ -37,7 +37,7 @@
     Anzahl Kundendaten: <%= @cooperative.customer_count %>
   </li>
   <li>
-    Letzte Aktualisierung Kundendaten: <%= l @cooperative.last_customer_update %>
+    Letzte Aktualisierung Kundendaten: <%= (@cooperative.last_customer_update) ? (l @cooperative.last_customer_update) : 'nie' %>
   </li>
   </ul>
 </div>
