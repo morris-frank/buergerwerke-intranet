@@ -23,9 +23,12 @@
       <th>Vorname</th>
       <th>Nachname</th>
       <th>E-Mail</th>
-      <th style="text-align: center !important;">Vorstand</th>
-      <% if is_admin %><th style="text-align: center !important;">Redakteur</th><% end %>
-      <% if is_admin %><th style="text-align: center !important;">Kundendaten</th><% end %>
+      <th class="has-text-centered">Vorstand</th>
+      <% if is_admin %>
+        <th class="has-text-centered">Redakteur</th>
+        <th class="has-text-centered">Kundendaten</th>
+        <th></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -35,7 +38,7 @@
       <td><%= member.lastname %></td>
       <td><%= member.email %></td>
       <% if !is_admin %>
-        <td style="text-align: center !important;">
+        <td class="has-text-centered">
         <span class="icon has-text-info">
           <% if member.is_board_member %>
             <i class="fas fa-check-square"></i>
@@ -51,15 +54,15 @@
           <%= form.check_box :is_board_member, class: 'checkbox' %></span>
           </td>
           <% if member.is_coop_admin %>
-            <td style="text-align: center !important;"><span class="tag is-danger">Admin</span></td>
-            <td style="text-align: center !important;"><span class="tag is-danger">Admin</span></td>
+            <td class="has-text-centered"><span class="tag is-danger">Admin</span></td>
+            <td class="has-text-centered"><span class="tag is-danger">Admin</span></td>
           <% else %>
-            <td style="text-align: center !important;">
+            <td class="has-text-centered">
             <span>
             <%= form.check_box :is_editor, class: 'checkbox' %>
             </span>
             </td>
-            <td style="text-align: center !important;">
+            <td class="has-text-centered">
             <span>
             <%= form.check_box :can_see_customer_data, class: 'checkbox' %>
             </span>
