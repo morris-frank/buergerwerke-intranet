@@ -7,8 +7,8 @@ domready(function () {
   function setBurgerListeners () {
     burgers.forEach(function (burger) {
       burger.addEventListener('click', function () {
-        var target = document.getElementById(burger.dataset.target);
-        burger.classList.toggle('is-active');
+        this.classList.toggle('is-active');
+        var target = document.getElementById(this.dataset.target);
         target.classList.toggle('is-active');
       });
     });
@@ -27,8 +27,9 @@ domready(function () {
   function setModalButtonListeners() {
     modalButtons.forEach(function (modalButton) {
       modalButton.addEventListener('click', function () {
-        var modal = document.getElementById(modalButton.dataset.target);
-        openModal(modal);
+        var modal = document.getElementById(this.dataset.target);
+        document.documentElement.classList.add('is-clipped');
+        modal.classList.add('is-active');
       });
     });
   }
@@ -36,20 +37,28 @@ domready(function () {
   function setModalCloserListeners () {
     modalClosers.forEach(function (modalCloser) {
       modalCloser.addEventListener('click', function () {
-        closeModals();
+        document.documentElement.classList.remove('is-clipped');
+        modals.forEach(function (modal) {
+          modal.classList.remove('is-active');
+        });
       });
     });
   }
 
-  function openModal(modal) {
-    document.documentElement.classList.add('is-clipped');
-    modal.classList.add('is-active');
-  }
 
-  function closeModals() {
-    document.documentElement.classList.remove('is-clipped');
-    modals.forEach(function (modal) {
-      modal.classList.remove('is-active');
-    });
-  }
-});
+  // Sticky Table Headers
+//   var stickyTables = document.getAll('.is-sticky');
+
+//   if (stickyTables.length > 0) stickStickyTables();
+
+//   function stickStickyTables() {
+//     window.addEventListener("scroll", function () {
+//       stickyTables.forEach(function (stickyTable) {
+//         var bounds = stickyTable.getBoundingClientRect();
+//         var topTrans = - Math.min(bounds.top, 0);
+//         var translate = "translate(0," + topTrans + "px)";
+//         stickyTable.querySelector("thead").style.transform = translate;
+//        });
+//     });
+//   }
+// });

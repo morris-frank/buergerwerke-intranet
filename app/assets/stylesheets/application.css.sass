@@ -98,15 +98,15 @@ footer
     margin-bottom: 2em
 
 .table-container
-    overflow-x: scroll
+    overflow: scroll
+    .is-sticky
+        height: 100vh
+        thead
+            th
+                background: $white
+                position: sticky
+                top: 0px
 
 .table-select
     .tag
         cursor: pointer
-
-.is-sticky
-    height: 100vh
-    thead
-        th
-            position: sticky
-            top: 0px
