@@ -33,17 +33,23 @@ domready(function () {
 	function setSelectsListeners () {
 		tags.forEach(function (tag) {
 			tag.addEventListener('click', function () {
-				toggle_tag(tag);
+				tag.classList.toggle('is-primary');
+				filter_by_tag(tag);
 			});
+			if (BROWSER_IS_WEBKIT) filter_by_tag(tag);
 		});
 	}
 
-	function toggle_tag (tag) {
-		tag.classList.toggle('is-primary');
+	function filter_by_tag (tag) {
 		var target = '.' + tag.dataset.target;
 		var active = tag.classList.contains('is-primary');
-		document.getAll(target).forEach(function (col) {
-			col.style.visibility=active?"":"collapse";
+		document.getAll('col' + target).forEach(function (col) {
+			col.style.visibility = active ? "" : "collapse";
 		});
+		if (BROWSER_IS_WEBKIT) {
+			document.getAll(target).forEach(function (td) {
+				td.style.display = active ? "" : "none";
+			});
+		}
 	}
 });

@@ -61,7 +61,7 @@
   <thead>
     <tr>
       <% @attributes.each do |attribute| %>
-      <th><%= CustomerDatum.human_attribute_name(attribute) %></th>
+      <th class="<%= attribute %>"><%= CustomerDatum.human_attribute_name(attribute) %></th>
       <% end %>
     </tr>
   </thead>
@@ -70,7 +70,7 @@
   <% @cooperative.customer_data.each do |cd| %>
     <tr>
       <% @attributes.each do |attribute| %>
-      <td><%= cd.read_attribute(attribute) %></td>
+      <td class="<%= attribute %>"><%= cd.read_attribute(attribute) %></td>
       <% end %>
     </tr>
   <% end %>

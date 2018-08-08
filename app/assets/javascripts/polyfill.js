@@ -1,3 +1,5 @@
+var BROWSER_IS_WEBKIT = /webkit/i.test(navigator.userAgent);
+
 String.prototype.trim || (String.prototype.trim = function() {
     return String(this).replace(/^\s+|\s+$/g, '');
 });
