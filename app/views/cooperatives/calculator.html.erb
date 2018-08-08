@@ -1,5 +1,5 @@
 <% content_for :head do %>
-<script src="https://taca.buergerwerke.de/bundles/taca/js/seamless.js"></script>
+<script id="seamlessScript" src="https://taca.buergerwerke.de/bundles/taca/js/seamless.js" async></script>
 <% end %>
 
 <% title 'Interner Tarifrechner' %>
@@ -19,4 +19,8 @@
 
 <iframe class="tacaframe" src="https://taca.buergerwerke.de/?stakeholder=<%= @cooperative.coopnumber %>&intern=1" name="tacaframe" frameborder="0" ></iframe>
 
-<script>seamless.parent()</script>
+<script>
+seamlessScript.addEventListener('load', function () {
+  seamless.parent();
+});
+</script>
