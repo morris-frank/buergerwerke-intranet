@@ -1,0 +1,5 @@
+<% if page.current? %>
+  <%= link_to page, false, {class: 'pagination-link is-current'} %>
+<% else %>
+  <%= link_to page, url, {remote: remote, rel: page.rel, class: 'pagination-link'} %>
+<% end %>

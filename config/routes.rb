@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
   get '/members', to: redirect('/members/sign_in')
 
-  resources :cooperatives, only: [:index, :show, :edit, :update] do
+  concern :paginatable do
+    get '(page/:page)', action: :index, on: :collection, as: ''
+  end
+
+  resources :cooperatives, concerns: :paginatable, only: [:index, :show, :edit, :update] do
     resources :plants, only: [:index, :show, :new, :create, :edit, :update]
     resources :members, only: [:index, :update]
     get 'customer_data', to: 'customer_data#index'

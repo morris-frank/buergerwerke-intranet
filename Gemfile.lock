@@ -306,6 +306,7 @@ DEPENDENCIES
   devise_invitable
   exception_notification
   geocoder
+  kaminari
   leaflet-rails
   listen (>= 3.0.5, < 3.2)
   mini_racer

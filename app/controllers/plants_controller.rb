@@ -3,7 +3,7 @@ class PlantsController < ApplicationController
 
     def index
         @cooperative = Cooperative.find(params[:cooperative_id])
-        @plants = @cooperative.plants.order('name ASC')
+        @plants = @cooperative.plants.order(:name)
         @markers = @plants.pluck(:name, :latitude, :longitude)
             .reject{|name, latitude, longitude| latitude == nil || longitude == nil}
             .collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
