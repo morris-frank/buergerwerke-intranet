@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require polyfill
+//= require ready
 //= require rails-ujs
 //= require turbolinks
 //= require leaflet

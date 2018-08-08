@@ -1,6 +1,4 @@
-'use strict';
-
-document.addEventListener('DOMContentLoaded', function () {
+domready(function () {
 	var tables = document.getAll('table.is-filterable');
 	var filters = document.getAll('.table-filter');
 

@@ -1,6 +1,4 @@
-'use strict';
-
-document.addEventListener('DOMContentLoaded', function () {
+domready(function () {
   // Burger Menu
   var burgers = document.getAll('.navbar-burger');
 
