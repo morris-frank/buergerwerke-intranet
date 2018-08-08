@@ -18,6 +18,24 @@ class Plant < ApplicationRecord
     geocoded_by :address
     after_validation :geocode
 
+    def annual_generation
+        self['annual_generation'].to_s.sub!('.', ',')
+    end
+
+    def annual_generation=(val)
+        val.sub!(',', '.') if val.is_a?(String)
+        self['annual_generation'] = val
+    end
+
+    def peak_power
+        self['peak_power'].to_s.sub!('.', ',')
+    end
+
+    def peak_power=(val)
+        val.sub!(',', '.') if val.is_a?(String)
+        self['peak_power'] = val
+    end
+
     enum plant_type: [ :solar, :wind, :wasser, :biomasse, :bhkw, :speicher ]
 
     validates :name, presence: true
