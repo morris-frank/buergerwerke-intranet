@@ -1,18 +1,22 @@
-<div class="column is-6 is-offset-3 has-text-centered">
-  <h3 class="title is-4 has-text-grey"><%= t('.resend_confirmation_instructions') %></h2>
+<div class="column is-6 is-offset-3">
+  <h3 class="title is-3 has-text-grey has-text-centered"><%= t('.resend_confirmation_instructions') %></h3>
 
   <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="field">
-      <div class="control">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      <div class="control has-icons-left">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: 'E-Mail Adresse' %>
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
       </div>
     </div>
 
-    <div class="actions">
-      <%= f.submit t('.resend_confirmation_instructions', class: "button is-link is-fullwidth") %>
+    <div class="field">
+      <div class="actions control">
+        <%= f.submit t('.resend_confirmation_instructions'), class: "button is-link is-fullwidth" %>
+      </div>
     </div>
   <% end %>
 

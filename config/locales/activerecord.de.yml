@@ -41,14 +41,37 @@ de:
         annual_generation: 'Jährliche Erzeugung kWh'
       user:
         <<: *commons
-        firstname: 'Vorname'
-        lastname: 'Nachname'
-        is_coop_admin: 'BEG Admin'
-        is_board_member: 'Vorstand'
-        is_editor: 'Redakteurin'
         can_see_customer_data: 'Kundendatenberechtigung'
-        invitation_accepted_at?: 'Einladung akzeptiert'
+        confirmation_sent_at: Bestätigung gesendet am
+        confirmation_token: Bestätigungs-Token
+        confirmed_at: Bestätigt am
+        created_at: Erstellt am
+        current_password: Bisheriges Passwort
+        current_sign_in_at: Aktuelle Anmeldung vom
+        current_sign_in_ip: IP aktueller Anmeldung
+        email: E-Mail
+        encrypted_password: Verschlüsseltes Passwort
+        failed_attempts: Fehlversuche
+        firstname: 'Vorname'
         invitation_accepted_at: 'Einladung akzeptiert'
+        invitation_accepted_at?: 'Einladung akzeptiert'
+        is_board_member: 'Vorstand'
+        is_coop_admin: 'BEG Admin'
+        is_editor: 'Redakteurin'
+        last_sign_in_at: Letzte Anmeldung am
+        last_sign_in_ip: IP der letzten Anmeldung
+        lastname: 'Nachname'
+        locked_at: Gesperrt am
+        password_confirmation: Passwortbestätigung
+        password: Passwort
+        remember_created_at: Angemeldet bleiben vom
+        remember_me: Angemeldet bleiben
+        reset_password_sent_at: Passwort-Zurücksetzen-E-Mail gesendet am
+        reset_password_token: Passwort-Zurücksetzen-Token
+        sign_in_count: Anzahl Anmeldungen
+        unconfirmed_email: Unbestätigte E-Mail-Adresse
+        unlock_token: Entsperrungs-Token
+        updated_at: Aktualisiert am
       customer_datum:
         <<: *commons
         ra_company: 'RA Firma'
@@ -99,3 +122,6 @@ de:
       plant:
         one: 'Anlage'
         other: 'Anlagen'
+      user:
+        one: 'Benutzer'
+        other: 'Benutzer'

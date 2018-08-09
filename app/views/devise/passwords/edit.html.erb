@@ -1,27 +1,41 @@
-<h2><%= t('.change_your_password') %></h2>
+<div class="column is-6 is-offset-3">
+  <h3 class="title is-3 has-text-grey has-text-centered"><%= t('.change_your_password') %></h3>
 
-<div class="notification"><a href="https://xkcd.com/936/">Wie finde ich ein gutes Passwort, dass ich mir merken kann?</a></div>
+  <div class="notification"><a href="https://xkcd.com/936/">Wie finde ich ein gutes Passwort, dass ich mir merken kann?</a></div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, t('.new_password') %><br />
-    <% if @minimum_password_length %>
-      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label :password, t('.new_password'), class: 'label' %>
+      <% if @minimum_password_length %>
+      <% end %>
+      <div class="control has-icons-left">
+        <%= f.password_field :password, autofocus: true, autocomplete: "off", class: 'input' %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+      </div>
+      <p class="help"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></p>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, t('.confirm_new_password') %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation, t('.confirm_new_password'), class: 'label' %>
+      <div class="control has-icons-left">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input' %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit t('.change_my_password') %>
-  </div>
-<% end %>
+    <div class="field">
+      <div class="control actions">
+        <%= f.submit t('.change_my_password') %>
+      </div>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

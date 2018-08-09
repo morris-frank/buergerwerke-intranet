@@ -1,18 +1,22 @@
-<div class="column is-6 is-offset-3 has-text-centered">
-  <h2 class="title has-text-grey"><%= t('.sign_in') %></h2>
+<div class="column is-6 is-offset-3">
+  <h2 class="title is-2 has-text-grey has-text-centered"><%= t('.sign_in') %></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <div class="control">
-      <%= f.label :email, class: 'label' %>
-      <%= f.email_field :email, autofocus: true, class: "input", autocomplete: "email" %>
+    <div class="control has-icons-left">
+      <%= f.email_field :email, autofocus: true, class: "input", autocomplete: "email", placeholder: "E-Mail Adresse" %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
     </div>
   </div>
 
   <div class="field">
-    <div class="control">
-      <%= f.label :password, class: 'label' %>
-      <%= f.password_field :password, class: "input", autocomplete: "off" %>
+    <div class="control has-icons-left">
+      <%= f.password_field :password, class: "input", autocomplete: "off", placeholder: 'Password' %>
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
     </div>
   </div>
 
@@ -23,8 +27,10 @@
     </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit t('.sign_in'), class: "button is-link is-fullwidth" %>
+  <div class="field">
+    <div class="actions control">
+      <%= f.submit t('.sign_in'), class: "button is-link is-fullwidth" %>
+    </div>
   </div>
 <% end %>
 
