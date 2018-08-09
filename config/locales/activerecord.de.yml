@@ -42,9 +42,6 @@ de:
       user:
         <<: *commons
         can_see_customer_data: 'Kundendatenberechtigung'
-        confirmation_sent_at: Bestätigung gesendet am
-        confirmation_token: Bestätigungs-Token
-        confirmed_at: Bestätigt am
         created_at: Erstellt am
         current_password: Bisheriges Passwort
         current_sign_in_at: Aktuelle Anmeldung vom
@@ -69,7 +66,6 @@ de:
         reset_password_sent_at: Passwort-Zurücksetzen-E-Mail gesendet am
         reset_password_token: Passwort-Zurücksetzen-Token
         sign_in_count: Anzahl Anmeldungen
-        unconfirmed_email: Unbestätigte E-Mail-Adresse
         unlock_token: Entsperrungs-Token
         updated_at: Aktualisiert am
       customer_datum:
