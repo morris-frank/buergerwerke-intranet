@@ -28,7 +28,7 @@
       <p class="panel-heading"><%= @plant.name %></p>
 
       <p class="panel-block">
-        <%= @plant.cooperative.name %>
+        <%= link_to @plant.cooperative.name, cooperative_path(@plant.cooperative) %>
       </p>
 
       <p class="panel-block">
