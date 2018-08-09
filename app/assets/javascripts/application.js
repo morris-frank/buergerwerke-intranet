@@ -14,6 +14,5 @@
 //= require ready
 //= require rails-ujs
 //= require turbolinks
-//= require leaflet
 //= require table-filter
 //= require bulma

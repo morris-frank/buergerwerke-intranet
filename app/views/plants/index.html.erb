@@ -1,3 +1,7 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "leaflet.js" %>
+<% end %>
+
 <% title Plant.model_name.human(count: 2) + ' der ' + @cooperative.name %>
 
 <p class="title is-2"><%= yield :title %></p>
