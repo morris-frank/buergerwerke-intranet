@@ -4,7 +4,7 @@ domready(function () {
 
 	if (filters.length > 0) setFilterListeners();
 
-	function setFilterListeners () {
+	function setFilterListeners() {
 		filters.forEach(function (filter) {
 			filter.addEventListener('input', function () {
 				var searchString = filter.value.trim().toLowerCase();
@@ -13,13 +13,13 @@ domready(function () {
 		});
 	}
 
-	function filter_tables (searchString) {
+	function filter_tables(searchString) {
 		tables.forEach(function (table) {
-			filter_table(table, searchString)
+			filter_table(table, searchString);
 		});
 	}
 
-	function filter_table (table, searchString) {
+	function filter_table(table, searchString) {
 		for (var i = 0, row; row = table.rows[i]; i++) {
 			var text = row.textContent.trim().toLowerCase();
 			row.style.display = text.indexOf(searchString) === -1 ? 'none' : 'table-row';
@@ -30,7 +30,7 @@ domready(function () {
 
 	if (tags.length > 0) setSelectsListeners();
 
-	function setSelectsListeners () {
+	function setSelectsListeners() {
 		tags.forEach(function (tag) {
 			tag.addEventListener('click', function () {
 				tag.classList.toggle('is-primary');
@@ -40,7 +40,7 @@ domready(function () {
 		});
 	}
 
-	function filter_by_tag (tag) {
+	function filter_by_tag(tag) {
 		var target = '.' + tag.dataset.target;
 		var active = tag.classList.contains('is-primary');
 		document.getAll('col' + target).forEach(function (col) {

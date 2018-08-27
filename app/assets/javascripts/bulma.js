@@ -4,7 +4,7 @@ domready(function () {
 
   if (burgers.length > 0) setBurgerListeners();
 
-  function setBurgerListeners () {
+  function setBurgerListeners() {
     burgers.forEach(function (burger) {
       burger.addEventListener('click', function () {
         this.classList.toggle('is-active');
@@ -34,7 +34,7 @@ domready(function () {
     });
   }
 
-  function setModalCloserListeners () {
+  function setModalCloserListeners() {
     modalClosers.forEach(function (modalCloser) {
       modalCloser.addEventListener('click', function () {
         document.documentElement.classList.remove('is-clipped');
@@ -44,21 +44,4 @@ domready(function () {
       });
     });
   }
-
-
-  // Sticky Table Headers
-//   var stickyTables = document.getAll('.is-sticky');
-
-//   if (stickyTables.length > 0) stickStickyTables();
-
-//   function stickStickyTables() {
-//     window.addEventListener("scroll", function () {
-//       stickyTables.forEach(function (stickyTable) {
-//         var bounds = stickyTable.getBoundingClientRect();
-//         var topTrans = - Math.min(bounds.top, 0);
-//         var translate = "translate(0," + topTrans + "px)";
-//         stickyTable.querySelector("thead").style.transform = translate;
-//        });
-//     });
-//   }
 });
