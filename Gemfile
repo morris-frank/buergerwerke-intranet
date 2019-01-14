@@ -68,7 +68,7 @@ gem "active_admin_import" , github: "activeadmin-plugins/active_admin_import"
 gem 'exception_notification'
 
 # bulma.io is used as the sass framework
-gem 'bulma-rails', '~> 0.7.1'
+gem 'bulma-rails', '~> 0.7.2'
 # For embedding OSMaps for plants and cooperatives
 gem 'leaflet-rails'
 
