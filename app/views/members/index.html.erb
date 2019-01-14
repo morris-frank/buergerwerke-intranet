@@ -1,6 +1,6 @@
 <% title Member.model_name.human(count: 2) + ' der ' + @cooperative.name %>
 
-<p class="title is-2"><%= yield :title %></p>
+<p class="title"><%= yield :title %></p>
 
 <div class="tabs is-boxed">
   <ul>
@@ -17,6 +17,7 @@
 
 <%= render "/table_filter" %>
 
+<%= form_with model: @members, url: cooperative_members_path(@cooperative.id), local: true do |form| %>
 <table class="table is-filterable is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
@@ -33,48 +34,48 @@
   </thead>
   <tbody>
   <% @members.each do |member| %>
+  <%= fields_for |member| %>
     <tr>
       <td><%= member.firstname %></td>
       <td><%= member.lastname %></td>
       <td><%= member.email %></td>
       <% if !is_admin %>
         <td class="has-text-centered">
-        <span class="icon has-text-info">
-          <% if member.is_board_member %>
-            <i class="fas fa-check-square"></i>
-          <% else %>
-            <i class="fas fa-square"></i>
-          <% end %>
-        </span>
+          <span class="icon has-text-info">
+            <% if member.is_board_member %>
+              <i class="fas fa-check-square"></i>
+            <% else %>
+              <i class="fas fa-square"></i>
+            <% end %>
+          </span>
         </td>
       <% else %>
-        <%= form_with model: member, url: cooperative_member_path(@cooperative.id, member.id), local: true do |form| %>
+        <%= fields_for :member, member %>
           <td>
-          <span style="width: 5rem; display:inline-block; text-align: center;">
-          <%= form.check_box :is_board_member, class: 'checkbox' %></span>
+            <span style="width: 5rem; display:inline-block; text-align: center;">
+              <%= form.check_box :is_board_member, class: 'checkbox' %>
+            </span>
           </td>
           <% if member.is_coop_admin %>
             <td class="has-text-centered"><span class="tag is-danger">Admin</span></td>
             <td class="has-text-centered"><span class="tag is-danger">Admin</span></td>
           <% else %>
             <td class="has-text-centered">
-            <span>
-            <%= form.check_box :is_editor, class: 'checkbox' %>
-            </span>
+              <span>
+                <%= form.check_box :is_editor, class: 'checkbox' %>
+              </span>
             </td>
             <td class="has-text-centered">
-            <span>
-            <%= form.check_box :can_see_customer_data, class: 'checkbox' %>
-            </span>
+              <span>
+                <%= form.check_box :can_see_customer_data, class: 'checkbox' %>
+              </span>
             </td>
           <% end %>
-          </td>
-          <td>
-            <%= form.submit 'Ändern', class: 'button is-link is-small' %>
-          </td>
         <% end %>
       <% end %>
     </tr>
   <% end %>
   </tbody>
 </table>
+<%= form.submit 'Ändern', class: 'button is-link is-small' %>
+<% end %>
