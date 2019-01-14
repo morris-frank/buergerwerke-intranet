@@ -23,3 +23,6 @@ tmp
 
 # Ignore local env file
 /config/env.yml
+
+# Ignore hidden private seeds
+/private_seeds
