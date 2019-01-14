@@ -16,7 +16,6 @@
 
 @import "global-settings.sass"
 @import "sass/utilities/functions"
-@import "bulma-settings.sass"
 @import "sass/utilities/_all"
 @import "sass/base/_all"
 @import "sass/elements/_all"
@@ -45,27 +44,29 @@ body > section.section > div.container
 
 footer
     box-shadow: $box-shadow
-    padding: 2em 0 3em
+    padding: $footer-padding
     margin-top: 6em
-    background: $grey-dark
+    background: $footer-background-color
     color: $white
-    border-bottom: 2em solid $black-ter
-
     a
         color: $white
         &:hover
             color: $primary
 
 // Single elements/components, global
+.title
+  background: $gradient
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
 
 .section
     padding: 0.5rem 1.5rem
 
 .button.is-link
-    background: linear-gradient(135deg, #fab41a 0%,#fab41a 40%,#f49503 60%,#f49503 100%)
+    background: $gradient
     &:hover
         color: $black
-        border-color: $grey-light
+        border-color: $light
 
 .input,
 .textarea
