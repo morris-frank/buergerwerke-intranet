@@ -5,7 +5,7 @@ class Fileclip < ApplicationRecord
     has_many :fileclips_cooperatives
     has_many :cooperatives, through: :fileclips_cooperatives
 
-    scope :joined_coops, -> { joins("INNER JOIN fileclips_cooperatives ON fileclips.id = fileclips_cooperatives.fileclip_id") }
+    scope :joined_coops, -> { joins("LEFT JOIN fileclips_cooperatives ON fileclips.id = fileclips_cooperatives.fileclip_id") }
 
     accepts_nested_attributes_for :cooperatives
     accepts_nested_attributes_for :fileclips_cooperatives
