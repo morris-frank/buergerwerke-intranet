@@ -20,18 +20,21 @@ $render-mode:       optimizeLegibility
 $yellow:       #fab41a
 $orange:       #f4950c
 $white:        #ffffff
+$grey-lighter: #dedede
 $grey-light:   #878787
 $grey-middle:  #b2b2b2
 $grey-dark:    #575756
+$grey-darker:  #424242
 $black:        #231F20
 $danger:       #ea6359
 
 // General derived colors
 $primary:   $yellow
 $secondary: $orange
-$light:     $grey-light
+$light:     $grey-lighter
 $grey:      $grey-middle
 $dark:      $grey-dark
+$darker:      $grey-darker
 
 $primary-invert:    $black
 $secondary-invert:  $black
@@ -39,13 +42,14 @@ $white-invert:      $dark
 $light-invert:      $black
 $grey-invert:       $white
 $dark-invert:       $white
+$darker-invert:     $white
 $black-invert:      $white
 $danger-invert:     $white
 
 $gradient: linear-gradient(to bottom right, $yellow, $orange)
 $shiny-gradient: linear-gradient(135deg, #fab41a 0%,#fab41a 40%,#f49503 60%,#f49503 100%)
 
-$colors: ("white":($white, $white-invert),"light":($light, $light-invert),"grey":($grey, $grey-invert),"dark":($dark, $dark-invert),"black":($black, $black-invert),"primary":($primary, $primary-invert),"secondary":($secondary, $secondary-invert),"danger":($danger, $danger-invert))
+$colors: ("white":($white, $white-invert),"light":($light, $light-invert),"grey":($grey, $grey-invert),"dark":($dark, $dark-invert),"darker":($darker, $darker-invert), "black":($black, $black-invert),"primary":($primary, $primary-invert),"secondary":($secondary, $secondary-invert),"danger":($danger, $danger-invert))
 
 // General semantic colors
 $background:         $white
@@ -126,10 +130,15 @@ $speed:            120ms
 $variable-columns: true
 
 //// COMPONENTS
-$navbar-background-color: $dark
-$navbar-height:           1.4rem
+$navbar-background-color:                     $darker
+$navbar-height:                               1.4rem
+$navbar-item-color:                           $white
+$navbar-item-hover-color:                     $primary
+$navbar-item-hover-background-color:          $darker
+$navbar-dropdown-item-hover-color:            $primary
+$navbar-dropdown-item-hover-background-color: $black
 
-$footer-background-color: $dark
+$footer-background-color: $darker
 $footer-padding:          3rem 1.5rem 6rem
 
 $table-head-cell-border-width: 0 0 1px

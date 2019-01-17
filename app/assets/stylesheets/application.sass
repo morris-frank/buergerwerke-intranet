@@ -1,20 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_self
- *= require leaflet
- */
-
-@import "global-settings.sass"
+@import "settings"
 @import "sass/utilities/functions"
 @import "sass/utilities/_all"
 @import "sass/base/_all"
@@ -24,11 +8,10 @@
 @import "sass/layout/_all"
 
 // General layouting. From Top(nav) to bottom (footer)
-
 .navbar
-    +desktop
-        box-shadow: 0 0 30px 0 $white
-
+    text-transform: uppercase
+    font-size: 15px
+    font-weight: $weight-bold
     .navbar-burger
         width: 2.4rem
         height: 2.4rem
@@ -116,3 +99,8 @@ footer
 .table-select
     .tag
         cursor: pointer
+
+.level
+    .heading
+        margin-bottom: 0
+        line-height: 11px
