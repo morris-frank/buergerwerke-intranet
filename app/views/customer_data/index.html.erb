@@ -2,49 +2,47 @@
 
 <p class="title"><%= yield :title %></p>
 
+<nav class="level">
+  <div class="level-left">
+    <div class="level-item">
+      <a class=""  href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
+        <span class="icon"><i class="fas fa-chevron-left"></i></span>
+        <span>zurück</span>
+      </a>
+    </div>
+  </div>
+  <div class="level-right">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Anzahl Kunden</p>
+        <p class=""><%= @cooperative.customer_count %></p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Aktualisiert vor</p>
+        <p class=""><%= (@cooperative.last_customer_update) ? time_ago_in_words(@cooperative.last_customer_update) : 'nie' %></p>
+      </div>
+    </div>
 
-<div class="tabs is-boxed">
-  <ul>
-  <li>
-  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
-    <span class="icon"><i class="fas fa-chevron-left"></i></span>
-    <span>zurück</span>
-  </a>
-  </li>
+    <% if @cooperative.customer_data_pdf.attached? %>
+    <div class="level-item">
+      <a href="<%= rails_blob_path(@cooperative.customer_data_pdf, disposition: "attachment") %>">
+        <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
+        <span>PDF</span>
+      </a>
+    </div>
+    <% end %>
 
-  <% if @cooperative.customer_data_pdf.attached? %>
-  <li>
-  <a href="<%= rails_blob_path(@cooperative.customer_data_pdf, disposition: "attachment") %>">
-    <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
-    <span>PDF</span>
-  </a>
-  </li>
-  <% end %>
-  </ul>
-</div>
-
-<% if @cooperative.customer_data_pdf.attached? %>
-<object data="<%= rails_blob_path(@cooperative.customer_data_pdf) %>" type="application/pdf" width="100%" height="500px">
-  Dieser Browser unterstützt keine PDFs. Bitte laden Sie das PDF herunter, um es zu sehen: <a href="<%= rails_blob_path(@cooperative.customer_data_pdf) %>">Download PDF</a>
-</object>
-<% end %>
-
-<%= render "/table_filter" %>
-
-<div class="tabs is-fullwidth">
-  <ul>
-  <li>
-    Anzahl Kundendaten: <%= @cooperative.customer_count %>
-  </li>
-  <li>
-    Letzte Aktualisierung Kundendaten: <%= (@cooperative.last_customer_update) ? (l @cooperative.last_customer_update) : 'nie' %>
-  </li>
-  </ul>
-</div>
+    <div class="level-item">
+      <%= render "/table_filter" %>
+    </div>
+  </div>
+</nav>
 
 <div class="tags table-select">
   <% @attributes.each do |attribute| %>
-  <span data-target="<%= attribute %>" class="tag<%= (@active_attributes.include? attribute) ? ' is-primary' : '' %>">
+  <span data-target="<%= attribute %>" class="tag<%= (@active_attributes.include? attribute) ? ' is-primary' : ' is-light' %>" title="<%= t 'customer_data.attribute_legend.' + attribute.to_s  %>">
     <%= CustomerDatum.human_attribute_name(attribute) %>
   </span>
   <% end %>

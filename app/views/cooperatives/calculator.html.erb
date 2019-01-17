@@ -6,15 +6,15 @@
 
 <p class="title"><%= yield :title %></p>
 
-<div class="tabs is-boxed">
-  <ul>
-  <li>
+<div class="level">
+  <div class="level-left">
+  <div class="level-item">
   <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
     <span class="icon"><i class="fas fa-chevron-left"></i></span>
     <span>zurück</span>
   </a>
-  </li>
-  </ul>
+  </div>
+  </div>
 </div>
 
 <iframe class="tacaframe" src="https://taca.buergerwerke.de/?stakeholder=<%= @cooperative.coopnumber %>&intern=1" name="tacaframe" frameborder="0" ></iframe>

@@ -2,25 +2,28 @@
 
 <p class="title"><%= yield :title %></p>
 
-<div class="tabs is-boxed">
-  <ul>
-  <li>
-  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
-    <span class="icon"><i class="fas fa-chevron-left"></i></span>
-    <span>zurück</span>
-  </a>
-  </li>
-  </ul>
+<div class="level">
+  <div class="level-left">
+    <div class="level-item">
+      <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
+        <span class="icon"><i class="fas fa-chevron-left"></i></span>
+        <span>zurück</span>
+      </a>
+    </div>
+  </div>
+  <div class="level-right">
+    <div class="level-item">
+      <%= render "/table_filter" %>
+    </div>
+  </div>
 </div>
 
 <div class="notification">Die <%= Member.model_name.human(count: 2) %> sind alle im <%= t 'intranet' %> registrierten und der <%= @cooperative.name %> zugeordneten Personen. Sie sind nicht zwangsläufig Mitglieder und/oder Kunden dieser.</div>
 
-<%= render "/table_filter" %>
-
 <% if !is_admin %>
 <table class="table is-filterable is-fullwidth is-striped is-hoverable">
   <thead>
-    <tr>
+    <tr class="table-heading">
       <th>Vorname</th>
       <th>Nachname</th>
       <th>E-Mail</th>

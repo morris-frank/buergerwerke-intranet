@@ -2,19 +2,19 @@
 
 <p class="title"><%= yield :title %></p>
 
-<div class="tabs is-boxed">
-  <ul>
-  <li>
-  <% if @category.parent_id.nil? %>
-    <a href="<%= url_for controller: 'fileclips', action: 'index' %>">
-  <% else %>
-    <a href="<%= url_for controller: 'fileclips', action: 'show', id: @category.parent_id %>">
-  <% end %>
-      <span class="icon"><i class="fas fa-chevron-left"></i></span>
-      <span>zurück</span>
-    </a>
-  </li>
-  </ul>
+<div class="level">
+  <div class="level-left">
+    <div class="level-item">
+    <% if @category.parent_id.nil? %>
+      <a href="<%= url_for controller: 'fileclips', action: 'index' %>">
+    <% else %>
+      <a href="<%= url_for controller: 'fileclips', action: 'show', id: @category.parent_id %>">
+    <% end %>
+        <span class="icon"><i class="fas fa-chevron-left"></i></span>
+        <span>zurück</span>
+      </a>
+    </div>
+  </div>
 </div>
 
 <%= render partial: 'fileclips/categories', object: @category.children %>

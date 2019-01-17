@@ -2,24 +2,25 @@
 
 <p class="title"><%= yield :title %></p>
 
-<div class="tabs is-boxed">
-  <ul>
-  <li>
-  <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
-    <span class="icon"><i class="fas fa-chevron-left"></i></span>
-    <span>zurück</span>
-  </a>
-  </li>
-
-  <% if can_edit %>
-  <li>
-  <a href="<%= url_for controller: 'plants', action: 'edit', id: @plant, cooperative_id: @cooperative.id %>">
-    <span class="icon"><i class="fas fa-edit"></i></span>
-    <span><%= Plant.model_name.human %> bearbeiten</span>
-  </a>
-  </li>
-  <% end %>
-  </ul>
+<div class="level">
+  <div class="level-left">
+    <div class="level-item">
+    <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-chevron-left"></i></span>
+      <span>zurück</span>
+    </a>
+    </div>
+  </div>
+  <div class="level-right">
+    <% if can_edit %>
+    <div class="level-item">
+    <a href="<%= url_for controller: 'plants', action: 'edit', id: @plant, cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-edit"></i></span>
+      <span><%= Plant.model_name.human %> bearbeiten</span>
+    </a>
+    </div>
+    <% end %>
+  </div>
 </div>
 
 <div class="columns">

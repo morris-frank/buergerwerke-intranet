@@ -6,14 +6,14 @@
 
 <p class="title"><%= yield :title %></p>
 
-<%= map(:center => {
-    :latlng => [51.100, 10.360],
-    :zoom => 6
-  },
-  :markers => @markers
-) %>
-
-<%= render "/table_filter" %>
+<div class="level">
+  <div class="level-left"></div>
+  <div class="level-right">
+    <div class="level-item">
+      <%= render "/table_filter" %>
+    </div>
+  </div>
+</div>
 
 <table class="table is-filterable is-fullwidth is-striped is-hoverable">
   <thead>
@@ -33,3 +33,10 @@
 </table>
 
 <%= paginate @cooperatives %>
+
+<%= map(:center => {
+    :latlng => [51.100, 10.360],
+    :zoom => 6
+  },
+  :markers => @markers
+) %>

@@ -6,34 +6,29 @@
 
 <p class="title"><%= yield :title %></p>
 
-<div class="tabs is-boxed">
-  <ul>
-  <li>
-  <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
-    <span class="icon"><i class="fas fa-chevron-left"></i></span>
-    <span>zurück</span>
-  </a>
-  </li>
-
-  <% if can_edit %>
-  <li>
-  <a href="<%= url_for controller: 'plants', action: 'new', cooperative_id: @cooperative.id %>">
-    <span class="icon"><i class="fas fa-plus"></i></span>
-    <span>Neue <%= Plant.model_name.human %> hinzufügen</span>
-  </a>
-  </li>
-  <% end %>
-  </ul>
+<div class="level">
+  <div class="level-left">
+    <div class="level-item">
+    <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-chevron-left"></i></span>
+      <span>zurück</span>
+    </a>
+    </div>
+  </div>
+  <div class="level-right">
+    <% if can_edit %>
+    <div class="level-item">
+    <a href="<%= url_for controller: 'plants', action: 'new', cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-plus"></i></span>
+      <span>Neue <%= Plant.model_name.human %> hinzufügen</span>
+    </a>
+    </div>
+    <% end %>
+    <div class="level-item">
+      <%= render "/table_filter" %>
+    </div>
+  </div>
 </div>
-
-<%= map(:center => {
-    :latlng => [51.100, 10.360],
-    :zoom => 6
-  },
-  :markers => @markers
-) %>
-
-<%= render "/table_filter" %>
 
 <table class="table is-filterable is-fullwidth is-striped is-hoverable">
   <thead>
@@ -62,3 +57,10 @@
   <% end %>
   </tbody>
 </table>
+
+<%= map(:center => {
+    :latlng => [51.100, 10.360],
+    :zoom => 6
+  },
+  :markers => @markers
+) %>
