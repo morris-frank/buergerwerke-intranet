@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
   resources :cooperatives, concerns: :paginatable, only: [:index, :show, :edit, :update] do
     resources :plants, only: [:index, :show, :new, :create, :edit, :update]
-    resources :members, only: [:index, :update]
+    resources :members, only: [:index]
+    post 'members', to: 'members#update'
     get 'customer_data', to: 'customer_data#index'
     get 'calculator', to: 'cooperatives#calculator'
   end
