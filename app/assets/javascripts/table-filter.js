@@ -40,7 +40,9 @@ function filter_by_tag(tag) {
 	}
 }
 
-domready(function () {
+document.addEventListener("turbolinks:load", function() {
+// domready(function () {
+	console.log('TABLE_FILTER IS READY DUMBSHITS!')
 	var filters = document.getAll('.table-filter');
 	if (filters.length > 0) setFilterListeners(filters);
 

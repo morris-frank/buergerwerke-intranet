@@ -30,7 +30,8 @@ function setModalCloserListeners(modalClosers) {
   });
 }
 
-domready(function () {
+document.addEventListener("turbolinks:load", function() {
+// domready(function () {
   var burgers = document.getAll('.navbar-burger');
   if (burgers.length > 0) setBurgerListeners(burgers);
 
@@ -40,4 +41,5 @@ domready(function () {
     setModalButtonListeners(modalButtons);
     setModalCloserListeners(modalClosers);
   }
+// });
 });
