@@ -13,8 +13,6 @@ if Rails.env.development?
     Cooperative.create!(email: 'info@eeg.com', city: 'Entenhausen',name: 'Entenhausener Energiegenossenschaft',latitude: 53.2840, longitude: 9.75958, website: 'https://entenhausenener-energiegenossenschaft.com', coopnumber: 'P001', has_tariff: true)
     Cooperative.create!(email: 'info@msg.com',    city: 'Mouseton',   name: 'MausStrom Genossenschaft',        latitude: 53.2474, longitude: 12.0411, website: 'https://mausstrom.com',                             coopnumber: 'P002', has_tariff: false)
 
-    :solar, :wind, :wasser, :biomasse, :bhkw, :speicher
-
     # Entenhausen
     Plant.create!(name: 'Duck-Solarpark',        cooperative_id: 1, plant_type: 'solar',   peak_power: 400.00,latitude: 53.4840, longitude: 9.72958)
     Plant.create!(name: 'Duck-Windpark',         cooperative_id: 1, plant_type: 'wind',    peak_power: 46.55, latitude: 54.2840, longitude: 9.76958)
