@@ -10,7 +10,7 @@ function setFilterListeners(filters) {
 function filter_tables(searchString) {
 	var tables = document.getAll('table.is-filterable');
 	tables.forEach(function (table) {
-		for (var i = 0, row; row = table.rows[i]; i++) {
+		for (var i = 0, row; row = table.tBodies[0].rows[i]; i++) {
 			var text = row.textContent.trim().toLowerCase();
 			row.style.display = text.indexOf(searchString) === -1 ? 'none' : 'table-row';
 		}
@@ -42,7 +42,6 @@ function filter_by_tag(tag) {
 
 document.addEventListener("turbolinks:load", function() {
 // domready(function () {
-	console.log('TABLE_FILTER IS READY DUMBSHITS!')
 	var filters = document.getAll('.table-filter');
 	if (filters.length > 0) setFilterListeners(filters);
 
