@@ -84,5 +84,6 @@ gem 'geocoder'
 # To generate non-digest Error pages
 gem "non-digest-assets"
 
-# For pagination
+# For pagination and filter
 gem 'pagy'
+gem 'filterrific'

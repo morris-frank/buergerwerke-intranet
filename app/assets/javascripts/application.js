@@ -14,5 +14,6 @@
 //= require ready
 //= require rails-ujs
 //= require turbolinks
-//= require table-filter
 //= require bulma
+//= require filterrific
+//= require customer-data

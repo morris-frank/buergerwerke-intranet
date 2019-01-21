@@ -124,6 +124,7 @@ GEM
       activesupport (>= 4.0, < 6)
     execjs (2.7.0)
     ffi (1.9.25)
+    filterrific (5.1.0)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
     formtastic (3.1.5)
@@ -304,6 +305,7 @@ DEPENDENCIES
   devise-i18n
   devise_invitable
   exception_notification
+  filterrific
   geocoder
   leaflet-rails
   listen (>= 3.0.5, < 3.2)

@@ -1,0 +1,6 @@
+<% new_results = escape_javascript(
+  render(
+    :partial => 'customer_data/list_body'
+  )
+) %>
+document.getElementById("customer-data-table").tBodies[0].innerHTML = "<%= new_results %>";
