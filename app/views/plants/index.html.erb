@@ -24,13 +24,10 @@
     </a>
     </div>
     <% end %>
-    <div class="level-item">
-      <%= render "/table_filter" %>
-    </div>
   </div>
 </div>
 
-<table class="table is-filterable is-fullwidth is-striped is-hoverable">
+<table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
       <th>Name</th>
@@ -58,9 +55,9 @@
   </tbody>
 </table>
 
-<%= map(:center => {
+<%=
+  map(:center => {
     :latlng => [51.100, 10.360],
     :zoom => 6
-  },
-  :markers => @markers
-) %>
+  }, :markers => @markers)
+%>
