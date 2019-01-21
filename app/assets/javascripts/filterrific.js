@@ -1,14 +1,11 @@
 var filterificCounter = function(seconds) {
     var cnt = 0;
-    console.log('init counter');
     return function() {
         cnt += 1;
         _this = this;
-        console.log('change event');
         setTimeout(function(_cnt, node) {
             if(cnt != _cnt) return;
             filterificSendRequest(node);
-            console.log('Sending ajax request');
         }, seconds * 1000, cnt, _this);
     };
 };

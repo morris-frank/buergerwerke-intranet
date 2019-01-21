@@ -1,0 +1,34 @@
+#customer-data-table
+    table
+        table-layout: fixed
+        col
+            min-width: 200px
+            &.is-inactive
+                visibility: collapse
+                width: 0
+        td
+            &.is-inactive
+                width: 0
+
+    .table-container
+        overflow: scroll
+        .is-sticky
+            height: 100vh
+            thead
+                th
+                    background: $white
+                    position: sticky
+                    top: 0px
+
+    .selectors
+        .tag
+            cursor: pointer
+
+    .scroller
+        height: 1em
+        width: 100%
+        overflow-x: scroll
+        overflow-y: hidden
+        & > div
+            height: 1px
+            width: 2000px
