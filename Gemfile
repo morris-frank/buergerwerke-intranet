@@ -84,5 +84,5 @@ gem 'geocoder'
 # To generate non-digest Error pages
 gem "non-digest-assets"
 
-# For pagination of index lists
-gem 'kaminari'
+# For pagination
+gem 'pagy'

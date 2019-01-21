@@ -66,7 +66,7 @@
   </thead>
 
   <tbody>
-  <% @cooperative.customer_data.each do |cd| %>
+  <% @customer_data.each do |cd| %>
     <tr>
       <% @attributes.each do |attribute| %>
       <td class="<%= attribute %>"><%= cd.read_attribute(attribute) %></td>
@@ -76,3 +76,5 @@
   </tbody>
 </table>
 </div>
+
+<%== pagy_bulma_nav(@pagy) %>

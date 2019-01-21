@@ -187,6 +187,7 @@ GEM
     non-digest-assets (1.0.10)
       sprockets (>= 2.0)
     orm_adapter (0.5.0)
+    pagy (1.3)
     passenger (6.0.1)
       rack
       rake (>= 0.8.1)
@@ -304,11 +305,11 @@ DEPENDENCIES
   devise_invitable
   exception_notification
   geocoder
-  kaminari
   leaflet-rails
   listen (>= 3.0.5, < 3.2)
   mini_racer
   non-digest-assets
+  pagy
   passenger (>= 5.0.25)
   puma (~> 3.11)
   rails (~> 5.2.0)
