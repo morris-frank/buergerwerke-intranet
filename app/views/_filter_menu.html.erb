@@ -1,0 +1,17 @@
+<%= form_for_filterrific @filterrific do |f| %>
+<div class="field is-grouped">
+    <p class="control has-icons-left is-expanded">
+        <span class="icon is-small is-left">
+        <i class="fas fa-search"></i>
+        </span>
+        <%= f.text_field(
+        :search_query,
+        class: 'input filterrific-periodically-observed',
+        placeholder: 'Filter'
+        ) %>
+    </p>
+    <div class="control">
+        <%= button_to t('reset'), reset_filterrific_url, class: "button is-link" %>
+    </div>
+</div>
+<% end %>

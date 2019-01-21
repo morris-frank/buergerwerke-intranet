@@ -1,6 +1,2 @@
-<% new_results = escape_javascript(
-  render(
-    :partial => 'customer_data/list_body'
-  )
-) %>
-document.getElementById("customer-data-table").tBodies[0].innerHTML = "<%= new_results %>";
+document.getElementById("customer-data-table").querySelector("tbody").outerHTML = "<%= j render 'customer_data/list_body' %>";
+document.getElementById("customer-data-table").querySelector("nav").outerHTML = "<%== j pagy_bulma_nav(@pagy) %>";
