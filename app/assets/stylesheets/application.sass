@@ -6,6 +6,8 @@
 @import "sass/components/_all"
 @import "sass/grid/_all"
 @import "sass/layout/_all"
+@import "leaflet"
+@import "customer_data"
 
 // General layouting. From Top(nav) to bottom (footer)
 .navbar
@@ -84,30 +86,7 @@ footer
 #map
     min-height: 600px
     height: 50vh
-    margin-bottom: 2em
-
-.table-container
-    overflow: scroll
-    .is-sticky
-        height: 100vh
-        thead
-            th
-                background: $white
-                position: sticky
-                top: 0px
-
-.table-select
-    .tag
-        cursor: pointer
-
-.table-scroll-top
-    height: 1em
-    width: 100%
-    overflow-x: scroll
-    overflow-y: hidden
-    & > div
-        height: 1px
-        width: 2000px
+    margin: 2em 1em
 
 .level
     .heading

@@ -1,11 +1,22 @@
 class CooperativesController < ApplicationController
+    include Pagy::Backend
     before_action :authenticate_member!
 
     def index
-        @cooperatives = Cooperative.order(:name).page params[:page]
+        @filterrific = initialize_filterrific(
+            Cooperative,
+            params[:filterrific]
+        ) or return
+        @pagy, @cooperatives = pagy(@filterrific.find)
+
         @markers = Cooperative.pluck(:name, :latitude, :longitude)
             .reject{|name, latitude, longitude| latitude == nil || longitude == nil}
             .collect{|name, latitude, longitude| {:latlng => [latitude, longitude], :popup => name}}
+
+        respond_to do |format|
+            format.html
+            format.js
+        end
     end
 
     def show

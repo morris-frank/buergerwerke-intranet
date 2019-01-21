@@ -1,0 +1,2 @@
+document.getElementById("cooperatives-table").outerHTML = "<%= j render 'cooperatives/index_list' %>";
+document.querySelector("nav.pagy").outerHTML = "<%== j pagy_bulma_nav(@pagy) %>";

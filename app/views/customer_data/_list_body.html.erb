@@ -1,0 +1,9 @@
+<tbody>
+    <% @customer_data.each do |cd| %>
+    <tr>
+        <% @attributes.each do |attribute| %>
+        <td class="<%= attribute %>"><%= cd.read_attribute(attribute) %></td>
+        <% end %>
+    </tr>
+    <% end %>
+</tbody>

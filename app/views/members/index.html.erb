@@ -11,17 +11,12 @@
       </a>
     </div>
   </div>
-  <div class="level-right">
-    <div class="level-item">
-      <%= render "/table_filter" %>
-    </div>
-  </div>
 </div>
 
 <div class="notification">Die <%= Member.model_name.human(count: 2) %> sind alle im <%= t 'intranet' %> registrierten und der <%= @cooperative.name %> zugeordneten Personen. Sie sind nicht zwangsläufig Mitglieder und/oder Kunden dieser.</div>
 
 <% if !is_admin %>
-<table class="table is-filterable is-fullwidth is-striped is-hoverable">
+<table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr class="table-heading">
       <th>Vorname</th>
@@ -51,7 +46,7 @@
 </table>
 <% else %>
 <%= form_with url: cooperative_members_path(@cooperative.id), local: true do |form| %>
-<table class="table is-filterable is-fullwidth is-striped is-hoverable">
+<table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
       <th>Vorname</th>

@@ -69,6 +69,7 @@ gem 'exception_notification'
 
 # bulma.io is used as the sass framework
 gem 'bulma-rails', '~> 0.7.2'
+
 # For embedding OSMaps for plants and cooperatives
 gem 'leaflet-rails'
 
@@ -84,5 +85,6 @@ gem 'geocoder'
 # To generate non-digest Error pages
 gem "non-digest-assets"
 
-# For pagination of index lists
-gem 'kaminari'
+# For pagination and filter
+gem 'pagy'
+gem 'filterrific'

@@ -1,0 +1,2 @@
+document.getElementById("customer-data-table").querySelector("tbody").outerHTML = "<%= j render 'customer_data/list_body' %>";
+document.getElementById("customer-data-table").querySelector("nav").outerHTML = "<%== j pagy_bulma_nav(@pagy) %>";

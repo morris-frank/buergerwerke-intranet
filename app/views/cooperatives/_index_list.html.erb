@@ -1,0 +1,16 @@
+<table id="cooperatives-table" class="table is-fullwidth is-striped is-hoverable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Stadt</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @cooperatives.each do |cooperative| %>
+    <tr>
+      <td><%= link_to cooperative.name, cooperative_path(cooperative) %></td>
+      <td><%= cooperative.city %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

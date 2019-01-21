@@ -33,46 +33,40 @@
       </a>
     </div>
     <% end %>
-
-    <div class="level-item">
-      <%= render "/table_filter" %>
-    </div>
   </div>
 </nav>
 
-<div class="tags table-select">
-  <% @attributes.each do |attribute| %>
-  <span data-target="<%= attribute %>" class="tag<%= (@active_attributes.include? attribute) ? ' is-primary' : ' is-light' %>" title="<%= t 'customer_data.attribute_legend.' + attribute.to_s  %>">
-    <%= CustomerDatum.human_attribute_name(attribute) %>
-  </span>
-  <% end %>
-</div>
-
-<div class="table-scroll-top" data-target="customer-data-table"><div></div></div>
-<div class="table-container is-sticky">
-<table class="table is-filterable is-fullwidth is-striped is-hoverable">
-  <colgroup>
+<div id="customer-data-table">
+  <div class="tags selectors" data-target="customer-data-table">
     <% @attributes.each do |attribute| %>
-    <col class="<%= attribute %>" <%= (@active_attributes.include? attribute) ? '' : 'width=0' %>>
+    <span data-target="<%= attribute %>" class="tag<%= (@active_attributes.include? attribute) ? ' is-primary' : ' is-light' %>" title="<%= t 'customer_data.attribute_legend.' + attribute.to_s  %>">
+      <%= CustomerDatum.human_attribute_name(attribute) %>
+    </span>
     <% end %>
-  </colgroup>
+  </div>
 
-  <thead>
-    <tr>
-      <% @attributes.each do |attribute| %>
-      <th class="<%= attribute %>"><%= CustomerDatum.human_attribute_name(attribute) %></th>
-      <% end %>
-    </tr>
-  </thead>
+  <%= render '/filter_menu' %>
 
-  <tbody>
-  <% @cooperative.customer_data.each do |cd| %>
-    <tr>
-      <% @attributes.each do |attribute| %>
-      <td class="<%= attribute %>"><%= cd.read_attribute(attribute) %></td>
-      <% end %>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+  <div class="scroller"><div></div></div>
+  <div class="table-container">
+    <table class="table is-fullwidth is-striped is-hoverable">
+      <colgroup>
+        <% @attributes.each do |attribute| %>
+        <col class="<%= attribute %> <%= (@active_attributes.include? attribute) ? '' : 'is-inactive' %>">
+        <% end %>
+      </colgroup>
+
+      <thead>
+        <tr>
+          <% @attributes.each do |attribute| %>
+          <th class="<%= attribute %>"><%= CustomerDatum.human_attribute_name(attribute) %></th>
+          <% end %>
+        </tr>
+      </thead>
+
+      <%= render 'customer_data/list_body' %>
+    </table>
+  </div>
+
+  <%== pagy_bulma_nav(@pagy) %>
 </div>
