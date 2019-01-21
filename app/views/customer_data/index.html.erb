@@ -48,11 +48,12 @@
   <% end %>
 </div>
 
+<div class="table-scroll-top" data-target="customer-data-table"><div></div></div>
 <div class="table-container is-sticky">
 <table class="table is-filterable is-fullwidth is-striped is-hoverable">
   <colgroup>
     <% @attributes.each do |attribute| %>
-    <col class="<%= attribute %>" style="<%= (@active_attributes.include? attribute) ? '' : 'visibility: collapse;' %>">
+    <col class="<%= attribute %>" <%= (@active_attributes.include? attribute) ? '' : 'width=0' %>>
     <% end %>
   </colgroup>
 

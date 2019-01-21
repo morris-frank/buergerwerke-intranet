@@ -1,3 +1,13 @@
+function setTableScrollTopListeners(tableScrollTops) {
+	tableScrollTops.forEach(function(tableScrollTop) {
+		var target = document.getAll('.table-container')[0];
+		tableScrollTop.addEventListener('scroll', function() {
+			var scrolled = tableScrollTop.scrollLeft / tableScrollTop.scrollWidth;
+			target.scrollLeft = scrolled * target.scrollWidth;
+		});
+	});
+}
+
 function setFilterListeners(filters) {
 	filters.forEach(function (filter) {
 		filter.addEventListener('input', function () {
@@ -48,4 +58,7 @@ document.addEventListener("turbolinks:load", function() {
 
 	var tags = document.getAll('.table-select .tag');
 	if (tags.length > 0) setSelectsListeners(tags);
+
+	var tableScrollTops = document.getAll('.table-scroll-top');
+	if (tableScrollTops.length > 0) setTableScrollTopListeners(tableScrollTops);
 });
