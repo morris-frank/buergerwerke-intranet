@@ -1,6 +1,8 @@
+// TODO first run on first page load
+// TODO not table layout fixed if more than 6 tags selected
 document.addEventListener("turbolinks:load", function() {
 	if (!document.getElementById('customer-data-table')) return;
-	function filter_by_tag(tag, table) {
+	function filter_by_tag(tag, table, scroller) {
 		tag.classList.toggle('is-primary');
 		tag.classList.toggle('is-light');
 		var col = table.querySelector('col.' + tag.dataset.target);
@@ -9,6 +11,7 @@ document.addEventListener("turbolinks:load", function() {
 			var td = table.querySelector('td.' + tag.dataset.target);
 			td.classList.toggle('is-inactive');
 		}
+		scroller.children[0].style.width = table.scrollWidth + 'px';
 	}
 
 	var outerContainer = document.getElementById('customer-data-table');
@@ -24,8 +27,8 @@ document.addEventListener("turbolinks:load", function() {
 	var selector = outerContainer.querySelector('.selectors');
 	selector.querySelectorAll('.tag').forEach(function (tag) {
 		tag.addEventListener('click', function () {
-			filter_by_tag(tag, table);
+			filter_by_tag(tag, table, scroller);
 		});
-		if (BROWSER_IS_WEBKIT) filter_by_tag(tag, table);
+		if (BROWSER_IS_WEBKIT) filter_by_tag(tag, table, scroller);
 	});
 });
