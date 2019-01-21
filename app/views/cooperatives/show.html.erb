@@ -2,51 +2,51 @@
 
 <p class="title"><%= yield :title %></p>
 
-<div class="tabs is-boxed">
-  <ul>
-  <li>
+<div class="level">
+  <div class="level-left">
+  <div class="level-item">
     <a href="<%= url_for controller: 'members', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-users"></i></span>
       <span><%= Member.model_name.human(count: 2) %></span>
     </a>
-  </li>
+  </div>
 
-  <li>
+  <div class="level-item">
     <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-solar-panel"></i></span>
       <span><%= Plant.model_name.human(count: 2) %></span>
     </a>
-  </li>
+  </div>
 
   <% if @cooperative.id == current_member.cooperative_id %>
   <% if can_customer_data %>
-  <li>
+  <div class="level-item">
     <a href="<%= url_for controller: 'customer_data', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-th-list"></i></span>
       <span>Kundendaten</span>
     </a>
-  </li>
+  </div>
   <% end %>
 
   <% if @cooperative.has_tariff %>
-  <li>
+  <div class="level-item">
     <a href="<%= url_for controller: 'cooperatives', action: 'calculator', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-calculator"></i></span>
       <span>Tarifrechner</span>
     </a>
-  </li>
+  </div>
   <% end %>
 
   <% if can_edit %>
-  <li>
+  <div class="level-item">
     <a href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-edit"></i></span>
       <span>bearbeiten</span>
     </a>
-  </li>
+  </div>
   <% end %>
   <% end %>
-  </ul>
+</div>
 </div>
 
 <div class="columns">
