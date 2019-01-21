@@ -4,10 +4,6 @@ de:
   intranet: 'Intranet'
   submit: 'Abschicken'
   abort: 'abbrechen'
-  views:
-    pagination:
-      next: "Vor &rsaquo;"
-      previous: "&lsaquo; Zurück"
   customer_data:
     attribute_legend:
       accepted_privacy_statement: "Hat Privatsphäreerklärung akzeptiert"
