@@ -6,33 +6,11 @@
 
 <p class="title"><%= yield :title %></p>
 
-<div class="level">
-  <div class="level-left"></div>
-  <div class="level-right">
-    <div class="level-item">
-      <%= render "/table_filter" %>
-    </div>
-  </div>
-</div>
+<%= render "/filter_menu" %>
 
-<table class="table is-filterable is-fullwidth is-striped is-hoverable">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Stadt</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @cooperatives.each do |cooperative| %>
-    <tr>
-      <td><%= link_to cooperative.name, cooperative_path(cooperative) %></td>
-      <td><%= cooperative.city %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= render "index_list" %>
 
-<%= paginate @cooperatives %>
+<%== pagy_bulma_nav(@pagy) %>
 
 <%= map(:center => {
     :latlng => [51.100, 10.360],

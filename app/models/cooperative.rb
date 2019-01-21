@@ -43,6 +43,33 @@ class Cooperative < ApplicationRecord
     validate :coopnumber_style
     validates_format_of :zip, :with => /\d{5}/, :message => "sollte 5-stellige Nummer sein", allow_blank: true
 
+    filterrific(
+        available_filters: [
+            :search_query,
+        ]
+    )
+
+    scope :search_query, lambda {|query|
+        return nil if query.blank?
+
+        terms = query.downcase.split(/\s+/)
+        terms = terms.map{|e|
+            (e.gsub('*', '%') + '%').gsub(/%+/, '%')
+        }
+
+        num_conditions = 2
+        where(
+            terms.map {
+                or_clauses = [
+                    "LOWER(cooperatives.name) LIKE ?",
+                    "LOWER(cooperatives.city) LIKE ?"
+                ].join(' OR ')
+                "(#{ or_clauses })"
+            }.join(' AND '),
+            *terms.map { |e| [e] * num_conditions }.flatten
+        )
+    }
+
     private
         def coopnumber_style
             if !(/[MP]\d{3}$/.match?(coopnumber))
