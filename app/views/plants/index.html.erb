@@ -1,6 +1,5 @@
-<% title Plant.model_name.human(count: 2) + ' der ' + @cooperative.name %>
-
-<p class="title"><%= yield :title %></p>
+<p class="title"><%= Plant.model_name.human(count: 2) %></p>
+<p class="subtitle"><%= @cooperative.name %></>
 
 <div class="level">
   <div class="level-left">
@@ -27,6 +26,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Stadt</th>
       <th>Anlagentyp</th>
       <th>kWp</th>
       <% if can_edit %><th></th><% end %>
@@ -36,6 +36,7 @@
   <% @plants.each do |plant| %>
     <tr>
       <td><%= link_to plant.name, cooperative_plant_path(plant.cooperative_id, plant) %></td>
+      <td><%= plant.city %></td>
       <td><%= plant.plant_type %></td>
       <td><%= plant.peak_power %></td>
       <% if can_edit %>

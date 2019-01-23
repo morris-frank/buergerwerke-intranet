@@ -1,6 +1,7 @@
 <% title @category.path %>
 
 <p class="title"><%= yield :title %></p>
+<p class="subtitle"><%= Fileclip.model_name.human(count: 2) %></p>
 
 <div class="level">
   <div class="level-left">

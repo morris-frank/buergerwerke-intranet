@@ -2,9 +2,8 @@
 <script id="seamlessScript" src="https://taca.buergerwerke.de/bundles/taca/js/seamless.js" async></script>
 <% end %>
 
-<% title 'Interner Tarifrechner' %>
-
-<p class="title"><%= yield :title %></p>
+<p class="title"><%= t 'tariff-calculator' %></p>
+<p class="subtitle"><%= @cooperative.name %></p>
 
 <div class="level">
   <div class="level-left">

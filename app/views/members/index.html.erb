@@ -1,6 +1,5 @@
-<% title Member.model_name.human(count: 2) + ' der ' + @cooperative.name %>
-
-<p class="title"><%= yield :title %></p>
+<p class="title"><%= Member.model_name.human(count: 2) %></p>
+<p class="subtitle"><%= @cooperative.name %></>
 
 <div class="level">
   <div class="level-left">
@@ -84,6 +83,6 @@
   <% end %>
   </tbody>
 </table>
-<%= form.submit (t 'update-member-rights'), class: 'button is-link is-small' %>
+<%= form.submit (t 'update-member-rights'), class: 'button is-small is-pulled-right' %>
 <% end %>
 <% end %>

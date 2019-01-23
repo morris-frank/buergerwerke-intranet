@@ -1,52 +1,50 @@
-<% title @cooperative.name %>
+<p class="title"><%= @cooperative.name %></p>
 
-<p class="title"><%= yield :title %></p>
-
-<div class="level">
-  <div class="level-left">
-  <div class="level-item">
-    <a href="<%= url_for controller: 'members', action: 'index', cooperative_id: @cooperative.id %>">
-      <span class="icon"><i class="fas fa-users"></i></span>
-      <span><%= Member.model_name.human(count: 2) %></span>
-    </a>
-  </div>
-
-  <div class="level-item">
-    <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
+<div class="tabs">
+  <ul>
+  <li class="">
+    <a class="" href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-solar-panel"></i></span>
       <span><%= Plant.model_name.human(count: 2) %></span>
     </a>
-  </div>
+  </li>
 
   <% if @cooperative.id == current_member.cooperative_id %>
   <% if can_customer_data %>
-  <div class="level-item">
-    <a href="<%= url_for controller: 'customer_data', action: 'index', cooperative_id: @cooperative.id %>">
+  <li class="">
+    <a class="" href="<%= url_for controller: 'customer_data', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-th-list"></i></span>
       <span>Kundendaten</span>
     </a>
-  </div>
+  </li>
   <% end %>
 
   <% if @cooperative.has_tariff %>
-  <div class="level-item">
-    <a href="<%= url_for controller: 'cooperatives', action: 'calculator', cooperative_id: @cooperative.id %>">
+  <li class="">
+    <a class="" href="<%= url_for controller: 'cooperatives', action: 'calculator', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-calculator"></i></span>
       <span>Tarifrechner</span>
     </a>
-  </div>
+  </li>
   <% end %>
 
+  <li class="">
+    <a class="" href="<%= url_for controller: 'members', action: 'index', cooperative_id: @cooperative.id %>">
+      <span class="icon"><i class="fas fa-users"></i></span>
+      <span><%= Member.model_name.human(count: 2) %></span>
+    </a>
+  </li>
+
   <% if can_edit %>
-  <div class="level-item">
-    <a href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>">
+  <li class="">
+    <a class="" href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-edit"></i></span>
       <span>bearbeiten</span>
     </a>
-  </div>
+  </li>
   <% end %>
   <% end %>
-</div>
+  </ul>
 </div>
 
 <div class="columns">

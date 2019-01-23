@@ -1,0 +1,66 @@
+// High level layouting
+.navbar
+    text-transform: uppercase
+    font-size: 15px
+    font-weight: $weight-bold
+    .navbar-burger
+        width: 2.4rem
+        height: 2.4rem
+        color: $primary
+
+body > section.section > div.container
+    padding: 1.5em 0 0
+    +desktop
+        padding: 1.5em 2em 3em
+        box-shadow: 0px 10px 20px 1px rgba($black,0.1)
+        border-bottom-left-radius: 5px
+        border-bottom-right-radius: 5px
+
+footer
+    box-shadow: $box-shadow
+    padding: $footer-padding
+    margin-top: 6em
+    background: $footer-background-color
+    color: $white
+    a
+        color: $white
+        &:hover
+            color: $primary
+
+// Tweaks for bulma components
+.level
+    .heading
+        margin-bottom: 0
+        line-height: 11px
+.tabs
+    li
+        &:hover
+            background: $lighter
+
+// Added components
+.filecategories
+    .card
+        transition: 300ms
+        display: block
+        &:hover
+            color: $primary
+            border-color: $primary
+            box-shadow: 0 2px 3px rgba($primary, 0.4), 0 0 0 1px rgba($primary, 0.4)
+            .card-header-title
+                color: $primary
+            .card-header
+                box-shadow: 0 1px 2px rgba($primary, 0.4)
+        .card-content
+            display: block
+
+.tacaframe
+    width: 800px
+    height: 670px
+    padding: 0
+    margin: 0 auto
+    display: block
+
+#map
+    min-height: 600px
+    height: 50vh
+    margin: 2em 1em

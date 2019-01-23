@@ -1,6 +1,5 @@
-<% title 'Kundendaten der ' + @cooperative.name %>
-
-<p class="title"><%= yield :title %></p>
+<p class="title"><%= CustomerDatum.model_name.human(count: 2) %></p>
+<p class="subtitle"><%= @cooperative.name %></p>
 
 <nav class="level">
   <div class="level-left">
@@ -39,9 +38,9 @@
 <div id="customer-data-table">
   <div class="tags selectors" data-target="customer-data-table">
     <% @attributes.each do |attribute| %>
-    <span data-target="<%= attribute %>" class="tag<%= (@active_attributes.include? attribute) ? ' is-primary' : ' is-light' %>" title="<%= t 'customer_data.attribute_legend.' + attribute.to_s  %>">
+    <abbr data-target="<%= attribute %>" class="tag<%= (@active_attributes.include? attribute) ? ' is-primary' : ' is-lighter' %>" title="<%= t 'customer_data.attribute_legend.' + attribute.to_s  %>">
       <%= CustomerDatum.human_attribute_name(attribute) %>
-    </span>
+    </abbr>
     <% end %>
   </div>
 

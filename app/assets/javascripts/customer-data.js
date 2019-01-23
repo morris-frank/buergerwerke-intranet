@@ -4,7 +4,7 @@ document.addEventListener("turbolinks:load", function() {
 	if (!document.getElementById('customer-data-table')) return;
 	function filter_by_tag(tag, table, scroller) {
 		tag.classList.toggle('is-primary');
-		tag.classList.toggle('is-light');
+		tag.classList.toggle('is-lighter');
 		var col = table.querySelector('col.' + tag.dataset.target);
 		col.classList.toggle('is-inactive');
 		if (BROWSER_IS_WEBKIT) {

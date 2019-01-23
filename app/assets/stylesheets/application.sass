@@ -7,88 +7,10 @@
 @import "sass/grid/_all"
 @import "sass/layout/_all"
 @import "leaflet"
+@import "elements"
+@import "components"
 @import "customer_data"
 
-// General layouting. From Top(nav) to bottom (footer)
-.navbar
-    text-transform: uppercase
-    font-size: 15px
-    font-weight: $weight-bold
-    .navbar-burger
-        width: 2.4rem
-        height: 2.4rem
-        color: $primary
-
-body > section.section > div.container
-    padding: 1.5em 0 0
-    +desktop
-        padding: 1.5em 2em 3em
-        box-shadow: 0px 10px 20px 1px rgba($black,0.1)
-        border-bottom-left-radius: 5px
-        border-bottom-right-radius: 5px
-
-footer
-    box-shadow: $box-shadow
-    padding: $footer-padding
-    margin-top: 6em
-    background: $footer-background-color
-    color: $white
-    a
-        color: $white
-        &:hover
-            color: $primary
-
-// Single elements/components, global
-.title
-  background: $gradient
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
-
-.section
-    padding: 0.5rem 1.5rem
-
-.button.is-link
-    background: $gradient
-    &:hover
-        color: $black
-        border-color: $light
-
-.input,
-.textarea
-    +placeholder
-        color: rgba($input-color, 0.7)
-
+// various
 #error_explanation
     margin: 2em 0 2em
-
-.filecategories
-    .card
-        transition: 300ms
-        display: block
-        &:hover
-            color: $primary
-            border-color: $primary
-            box-shadow: 0 2px 3px rgba($primary, 0.4), 0 0 0 1px rgba($primary, 0.4)
-            .card-header-title
-                color: $primary
-            .card-header
-                box-shadow: 0 1px 2px rgba($primary, 0.4)
-        .card-content
-            display: block
-
-.tacaframe
-    width: 800px
-    height: 670px
-    padding: 0
-    margin: 0 auto
-    display: block
-
-#map
-    min-height: 600px
-    height: 50vh
-    margin: 2em 1em
-
-.level
-    .heading
-        margin-bottom: 0
-        line-height: 11px

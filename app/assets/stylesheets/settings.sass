@@ -17,29 +17,34 @@ $family-code:       $family-monospace
 $render-mode:       optimizeLegibility
 
 // Color Scheme
-$yellow:       #fab41a
-$orange:       #f4950c
-$white:        #ffffff
-$grey-lighter: #dedede
-$grey-light:   #878787
-$grey-middle:  #b2b2b2
-$grey-dark:    #575756
-$grey-darker:  #424242
-$black:        #231F20
-$danger:       #ea6359
+$yellow:        #fab41a
+$orange:        #f4950c
+$white:         #ffffff
+$grey-lightest: #f0f0f0
+$grey-lighter:  #dedede
+$grey-light:    #878787
+$grey-middle:   #b2b2b2
+$grey-dark:     #575756
+$grey-darker:   #424242
+$black:         #231F20
+$danger:        #ea6359
 
 // General derived colors
 $primary:   $yellow
 $secondary: $orange
-$light:     $grey-lighter
+$lightest:  $grey-lightest
+$lighter:   $grey-lighter
+$light:     $grey-light
 $grey:      $grey-middle
 $dark:      $grey-dark
 $darker:      $grey-darker
 
-$primary-invert:    $black
+$primary-invert:    $white
 $secondary-invert:  $black
 $white-invert:      $dark
-$light-invert:      $black
+$lightest-invert:   $darker
+$lighter-invert:    $darker
+$light-invert:      $darker
 $grey-invert:       $white
 $dark-invert:       $white
 $darker-invert:     $white
@@ -49,18 +54,18 @@ $danger-invert:     $white
 $gradient: linear-gradient(to bottom right, $yellow, $orange)
 $shiny-gradient: linear-gradient(135deg, #fab41a 0%,#fab41a 40%,#f49503 60%,#f49503 100%)
 
-$colors: ("white":($white, $white-invert),"light":($light, $light-invert),"grey":($grey, $grey-invert),"dark":($dark, $dark-invert),"darker":($darker, $darker-invert), "black":($black, $black-invert),"primary":($primary, $primary-invert),"secondary":($secondary, $secondary-invert),"danger":($danger, $danger-invert))
+$colors: ("white":($white, $white-invert),"lightest":($lightest, $lightest-invert),"light":($light, $light-invert),"lighter":($lighter, $lighter-invert),"grey":($grey, $grey-invert),"dark":($dark, $dark-invert),"darker":($darker, $darker-invert), "black":($black, $black-invert),"primary":($primary, $primary-invert),"secondary":($secondary, $secondary-invert),"danger":($danger, $danger-invert))
 
 // General semantic colors
-$background:         $white
+$background: $white
 
-$border:             $light
-$border-hover:       $light
+$border:       $lighter
+$border-hover: $light
 
-$text:               $dark
-$text-strong:        $dark
-$text-light:         $grey
-$text-invert:        $white
+$text:        $dark
+$text-strong: $dark
+$text-light:  $grey
+$text-invert: $white
 
 $link:               $primary
 $link-invert:        $primary-invert
@@ -71,11 +76,6 @@ $link-focus:         $dark
 $link-focus-border:  $primary
 $link-active:        $dark
 $link-active-border: $dark
-
-$title-color:        $primary
-$subtitle-color:     $grey
-
-$input-color:        $dark
 
 // Sizes
 $size-1: 4rem
@@ -92,11 +92,6 @@ $size-medium: $size-5
 $size-large:  $size-4
 
 $body-size:     $size-normal
-$title-size:    $size-large
-$subtitle-size: $size-medium
-
-$title-line-height:           28.6px
-$subtitle-line-height:        22px
 $body-line-height:            24.28px
 $content-heading-line-height: 22px
 
@@ -108,8 +103,6 @@ $weight-semibold: bold
 $weight-bold:     bold
 
 $body-weight:     $weight-normal
-$title-weight:    $weight-bold
-$subtitle-weight: $weight-normal
 
 // Layout sizes
 $gap:        32px
@@ -118,7 +111,7 @@ $desktop:    916px + (2 * $gap)
 $widescreen: 916px + (2 * $gap)
 $fullhd:     916px + (2 * $gap)
 
-$radius:        2px
+$radius:        4px
 $radius-small:  0px
 $radius-large:  3px
 $box-radius:    $radius
@@ -126,7 +119,7 @@ $box-radius:    $radius
 // Layout various
 $box-shadow:       0 0 0 1px rgba($black, 0.1)
 $easing:           ease-out
-$speed:            120ms
+$speed:            400ms
 $variable-columns: true
 
 //// COMPONENTS
@@ -141,12 +134,39 @@ $navbar-dropdown-item-hover-background-color: $black
 $footer-background-color: $darker
 $footer-padding:          3rem 1.5rem 6rem
 
-$table-head-cell-border-width: 0 0 1px
+$table-color:                                   $darker
+$table-background-color:                        $white
+$table-striped-row-even-background-color:       $lightest
+$table-row-hover-background-color:              $lighter
+$table-striped-row-even-hover-background-color: $lighter
+$table-head-cell-border-width:                  0 0 2px
+$table-head-background-color:                   $lightest
 
 $control-radius:       $radius-small
 $control-radius-small: $radius-small
 
 $input-shadow:                none
-$input-border-color:          $light
+$input-border-color:          $lighter
 $input-background-color:      $white
 $input-focus-box-shadow-size: 0
+$input-color: $dark
+
+$tabs-link-color:       $text
+$tabs-link-hover-color: $darker
+
+$notification-background-color: $lighter
+
+$button-color:              $white
+$button-background-color:   $primary
+$button-border-color:       $lighter
+$button-hover-color:        $black
+$button-hover-border-color: $light
+
+$title-color:          $dark
+$subtitle-color:       $grey
+$title-weight:         $weight-bold
+$subtitle-weight:      $weight-normal
+$title-size:           $size-large
+$subtitle-size:        $size-medium
+$title-line-height:    28.6px
+$subtitle-line-height: 22px
