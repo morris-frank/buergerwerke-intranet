@@ -36,28 +36,32 @@
     <div class='control has-icons-left'>
       <%= form.text_field :street, class: 'input' %>
       <span class="icon is-small is-left">
-        <i class="fas fa-location-arrow"></i>
+        <i class="fas fa-road"></i>
       </span>
     </div>
   </div>
 
-  <div class='field'>
-    <%= form.label :zip, class: 'label' %>
-    <div class='control has-icons-left'>
-      <%= form.text_field :zip, class: 'input' %>
-      <span class="icon is-small is-left">
-        <i class="fas fa-location-arrow"></i>
-      </span>
+  <div class='field is-horizontal'>
+    <div class="field-body">
+    <div class='field'>
+      <%= form.label :zip, class: 'label' %>
+      <div class='control is-expanded has-icons-left'>
+        <%= form.text_field :zip, class: 'input' %>
+        <span class="icon is-small is-left">
+          <i class="fas fa-city"></i>
+        </span>
+      </div>
     </div>
-  </div>
 
-  <div class='field'>
-    <%= form.label :city, class: 'label' %>
-    <div class='control has-icons-left'>
-      <%= form.text_field :city, class: 'input' %>
-      <span class="icon is-small is-left">
-        <i class="fas fa-location-arrow"></i>
-      </span>
+    <div class='field'>
+      <%= form.label :city, class: 'label' %>
+      <div class='control is-expanded has-icons-left'>
+        <%= form.text_field :city, class: 'input' %>
+        <span class="icon is-small is-left">
+          <i class="fas fa-city"></i>
+        </span>
+      </div>
+    </div>
     </div>
   </div>
 
