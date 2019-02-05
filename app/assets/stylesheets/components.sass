@@ -1,7 +1,7 @@
 // High level layouting
 .navbar
     text-transform: uppercase
-    font-size: 15px
+    font-size: $size-7
     font-weight: $weight-bold
     .navbar-burger
         width: 2.4rem
@@ -29,11 +29,15 @@ footer
 
 // Tweaks for bulma components
 .level
+    .level-item
+        a
+            transition: $speed
     .heading
         margin-bottom: 0
         line-height: 11px
 .tabs
     li
+        transition: $speed
         &:hover
             background: $lighter
 
@@ -64,3 +68,9 @@ footer
     min-height: 600px
     height: 50vh
     margin: 2em 1em
+
+.new_filterrific
+    .input, .button
+        font-size: $size-small
+    + .table
+        margin-top: 1em
