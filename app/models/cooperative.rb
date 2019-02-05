@@ -5,6 +5,7 @@ class Cooperative < ApplicationRecord
     has_many :fileclips_cooperatives
     has_many :fileclips, through: :fileclips_cooperatives
     has_one_attached :customer_data_pdf
+    has_many_attached :diagrams
 
     accepts_nested_attributes_for :fileclips
 
@@ -28,6 +29,22 @@ class Cooperative < ApplicationRecord
             address += city + ', '
         end
         address += 'Germany'
+    end
+
+    def board
+        board = additional_board
+
+        members.each do |member|
+            if member.is_board_member?
+                board_member_name = member.firstname + ' ' + member.lastname
+                if !board.include? board_member_name
+                    board += ', ' + board_member_name
+                end
+            end
+        end
+        if board[0] == ','
+            board = board[2..-1]
+        end
     end
 
     geocoded_by :address

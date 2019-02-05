@@ -17,19 +17,21 @@ ActiveAdmin.register_page "Customer Data" do
 
       extract_filepath = '/tmp/buergerwerke_upload_customer_data.'
 
+      content_types = { "jpg" => "image/jpeg", "pdf" => "application/pdf", "png" => "image/png" }
+
       existing_coops = []
       missing_coops = []
 
       Zip::File.open(uploaded_file.tempfile) do |zip_file|
         zip_file.each do |entry|
           # Match the filename and extract Projectnumber of Coop and the file extension:
-          matches = /(?<coopnumber>[MP]\d{3})_.*(?<extension>csv|pdf)/.match(entry.name)
+          matches = /(?<coopnumber>[MP]\d{3})_.*(?<extension>csv|pdf|jpg|png)/.match(entry.name)
           # If invalid filename, ignore:
           if !matches
             next
           end
           # Get the corresponding Coop from DB:
-          coop = Cooperative.where(coopnumber: matches['coopnumber']).take
+          coop = Cooperative.with_attached_diagrams.find_by_coopnumber(matches['coopnumber'])
           if !coop
             missing_coops.push(matches['coopnumber'])
             next
@@ -42,6 +44,12 @@ ActiveAdmin.register_page "Customer Data" do
           filename = matches.to_s.encode("UTF-8", "UTF-8")
           if matches['extension'] == 'pdf'
             coop.customer_data_pdf.attach(io: File.open(extract_filepath + 'pdf', 'rb'), filename: filename, content_type: 'application/pdf')
+          elsif ['jpg', 'png'].include? matches['extension']
+            old_blob = coop.diagrams_blobs.find_by_filename(filename)
+            if old_blob
+              coop.diagrams_attachments.find_by_blob_id(old_blob.id).purge
+            end
+            coop.diagrams.attach(io: File.open(extract_filepath + matches['extension'], 'rb'), filename: filename, content_type: content_types[matches['extension']])
           else
             CustomerDatum.where('cooperative_id = ?', coop.id).delete_all
             CSV.foreach(extract_filepath + 'csv', headers: true, col_sep: ';') do |row|

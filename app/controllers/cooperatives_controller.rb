@@ -21,7 +21,6 @@ class CooperativesController < ApplicationController
 
     def show
         @cooperative = Cooperative.find(params[:id])
-        @board = calc_board
     end
 
     def edit
@@ -62,22 +61,5 @@ class CooperativesController < ApplicationController
         def can_edit
             own_coop = @cooperative.id == current_member.cooperative_id
             return own_coop && current_member.is_editor
-        end
-
-        def calc_board
-            board = @cooperative.additional_board
-
-            @cooperative.members.each do |member|
-                if member.is_board_member?
-                    board_member_name = member.firstname + ' ' + member.lastname
-                    if !board.include? board_member_name
-                        board += ', ' + board_member_name
-                    end
-                end
-            end
-            if board[0] == ','
-                board = board[2..-1]
-            end
-            return board
         end
 end

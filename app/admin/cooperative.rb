@@ -33,21 +33,24 @@ ActiveAdmin.register Cooperative do
         row :name
         row :email
         row :has_tariff
-        row :city
-        row :zip
-        row :street
-        row :additional_board
+        row :address
+        row :board
         row :website
         row :latitude
         row :longitude
         row :description
         row :customer_data_pdf do |ad|
           if ad.customer_data_pdf.attached?
-            link_to 'Anzeigen', rails_blob_path(ad.customer_data_pdf)
+            link_to ad.customer_data_pdf.filename.sanitized(), rails_blob_path(ad.customer_data_pdf)
           end
         end
         row :customer_count
         row :last_customer_update
+        row :diagrams do |ad|
+          if ad.diagrams.attached?
+            ad.diagrams.map{|dg| link_to dg.filename.sanitized(), rails_blob_path(dg)}.join(', ').html_safe
+          end
+        end
       end
     end
 
