@@ -8,7 +8,10 @@ de:
   edit: 'bearbeiten'
   back: 'zurück'
   add: 'hinzufügen'
-  number-customers: 'Anzahl Kunden'
+  number-customers: '# Kunden'
+  number-cooperatives: '# Genossenschaften'
+  number-plants: '# Anlagen'
+  sum-peak-power: 'Σ Peakleistung'
   last-updated: 'Aktualisiert vor'
   notifications:
       members: 'Die Benutzer sind alle im Intranet registrierten und der Genossenschaft zugeordneten Personen. Sie sind nicht zwangsläufig Mitglieder und/oder Kunden dieser.'

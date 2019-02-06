@@ -9,8 +9,6 @@
         <span><%= t 'back' %></span>
       </a>
     </div>
-  </div>
-  <div class="level-right">
     <% if @cooperative.diagrams.attached? %>
     <div class="level-item">
     <a class="" href="<%= url_for controller: 'customer_data', action: 'diagrams', cooperative_id: @cooperative.id %>">
@@ -19,6 +17,8 @@
       </a>
     </div>
     <% end %>
+  </div>
+  <div class="level-right">
     <div class="level-item has-text-centered">
       <div>
         <p class="heading"><%= t 'number-customers' %></p>

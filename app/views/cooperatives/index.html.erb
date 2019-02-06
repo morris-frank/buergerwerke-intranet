@@ -1,5 +1,17 @@
 <p class="title"><%= Cooperative.model_name.human(count: 2) %></p>
 
+<nav class="level">
+  <div class="level-left"></div>
+  <div class="level-right">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading"><%= t 'number-cooperatives' %></p>
+        <p class=""><%= Cooperative.count %></p>
+      </div>
+    </div>
+  </div>
+</nav>
+
 <%= render "/filter_menu" %>
 
 <%= render "index_list" %>
