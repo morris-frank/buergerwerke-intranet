@@ -1,4 +1,4 @@
-<p class="title"><%= t "diagrams" %></p>
+<p class="title"><%= Cooperative.human_attribute_name('diagrams') %></p>
 <p class="subtitle"><%= @cooperative.name %></p>
 
 <nav class="level">
@@ -6,7 +6,7 @@
     <div class="level-item">
       <a class=""  href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
         <span class="icon"><i class="fas fa-chevron-left"></i></span>
-        <span>zurück</span>
+        <span><%= t 'back' %></span>
       </a>
     </div>
   </div>

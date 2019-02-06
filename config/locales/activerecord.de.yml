@@ -27,6 +27,7 @@ de:
         has_tariff: 'Bietet Tarif an'
         customer_count: 'Kundenanzahl'
         last_customer_update: 'Letzte Aktualisierung der Kundendaten'
+        diagrams: 'Diagramme'
       fileclip:
         <<: *commons
         is_standard: 'Ist Standarddatei'

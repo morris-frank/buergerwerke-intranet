@@ -6,7 +6,7 @@
     <div class="level-item">
       <a class=""  href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
         <span class="icon"><i class="fas fa-chevron-left"></i></span>
-        <span>zurück</span>
+        <span><%= t 'back' %></span>
       </a>
     </div>
   </div>
@@ -15,19 +15,19 @@
     <div class="level-item">
     <a class="" href="<%= url_for controller: 'customer_data', action: 'diagrams', cooperative_id: @cooperative.id %>">
         <span class="icon"><i class="fas fa-chart-bar"></i></span>
-        <span>Diagrams</span>
+        <span><%= Cooperative.human_attribute_name('diagrams') %></span>
       </a>
     </div>
     <% end %>
     <div class="level-item has-text-centered">
       <div>
-        <p class="heading">Anzahl Kunden</p>
+        <p class="heading"><%= t 'number-customers' %></p>
         <p class=""><%= @cooperative.customer_count %></p>
       </div>
     </div>
     <div class="level-item has-text-centered">
       <div>
-        <p class="heading">Aktualisiert vor</p>
+        <p class="heading"><%= t 'last-updated' %></p>
         <p class=""><%= (@cooperative.last_customer_update) ? time_ago_in_words(@cooperative.last_customer_update) : 'nie' %></p>
       </div>
     </div>

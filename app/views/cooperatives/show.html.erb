@@ -14,7 +14,7 @@
   <li class="">
     <a class="" href="<%= url_for controller: 'customer_data', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-th-list"></i></span>
-      <span>Kundendaten</span>
+      <span><%= CustomerDatum.model_name.human(count: 2) %></span>
     </a>
   </li>
   <% end %>
@@ -23,7 +23,7 @@
   <li class="">
     <a class="" href="<%= url_for controller: 'cooperatives', action: 'calculator', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-calculator"></i></span>
-      <span>Tarifrechner</span>
+      <span><%= t 'tariff-calculator' %></span>
     </a>
   </li>
   <% end %>
@@ -39,7 +39,7 @@
   <li class="">
     <a class="" href="<%= url_for controller: 'cooperatives', action: 'edit', id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-edit"></i></span>
-      <span>bearbeiten</span>
+      <span><%= t 'edit' %></span>
     </a>
   </li>
   <% end %>
@@ -68,7 +68,7 @@
       </p>
 
       <div class="panel-block">
-        Vorstand: <%= @cooperative.board %>
+        <%= Cooperative.human_attribute_name('is_board_member') %>: <%= @cooperative.board %>
       </div>
     </div>
   </div>

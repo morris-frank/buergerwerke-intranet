@@ -12,7 +12,7 @@
       <a href="<%= url_for controller: 'fileclips', action: 'show', id: @category.parent_id %>">
     <% end %>
         <span class="icon"><i class="fas fa-chevron-left"></i></span>
-        <span>zurück</span>
+        <span><%= t 'back' %></span>
       </a>
     </div>
   </div>
@@ -43,6 +43,6 @@
 
 <% else %>
 
-<div class="notification">Keine Dateien in dieser Kategorie vorhanden.</div>
+<div class="notification"><%= t 'notifications.no_files' %></div>
 
 <% end %>

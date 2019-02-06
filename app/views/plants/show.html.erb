@@ -6,7 +6,7 @@
     <div class="level-item">
     <a href="<%= url_for controller: 'plants', action: 'index', cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-chevron-left"></i></span>
-      <span>zurück</span>
+      <span><%= t 'back' %></span>
     </a>
     </div>
   </div>
@@ -15,7 +15,7 @@
     <div class="level-item">
     <a href="<%= url_for controller: 'plants', action: 'edit', id: @plant, cooperative_id: @cooperative.id %>">
       <span class="icon"><i class="fas fa-edit"></i></span>
-      <span><%= Plant.model_name.human %> bearbeiten</span>
+      <span><%= Plant.model_name.human %> <%= t 'edit' %></span>
     </a>
     </div>
     <% end %>
@@ -32,15 +32,15 @@
       </p>
 
       <p class="panel-block">
-        kWp: <%= @plant.peak_power %>
+        <%= Plant.human_attribute_name('peak_power') %>: <%= @plant.peak_power %>
       </p>
 
       <p class="panel-block">
-        Jährliche Erzeugung: <%= @plant.annual_generation %>
+        <%= Plant.human_attribute_name('annual_generation') %>: <%= @plant.annual_generation %>
       </p>
 
       <p class="panel-block">
-        Anlagentyp: <%= @plant.plant_type %></a>
+        <%= Plant.human_attribute_name('plant_type') %>: <%= @plant.plant_type.humanize %></a>
       </p>
     </div>
   </div>

@@ -8,7 +8,7 @@
     <li>Unter <%= link_to Fileclip.model_name.human(count: 2), fileclips_path %> finden Sie Dateien der <%= current_member.cooperative.name %>.</li>
 </ul>
 
-<p class="title is-4" style="margin-top:3em">Neueste Dateien<p>
+<p class="title is-4" style="margin-top:3em">Neueste <%= Fileclip.model_name.human(count: 2) %><p>
 <table class="table is-fullwidth is-striped is-hoverable">
   <tbody>
   <% current_member.cooperative.fileclips.last(5).each do |file| %>

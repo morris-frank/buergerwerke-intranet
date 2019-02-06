@@ -6,22 +6,22 @@
     <div class="level-item">
       <a href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
         <span class="icon"><i class="fas fa-chevron-left"></i></span>
-        <span>zurück</span>
+        <span><%= t 'back' %></span>
       </a>
     </div>
   </div>
 </div>
 
-<div class="notification">Die <%= Member.model_name.human(count: 2) %> sind alle im <%= t 'intranet' %> registrierten und der <%= @cooperative.name %> zugeordneten Personen. Sie sind nicht zwangsläufig Mitglieder und/oder Kunden dieser.</div>
+<div class="notification"><%= t 'notifications.members' %></div>
 
 <% if !is_admin %>
 <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr class="table-heading">
-      <th>Vorname</th>
-      <th>Nachname</th>
-      <th>E-Mail</th>
-      <th class="has-text-centered">Vorstand</th>
+      <th><%= User.human_attribute_name('firstname') %></th>
+      <th><%= User.human_attribute_name('lastname') %></th>
+      <th><%= User.human_attribute_name('email') %></th>
+      <th class="has-text-centered"><%= User.human_attribute_name('is_board_member') %></th>
     </tr>
   </thead>
   <tbody>
@@ -48,12 +48,12 @@
 <table class="table is-fullwidth is-striped is-hoverable">
   <thead>
     <tr>
-      <th>Vorname</th>
-      <th>Nachname</th>
-      <th>E-Mail</th>
-      <th class="has-text-centered">Vorstand</th>
-      <th class="has-text-centered">Redakteur</th>
-      <th class="has-text-centered">Kundendaten</th>
+      <th><%= User.human_attribute_name('firstname') %></th>
+      <th><%= User.human_attribute_name('lastname') %></th>
+      <th><%= User.human_attribute_name('email') %></th>
+      <th class="has-text-centered"><%= User.human_attribute_name('is_board_member') %></th>
+      <th class="has-text-centered"><%= User.human_attribute_name('is_editor') %></th>
+      <th class="has-text-centered"><%= User.human_attribute_name('can_see_customer_data') %></th>
       <th></th>
     </tr>
   </thead>
@@ -68,8 +68,8 @@
           <%= member_form.check_box :is_board_member, class: 'checkbox' %>
       </td>
       <% if member.is_coop_admin %>
-        <td class="has-text-centered"><span class="tag is-danger">Admin</span></td>
-        <td class="has-text-centered"><span class="tag is-danger">Admin</span></td>
+        <td class="has-text-centered"><span class="tag is-danger"><%= User.human_attribute_name('is_admin') %></span></td>
+        <td class="has-text-centered"><span class="tag is-danger"><%= User.human_attribute_name('is_admin') %></span></td>
       <% else %>
         <td class="has-text-centered">
           <%= member_form.check_box :is_editor, class: 'checkbox' %>

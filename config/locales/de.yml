@@ -5,6 +5,14 @@ de:
   intranet: 'Intranet'
   submit: 'Abschicken'
   abort: 'abbrechen'
+  edit: 'bearbeiten'
+  back: 'zurück'
+  add: 'hinzufügen'
+  number-customers: 'Anzahl Kunden'
+  last-updated: 'Aktualisiert vor'
+  notifications:
+      members: 'Die Benutzer sind alle im Intranet registrierten und der Genossenschaft zugeordneten Personen. Sie sind nicht zwangsläufig Mitglieder und/oder Kunden dieser.'
+      no_files: 'Keine Dateien in dieser Kategorie vorhanden.'
   customer_data:
     attribute_legend:
       accepted_privacy_statement: "Ob der Kunde die Privatsphäreerklärung akzeptiert hat"
