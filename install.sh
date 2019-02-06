@@ -1,5 +1,6 @@
 #!/bin/bash
 
+bundle install --path ./vendor/bundle
 RAILS_ENV=production rails db:create
 RAILS_ENV=production rails db:migrate
 RAILS_ENV=production rails assets:precompile
