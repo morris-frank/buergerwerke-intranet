@@ -11,6 +11,23 @@
     </div>
   </div>
   <div class="level-right">
+    <% if @cooperative.diagrams.attached? %>
+    <div class="level-item">
+    <a class="" href="<%= url_for controller: 'customer_data', action: 'diagrams', cooperative_id: @cooperative.id %>">
+        <span class="icon"><i class="fas fa-chart-bar"></i></span>
+        <span>Diagrams</span>
+      </a>
+    </div>
+    <% end %>
+
+    <% if @cooperative.customer_data_pdf.attached? %>
+    <div class="level-item">
+      <a href="<%= rails_blob_path(@cooperative.customer_data_pdf, disposition: "attachment") %>">
+        <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
+        <span>PDF</span>
+      </a>
+    </div>
+    <% end %>
     <div class="level-item has-text-centered">
       <div>
         <p class="heading">Anzahl Kunden</p>
@@ -23,15 +40,6 @@
         <p class=""><%= (@cooperative.last_customer_update) ? time_ago_in_words(@cooperative.last_customer_update) : 'nie' %></p>
       </div>
     </div>
-
-    <% if @cooperative.customer_data_pdf.attached? %>
-    <div class="level-item">
-      <a href="<%= rails_blob_path(@cooperative.customer_data_pdf, disposition: "attachment") %>">
-        <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
-        <span>PDF</span>
-      </a>
-    </div>
-    <% end %>
   </div>
 </nav>
 

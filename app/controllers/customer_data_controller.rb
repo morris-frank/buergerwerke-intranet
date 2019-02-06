@@ -27,4 +27,8 @@ class CustomerDataController < ApplicationController
             format.js
         end
     end
+
+    def diagrams
+        @cooperative = Cooperative.with_attached_diagrams.find(params[:cooperative_id])
+    end
 end

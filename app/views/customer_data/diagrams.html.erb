@@ -1,0 +1,21 @@
+<p class="title"><%= t "diagrams" %></p>
+<p class="subtitle"><%= @cooperative.name %></p>
+
+<nav class="level">
+  <div class="level-left">
+    <div class="level-item">
+      <a class=""  href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
+        <span class="icon"><i class="fas fa-chevron-left"></i></span>
+        <span>zurück</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<% @cooperative.diagrams.each do |diagram|  %>
+    <% if ["png", "jpg"].include? diagram.filename.extension_without_delimiter %>
+        <a href="<%= rails_blob_path(diagram)%>" class="">
+            <img src="<%= rails_blob_path(diagram)%>">
+        </a>
+    <% end %>
+<% end %>

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :members, only: [:index]
     post 'members', to: 'members#update'
     get 'customer_data', to: 'customer_data#index'
+    get 'diagrams', to: 'customer_data#diagrams'
     get 'calculator', to: 'cooperatives#calculator'
   end
   resources :fileclips, only: [:index, :show], path: :files
