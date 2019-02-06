@@ -1,6 +1,5 @@
 #!/bin/bash
 
-git clone https://github.com/morris-frank/buergerwerke-portal.git .
 RAILS_ENV=production rails db:create
 RAILS_ENV=production rails db:migrate
 RAILS_ENV=production rails assets:precompile
