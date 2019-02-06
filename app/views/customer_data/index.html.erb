@@ -47,7 +47,7 @@
 
   <div class="scroller"><div></div></div>
   <div class="table-container">
-    <table class="table is-fullwidth is-striped is-hoverable">
+    <table class="table is-fullwidth is-striped is-hoverable fixed">
       <colgroup>
         <% @attributes.each do |attribute| %>
         <col class="<%= attribute %> <%= (@active_attributes.include? attribute) ? '' : 'is-inactive' %>">
