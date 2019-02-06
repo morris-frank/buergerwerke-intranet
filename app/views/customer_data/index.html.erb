@@ -19,15 +19,6 @@
       </a>
     </div>
     <% end %>
-
-    <% if @cooperative.customer_data_pdf.attached? %>
-    <div class="level-item">
-      <a href="<%= rails_blob_path(@cooperative.customer_data_pdf, disposition: "attachment") %>">
-        <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
-        <span>PDF</span>
-      </a>
-    </div>
-    <% end %>
     <div class="level-item has-text-centered">
       <div>
         <p class="heading">Anzahl Kunden</p>
