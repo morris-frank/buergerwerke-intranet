@@ -2,7 +2,20 @@
     <% @customer_data.each do |cd| %>
     <tr>
         <% @attributes.each do |attribute| %>
-        <td class="<%= attribute %>"><%= cd.read_attribute(attribute) %></td>
+            <% attrv = cd.read_attribute(attribute) %>
+            <% if [TrueClass, FalseClass].include? attrv.class %>
+            <td class="<%= attribute %> has-text-centered">
+                <span class="icon has-text-info">
+                <% if attrv %>
+                    <i class="fas fa-check-square"></i>
+                <% else %>
+                    <i class="fas fa-square"></i>
+                <% end %>
+                </span>
+            </td>
+            <% else %>
+            <td class="<%= attribute %>"><%=  attrv %></td>
+            <% end %>
         <% end %>
     </tr>
     <% end %>
