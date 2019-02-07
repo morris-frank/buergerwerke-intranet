@@ -4,7 +4,7 @@
 <nav class="level">
   <div class="level-left">
     <div class="level-item">
-      <a class=""  href="<%= url_for controller: 'cooperatives', action: 'show', id: @cooperative.id %>">
+      <a class=""  href="<%= url_for controller: 'customer_data', action: 'index', cooperative_id: @cooperative.id %>">
         <span class="icon"><i class="fas fa-chevron-left"></i></span>
         <span><%= t 'back' %></span>
       </a>
